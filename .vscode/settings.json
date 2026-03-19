@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "IGB388 Project.sln"
+    "dotnet.defaultSolution": "IGB388-Project.sln"
 }
