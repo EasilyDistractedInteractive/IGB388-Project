@@ -12,6 +12,11 @@ namespace Unity.VRTemplate
     /// </summary>
     public class XRKnob : XRBaseInteractable
     {
+        [Serializable] public enum RotationType { X, Y, Z };
+
+        [Tooltip("Sets the angle the knob rotates on")]
+        [SerializeField] public RotationType rotationType = RotationType.Y;
+
         const float k_ModeSwitchDeadZone = 0.1f; // Prevents rapid switching between the different rotation tracking modes
 
         /// <summary>
@@ -351,8 +356,23 @@ namespace Unity.VRTemplate
                 angle = (Mathf.Round(normalizeAngle / m_AngleIncrement) * m_AngleIncrement) + m_MinAngle;
             }
 
+            //Added code here to allow the knob to turn in any of the three directions
             if (m_Handle != null)
-                m_Handle.localEulerAngles = new Vector3(0.0f, angle, 0.0f);
+                switch (rotationType)
+                {
+                    case RotationType.X: 
+                        m_Handle.localEulerAngles = new Vector3(angle, 0.0f, 0.0f);
+                        break;
+
+                    case RotationType.Y:
+                        m_Handle.localEulerAngles = new Vector3(0.0f, angle, 0.0f);
+                        break;
+
+                    case RotationType.Z:
+                        m_Handle.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
+                        break;
+
+                }
         }
 
         void SetValue(float newValue)
