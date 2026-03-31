@@ -3,6 +3,8 @@ using UnityEngine;
 public class OrderHandler : MonoBehaviour
 {
     public string[] orderQueue;
-    public string currentOrder;  //Replace with order scriptable objects once created  
+    public string currentOrder;  //Replace with order scriptable objects once created
 
+    [Tooltip("The available ingredients")]
+    public Ingredient[] ingredientPool;
 }

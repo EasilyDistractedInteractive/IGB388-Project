@@ -6,7 +6,7 @@ public class Chef : MonoBehaviour
 
     private int chefMood;
 
-    public int orderComplexity;
+    public int orderComplexity; //Public for testing, hide later
 
     public int ChefMood
     {
