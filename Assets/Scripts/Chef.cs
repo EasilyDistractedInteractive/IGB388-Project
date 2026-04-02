@@ -2,11 +2,31 @@ using UnityEngine;
 
 public class Chef : MonoBehaviour
 {
-    private int nextOrderTimer;
+    private int nextOrderTimer = 3; //Set to 3 for now for testing purposes
+    [SerializeField] private int nextOrderInterval;
+
+    private int moodCheckTimer = 10;
+    [SerializeField] private int moodCheckInterval;
 
     private int chefMood;
 
     public int orderComplexity; //Public for testing, hide later
+
+    public OrderHandler orderHandler;
+
+    void Update()
+    {
+        if (Time.time > nextOrderTimer)
+        {
+            orderHandler.GenerateOrder(orderComplexity);
+            nextOrderTimer += nextOrderInterval;
+        }
+        if (Time.time > moodCheckTimer)
+        {
+            MoodCheck();
+            moodCheckTimer += moodCheckInterval;
+        }
+    }
 
     public int ChefMood
     {
@@ -38,6 +58,15 @@ public class Chef : MonoBehaviour
             case > 80:
                 mood = Moods.Happy;
                 break;
+        }
+    }
+
+    void PrintOrder()
+    {
+        Order newOrder = orderHandler.currentOrder;
+        for (int i = 0; i < newOrder.ingredients.Length; i++)
+        {
+            Debug.Log(newOrder.ingredients[i]);
         }
     }
 }
