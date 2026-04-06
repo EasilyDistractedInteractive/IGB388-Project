@@ -3,13 +3,25 @@ using UnityEngine;
 public class IngredientLogic : MonoBehaviour
 {
     public Ingredient ingredient;
-    GameObject ingredientModelBase;
+    GameObject ingredientModel;
     GameObject ingredientModelSliced;
 
+    public bool isDirty;
     public bool isSliced;
     int slices = 0;
 
     public bool isOnCuttingBoard;
+
+    public enum state
+    {
+        Dirty_Unsliced,
+        Clean_Unsliced,
+        Clean_Sliced,
+        Dirty_Sliced
+    }
+
+    state currentState = state.Dirty_Unsliced;
+    public state currentModel = state.Dirty_Unsliced;
 
     
 
@@ -17,15 +29,39 @@ public class IngredientLogic : MonoBehaviour
     void Start()
     {
         isSliced = false;
-        ingredientModelBase = Instantiate (ingredient.modelBase, gameObject.transform.position , Quaternion.identity);
-        ingredientModelSliced = Instantiate (ingredient.modelSliced, gameObject.transform.position , Quaternion.identity);
+        isDirty = false;
 
-        ingredientModelBase.transform.parent = gameObject.transform;
-        
-        ingredientModelSliced.transform.parent = gameObject.transform;
+        instantiateCurrentModel();
 
-        ingredientModelBase.SetActive(true);
-        ingredientModelSliced.SetActive(false);
+    }
+
+    void instantiateCurrentModel()
+    {
+        Destroy(ingredientModel);
+        if(currentState == state.Dirty_Unsliced)
+        {
+            ingredientModel = Instantiate (ingredient.modelDirty_Unsliced, gameObject.transform.position , Quaternion.identity);
+            ingredientModel.transform.parent = gameObject.transform;
+            currentModel = state.Dirty_Unsliced;
+        }
+        if(currentState == state.Clean_Unsliced)
+        {
+            ingredientModel = Instantiate (ingredient.modelClean_Unsliced, gameObject.transform.position , Quaternion.identity);
+            ingredientModel.transform.parent = gameObject.transform;
+            currentModel = state.Clean_Unsliced;
+        }
+        if(currentState == state.Clean_Sliced)
+        {
+            ingredientModel = Instantiate (ingredient.modelClean_Sliced, gameObject.transform.position , Quaternion.identity);
+            ingredientModel.transform.parent = gameObject.transform;
+            currentModel = state.Clean_Sliced;
+        }
+        if(currentState == state.Dirty_Sliced)
+        {
+            ingredientModel = Instantiate (ingredient.modelDirty_Sliced, gameObject.transform.position , Quaternion.identity);
+            ingredientModel.transform.parent = gameObject.transform;
+            currentModel = state.Dirty_Sliced;
+        }
     }
 
     // Update is called once per frame
@@ -35,23 +71,32 @@ public class IngredientLogic : MonoBehaviour
         {
             isSliced = true;
         }
-        if(isSliced == false)
+
+        if(isDirty == true && isSliced == false)
         {
-            ingredientModelBase.SetActive(true);
-            ingredientModelSliced.SetActive(false);
+            currentState = state.Dirty_Unsliced;
+        }
+        if(isDirty == false && isSliced == false)
+        {
+            currentState = state.Clean_Unsliced;
+        }
+        if(isDirty == false && isSliced == true)
+        {
+            currentState = state.Clean_Sliced;
+        }
+        if(isDirty == true && isSliced == true)
+        {
+            currentState = state.Dirty_Sliced;
         }
 
-        if(isSliced == true)
+        if(currentState != currentModel)
         {
-            ingredientModelBase.SetActive(false);
-            ingredientModelSliced.SetActive(true);
+            instantiateCurrentModel();
         }
+
     }
 
-    //void LateUpdate()
-    //{
-    //    isOnCuttingBoard = false;
-    //}
+
 
     public void setIsOnCuttingBoardTrue()
     {
