@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21abe0128ef9274f9979cdc8fac3600, type: 3}
   m_Name: SphereFruit
   m_EditorClassIdentifier: 
-  model: {fileID: 7808943584397307564, guid: b90c78caba3005f4b9ab92c08acdd86b, type: 3}
+  modelBase: {fileID: 7808943584397307564, guid: b90c78caba3005f4b9ab92c08acdd86b, type: 3}
+  modelSliced: {fileID: 1224121026871121474, guid: c4cf9c1ba7cd2224abaed250e6385062, type: 3}
   ingredientName: SphereFruit
+  ingredientComplexity: 0
