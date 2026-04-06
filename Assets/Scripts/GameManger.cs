@@ -2,21 +2,30 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+
 
 public class GameManger : MonoBehaviour
 {
 
+    public XRSocketInteractor cuttingBoard;
+    public GameObject currentObjectOnBoard;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Update()
     {
-        
-    }
+      
+        IXRSelectInteractable boardInteractable = cuttingBoard.GetOldestInteractableSelected();
+        if(boardInteractable != null)
+        {
+            currentObjectOnBoard = boardInteractable.transform.gameObject;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        IngredientLogic ingredientOnCuttingBoard = currentObjectOnBoard.GetComponent<IngredientLogic>();
+        ingredientOnCuttingBoard.setIsOnCuttingBoardTrue();
+
+
+
     }
 }

@@ -7,6 +7,11 @@ public class IngredientLogic : MonoBehaviour
     GameObject ingredientModelSliced;
 
     public bool isSliced;
+    int slices = 0;
+
+    public bool isOnCuttingBoard;
+
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +31,10 @@ public class IngredientLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(slices >= 3)
+        {
+            isSliced = true;
+        }
         if(isSliced == false)
         {
             ingredientModelBase.SetActive(true);
@@ -36,6 +45,26 @@ public class IngredientLogic : MonoBehaviour
         {
             ingredientModelBase.SetActive(false);
             ingredientModelSliced.SetActive(true);
+        }
+    }
+
+    //void LateUpdate()
+    //{
+    //    isOnCuttingBoard = false;
+    //}
+
+    public void setIsOnCuttingBoardTrue()
+    {
+        isOnCuttingBoard = true;
+    }
+    
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Knife" && isOnCuttingBoard == true)
+        {
+            Debug.Log("Slice");
+            slices += 1;
         }
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3186911892217294840
 Transform:
   m_ObjectHideFlags: 0
@@ -558,6 +558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: fbcffd299efa39f4a82df2c4cbcd95c8, type: 2}
+  isSliced: 0
 --- !u!1 &4171094197058785064
 GameObject:
   m_ObjectHideFlags: 0
