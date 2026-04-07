@@ -2,6 +2,7 @@ using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using DG.Tweening;
 
 namespace UnityEngine.XR.Content.Interaction
 {
@@ -41,6 +42,7 @@ namespace UnityEngine.XR.Content.Interaction
         [SerializeField]
         [Tooltip("Events to trigger when the lever deactivates")]
         UnityEvent m_OnLeverDeactivate = new UnityEvent();
+
 
         IXRSelectInteractor m_Interactor;
 
@@ -95,8 +97,12 @@ namespace UnityEngine.XR.Content.Interaction
         /// </summary>
         public UnityEvent onLeverDeactivate => m_OnLeverDeactivate;
 
+        bool m_InitialValue;
+
+
         void Start()
         {
+            m_InitialValue = m_Value;
             SetValue(m_Value, true);
         }
 
@@ -225,6 +231,22 @@ namespace UnityEngine.XR.Content.Interaction
         void OnValidate()
         {
             SetHandleAngle(m_Value ? m_MaxAngle : m_MinAngle);
+        }
+
+        public void ResetLever()
+        {
+            float targetAngle = m_InitialValue ? m_MaxAngle : m_MinAngle;
+
+            m_Handle.DOKill();
+
+            m_Handle.DOLocalRotate(
+                new Vector3(targetAngle, 0f, 0f),
+                0.25f
+                ).SetEase(Ease.InOutSine)
+                .OnComplete(() =>
+                {
+                    SetValue(m_InitialValue, true);
+                });
         }
     }
 }

@@ -12,6 +12,9 @@ public class GameManger : MonoBehaviour
     public XRSocketInteractor cuttingBoard;
     public GameObject currentObjectOnBoard;
 
+    public List<GameObject> ingredientsList = new List<GameObject>();
+    public GameObject ingredientSpawnPoint;
+
 
     public void Update()
     {
@@ -27,5 +30,14 @@ public class GameManger : MonoBehaviour
 
 
 
+    }
+    /// <summary>
+    /// Testing function to spawn random ingredient when slop lever pulled. Goo goo ga ga
+    /// By Maximus K
+    /// </summary>
+    public void SpawnRandomIngredient()
+    {
+        Debug.Log("Spawning random ingredient");
+        Instantiate(ingredientsList[Random.Range(0, ingredientsList.Count)], ingredientSpawnPoint.transform.position, ingredientSpawnPoint.transform.rotation);
     }
 }
