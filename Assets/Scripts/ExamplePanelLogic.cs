@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 public class ExamplePanelLogic : MonoBehaviour
 {
@@ -7,9 +9,10 @@ public class ExamplePanelLogic : MonoBehaviour
     {
         sun = FindFirstObjectByType<Light>();
     }
+    
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void ChangeLightIntensity(float intensity)
     {
