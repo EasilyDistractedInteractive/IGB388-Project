@@ -57,10 +57,14 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _ScalineStrength: 0.5
+    - _ScalineThickness: 0.01
+    - _ScanlineSpeed: 0.3
     - _ScrollSpeed: 0.05
     m_Colors:
-    - _FresnelColor: {r: 4, g: 4, b: 4, a: 0}
+    - _FresnelColor: {r: 5.3403134, g: 1.45202, b: 0, a: 0}
     - _HologramTiling: {r: 64, g: 64, b: 0, a: 0}
-    - _MainColor: {r: 2, g: 2, b: 2, a: 0}
+    - _MainColor: {r: 5.3403134, g: 1.45202, b: 0, a: 0}
+    - _ScanlineColor: {r: 5.3403134, g: 1.45202, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
