@@ -250,6 +250,37 @@ MonoBehaviour:
         stateExited: {fileID: 0}
     m_Variable: {fileID: 11400000, guid: 5c5c73ead290d6441aaa736f48f64242, type: 2}
   m_AudioSource: {fileID: 7804610173767277935}
+--- !u!1 &1194251665702615145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7158706532956180747}
+  m_Layer: 0
+  m_Name: AttachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7158706532956180747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194251665702615145}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7340998005264290341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3378359586455425910
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +371,7 @@ Transform:
   - {fileID: 1844386279443091578}
   - {fileID: 3023203939116175977}
   - {fileID: 2554093253227342160}
+  - {fileID: 7158706532956180747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7193669564322415989
@@ -467,7 +499,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 7158706532956180747}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
@@ -517,7 +549,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
+  m_FarAttachMode: 1
   m_LimitLinearVelocity: 0
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
@@ -741,6 +773,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7340998005264290341}
     m_Modifications:
+    - target: {fileID: 1115446041492976733, guid: b90c78caba3005f4b9ab92c08acdd86b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6ed2e334d79c5bd408d75c2352409e36, type: 2}
     - target: {fileID: 1383925315769553120, guid: b90c78caba3005f4b9ab92c08acdd86b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
