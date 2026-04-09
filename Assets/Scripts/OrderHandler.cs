@@ -33,7 +33,8 @@ public class OrderHandler : MonoBehaviour
         float tempOrderComplexity = 0;
         bool orderValid = false;
 
-        while (orderComplexity > ingredientMaxComplexity * ingredientCount) ingredientCount++;
+        Debug.Log(orderComplexity);
+        while (orderComplexity > (ingredientMaxComplexity * ingredientCount)) Debug.Log(ingredientMaxComplexity * ingredientCount); ingredientCount++;
 
         Order newOrder = new Order();
         newOrder.ingredients = new Ingredient[ingredientCount];
@@ -49,7 +50,11 @@ public class OrderHandler : MonoBehaviour
             if ((orderComplexity * 0.75 <= tempOrderComplexity) && (tempOrderComplexity <= orderComplexity * 1.25)) { orderValid = true; break; }
         }
 
-
+        Debug.Log($"New order: Complexity range is {orderComplexity * 0.75} to {orderComplexity * 1.25}; ingredients are:");
+        foreach (var ingredient in newOrder.ingredients)
+        {
+            Debug.Log (ingredient.name);
+        }
         orderQueue.Add(currentOrder);
     }
 }

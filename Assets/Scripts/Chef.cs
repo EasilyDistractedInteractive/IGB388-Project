@@ -2,17 +2,23 @@ using UnityEngine;
 
 public class Chef : MonoBehaviour
 {
-    private int nextOrderTimer = 3; //Set to 3 for now for testing purposes
-    [SerializeField] private int nextOrderInterval;
+    private float nextOrderTimer; //Set to 3 for now for testing purposes
+    [SerializeField] private float nextOrderInterval;
 
-    private int moodCheckTimer = 10;
-    [SerializeField] private int moodCheckInterval;
+    private float moodCheckTimer;
+    [SerializeField] private float moodCheckInterval;
 
     private int chefMood;
 
     public int orderComplexity; //Public for testing, hide later
 
     public OrderHandler orderHandler;
+
+    void Start()
+    {
+        nextOrderTimer = Time.time + nextOrderInterval;
+        moodCheckTimer = Time.time + moodCheckInterval;
+    }
 
     void Update()
     {
@@ -21,11 +27,14 @@ public class Chef : MonoBehaviour
             orderHandler.GenerateOrder(orderComplexity);
             nextOrderTimer += nextOrderInterval;
         }
+        
+        /*
         if (Time.time > moodCheckTimer)
         {
             MoodCheck();
             moodCheckTimer += moodCheckInterval;
         }
+        */
     }
 
     public int ChefMood
