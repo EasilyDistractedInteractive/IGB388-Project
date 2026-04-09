@@ -10,6 +10,7 @@ TagManager:
   - Projectile
   - Flame
   - Water
+  - KillBox
   layers:
   - Default
   - TransparentFX
