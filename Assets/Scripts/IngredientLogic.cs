@@ -4,13 +4,16 @@ public class IngredientLogic : MonoBehaviour
 {
     public Ingredient ingredient;
     GameObject ingredientModel;
-    GameObject ingredientModelSliced;
 
     public bool isDirty;
     public bool isSliced;
     int slices = 0;
 
     public bool isOnCuttingBoard;
+    public int framesOffCuttingBoard;
+
+    public bool isInSink;
+    public int framesOutOfSink;
 
     public enum state
     {
@@ -29,7 +32,7 @@ public class IngredientLogic : MonoBehaviour
     void Start()
     {
         isSliced = false;
-        isDirty = false;
+        isDirty = true;
 
         instantiateCurrentModel();
 
@@ -94,6 +97,21 @@ public class IngredientLogic : MonoBehaviour
             instantiateCurrentModel();
         }
 
+        if(framesOffCuttingBoard >= 2)
+        {
+            isOnCuttingBoard = false;
+        }
+        if(framesOutOfSink >= 2)
+        {
+            isInSink = false;
+        }
+
+    }
+
+    void LateUpdate()
+    {
+        framesOffCuttingBoard += 1;
+        framesOutOfSink += 1;
     }
 
 
@@ -101,6 +119,13 @@ public class IngredientLogic : MonoBehaviour
     public void setIsOnCuttingBoardTrue()
     {
         isOnCuttingBoard = true;
+        framesOffCuttingBoard = 0;
+    }
+
+    public void setIsInSinkTrue()
+    {
+        isInSink = true;
+        framesOutOfSink = 0;
     }
     
 
@@ -111,5 +136,12 @@ public class IngredientLogic : MonoBehaviour
             Debug.Log("Slice");
             slices += 1;
         }
+
+        if(collision.gameObject.name == "Knife" && isInSink == true)
+        {
+            isDirty = false;
+        }
     }
+
+
 }
