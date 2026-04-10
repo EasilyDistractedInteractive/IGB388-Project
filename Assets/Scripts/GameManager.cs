@@ -47,14 +47,16 @@ public class GameManager : MonoBehaviour
 
             ingredientInSink = currentObjectInSink.GetComponent<IngredientLogic>();
             ingredientInSink.setIsInSinkTrue();
+
+            if(tapOn == true)
+            {
+                ingredientInSink.Wash(cleanRate);
+            }
         }
 
         //currentObjectInSink = null;
 
-        if(tapOn == true)
-        {
-            ingredientInSink.Wash(cleanRate);
-        }
+        
 
     }
 
