@@ -16,6 +16,8 @@ public class IngredientLogic : MonoBehaviour
     public int framesOutOfSink;
     float cleanliness = 0;
 
+    private ParticleSystem cutParticleEffect;
+
     public enum state
     {
         Dirty_Unsliced,
@@ -42,6 +44,7 @@ public class IngredientLogic : MonoBehaviour
 
         instantiateCurrentModel();
 
+        cutParticleEffect = GetComponentInChildren<ParticleSystem>();
     }
 
     void instantiateCurrentModel()
@@ -154,6 +157,8 @@ public class IngredientLogic : MonoBehaviour
         {
             Debug.Log("Slice");
             slices += 1;
+
+            cutParticleEffect.Play();
         }
     }
 
