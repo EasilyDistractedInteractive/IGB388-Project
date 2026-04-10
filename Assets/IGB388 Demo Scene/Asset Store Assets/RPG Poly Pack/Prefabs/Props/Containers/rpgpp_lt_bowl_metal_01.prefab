@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4522445556964407443}
   - component: {fileID: 6485349409376958743}
   - component: {fileID: 7456356008625818772}
+  - component: {fileID: 598411233828391455}
+  - component: {fileID: 7714292536946901667}
   m_Layer: 0
   m_Name: rpgpp_lt_bowl_metal_01
   m_TagString: Untagged
@@ -268,6 +270,44 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &598411233828391455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075210506956534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e100c701cfe4731459ee5a5005217767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbable: {fileID: 0}
+  rigid: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  forceToBreak: 1
+  potSmashEffect: {fileID: 3014959229450926018, guid: eef110f8c9c33704c9e6a239222766f0, type: 3}
+--- !u!65 &7714292536946901667
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075210506956534}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.87039334, y: 0.6747188, z: 0.8663231}
+  m_Center: {x: 0.00064440066, y: 0.33735934, z: -0.00000002980232}
 --- !u!1 &1338866619413046300
 GameObject:
   m_ObjectHideFlags: 0
