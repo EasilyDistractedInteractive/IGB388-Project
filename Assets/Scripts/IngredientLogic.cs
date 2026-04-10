@@ -14,7 +14,7 @@ public class IngredientLogic : MonoBehaviour
 
     public bool isInSink;
     public int framesOutOfSink;
-    float cleanliness = 0;
+    public float cleanliness = 0;
 
     private ParticleSystem cutParticleEffect;
 

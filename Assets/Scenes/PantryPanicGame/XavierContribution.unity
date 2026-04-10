@@ -909,7 +909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5283898766228162098, guid: 36eff8b49ecdca745894efb1d2ce5f8f, type: 3}
       propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5283898766228162098, guid: 36eff8b49ecdca745894efb1d2ce5f8f, type: 3}
       propertyPath: m_OnLeverDeactivate.m_PersistentCalls.m_Calls.Array.size
@@ -941,7 +941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5283898766228162098, guid: 36eff8b49ecdca745894efb1d2ce5f8f, type: 3}
       propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: washSinkItems
+      value: SinkWaterOn
       objectReference: {fileID: 0}
     - target: {fileID: 5283898766228162098, guid: 36eff8b49ecdca745894efb1d2ce5f8f, type: 3}
       propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1792,6 +1792,10 @@ PrefabInstance:
     - target: {fileID: 3150673494833678953, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_InteractionLayers.m_Bits
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583810496511554748, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4750419573833148750, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7567,12 +7571,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 818468ce558a90242b96b796b3fd385f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 818468ce558a90242b96b796b3fd385f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -7614,7 +7618,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -7747,10 +7751,6 @@ PrefabInstance:
     - target: {fileID: 3413039493605981544, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
       propertyPath: m_Name
       value: Ingredient (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6638326213517170704, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
-      propertyPath: isDirty
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7340998005264290341, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8704,10 +8704,6 @@ PrefabInstance:
     - target: {fileID: 3413039493605981544, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
       propertyPath: m_Name
       value: Ingredient (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6638326213517170704, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
-      propertyPath: isDirty
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7340998005264290341, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
       propertyPath: m_LocalPosition.x
