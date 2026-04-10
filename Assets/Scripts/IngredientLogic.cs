@@ -160,6 +160,13 @@ public class IngredientLogic : MonoBehaviour
 
             cutParticleEffect.Play();
         }
+
+
+        if(collision.gameObject.name == "DestructionCollider")
+        {
+            Destroy(gameObject, 2f);
+        }
+    
     }
 
 
