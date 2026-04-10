@@ -14,6 +14,7 @@ public class IngredientLogic : MonoBehaviour
 
     public bool isInSink;
     public int framesOutOfSink;
+    float cleanliness = 0;
 
     public enum state
     {
@@ -33,6 +34,11 @@ public class IngredientLogic : MonoBehaviour
     {
         isSliced = false;
         isDirty = true;
+
+        if(isDirty)
+        {
+            cleanliness = 0f;
+        }
 
         instantiateCurrentModel();
 
@@ -106,6 +112,11 @@ public class IngredientLogic : MonoBehaviour
             isInSink = false;
         }
 
+        if(cleanliness >= 100f)
+        {
+            isDirty = false;
+        }
+
     }
 
     void LateUpdate()
@@ -127,6 +138,14 @@ public class IngredientLogic : MonoBehaviour
         isInSink = true;
         framesOutOfSink = 0;
     }
+
+    public void Wash(float cleanRate)
+    {
+        if(isInSink == true)
+        {
+            cleanliness += cleanRate * Time.deltaTime;
+        }
+    }
     
 
     void OnCollisionEnter(Collision collision)
@@ -135,11 +154,6 @@ public class IngredientLogic : MonoBehaviour
         {
             Debug.Log("Slice");
             slices += 1;
-        }
-
-        if(collision.gameObject.name == "Knife" && isInSink == true)
-        {
-            isDirty = false;
         }
     }
 

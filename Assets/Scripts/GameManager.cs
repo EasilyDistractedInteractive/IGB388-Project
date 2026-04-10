@@ -5,18 +5,25 @@ using System.Collections.Generic;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-
-public class GameManger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-
     public XRSocketInteractor cuttingBoard;
     public GameObject currentObjectOnBoard;
+    IngredientLogic ingredientOnCuttingBoard;
 
     public XRSocketInteractor sink;
     public GameObject currentObjectInSink;
+    IngredientLogic ingredientInSink;
 
     public List<GameObject> ingredientsList = new List<GameObject>();
     public GameObject ingredientSpawnPoint;
+
+    public GameObject tapWaterParticles;
+
+    public bool tapOn;
+
+    float cleanRate = 100f;
+
 
 
     public void Update()
@@ -27,7 +34,7 @@ public class GameManger : MonoBehaviour
         {
             currentObjectOnBoard = boardInteractable.transform.gameObject;
 
-            IngredientLogic ingredientOnCuttingBoard = currentObjectOnBoard.GetComponent<IngredientLogic>();
+            ingredientOnCuttingBoard = currentObjectOnBoard.GetComponent<IngredientLogic>();
             ingredientOnCuttingBoard.setIsOnCuttingBoardTrue();
         }
 
@@ -38,12 +45,29 @@ public class GameManger : MonoBehaviour
         {
             currentObjectInSink = sinkInteractable.transform.gameObject;
 
-            IngredientLogic ingredientInSink = currentObjectInSink.GetComponent<IngredientLogic>();
+            ingredientInSink = currentObjectInSink.GetComponent<IngredientLogic>();
             ingredientInSink.setIsInSinkTrue();
         }
 
         //currentObjectInSink = null;
 
+        if(tapOn == true)
+        {
+            ingredientInSink.Wash(cleanRate);
+        }
+
+    }
+
+    public void SinkWaterOn()
+    {
+        tapWaterParticles.SetActive(true);
+        tapOn = true;
+    }
+
+    public void SinkWaterOff()
+    {
+        tapWaterParticles.SetActive(false);
+        tapOn = false;
     }
 
 
