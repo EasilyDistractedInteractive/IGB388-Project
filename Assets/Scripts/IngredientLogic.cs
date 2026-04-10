@@ -18,6 +18,12 @@ public class IngredientLogic : MonoBehaviour
 
     private ParticleSystem cutParticleEffect;
 
+    [SerializeField] private AudioSource ingredientAudioSource;
+    [SerializeField] private AudioClip prepCompleted;
+    [SerializeField] private AudioClip[] cutIngredientClips;
+    [SerializeField] private AudioClip squishedIngredientClip;
+
+
     public enum state
     {
         Dirty_Unsliced,
@@ -45,6 +51,8 @@ public class IngredientLogic : MonoBehaviour
         instantiateCurrentModel();
 
         cutParticleEffect = GetComponentInChildren<ParticleSystem>();
+        ingredientAudioSource = GetComponentInChildren<AudioSource>();
+        
     }
 
     void instantiateCurrentModel()
@@ -67,12 +75,14 @@ public class IngredientLogic : MonoBehaviour
             ingredientModel = Instantiate (ingredient.modelClean_Sliced, gameObject.transform.position , Quaternion.identity);
             ingredientModel.transform.parent = gameObject.transform;
             currentModel = state.Clean_Sliced;
+            ingredientAudioSource.PlayOneShot(prepCompleted);
         }
         if(currentState == state.Dirty_Sliced)
         {
             ingredientModel = Instantiate (ingredient.modelDirty_Sliced, gameObject.transform.position , Quaternion.identity);
             ingredientModel.transform.parent = gameObject.transform;
             currentModel = state.Dirty_Sliced;
+            ingredientAudioSource.PlayOneShot(prepCompleted);
         }
     }
 
@@ -158,7 +168,18 @@ public class IngredientLogic : MonoBehaviour
             Debug.Log("Slice");
             slices += 1;
 
-            cutParticleEffect.Play();
+            if (!isSliced)
+            {
+                cutParticleEffect.Play();
+
+                ingredientAudioSource.PlayOneShot(
+                    cutIngredientClips[Random.Range(0, cutIngredientClips.Length)]
+                    );
+
+                ingredientAudioSource.PlayOneShot(squishedIngredientClip);
+                Debug.Log("Playing cut sound");
+            }
+                
         }
 
 
