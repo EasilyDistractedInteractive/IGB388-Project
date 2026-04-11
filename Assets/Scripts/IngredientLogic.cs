@@ -16,8 +16,6 @@ public class IngredientLogic : MonoBehaviour
     public int framesOutOfSink;
     public float cleanliness = 0;
 
-    private ParticleSystem cutParticleEffect;
-
     [SerializeField] private AudioSource ingredientAudioSource;
     [SerializeField] private AudioClip prepCompleted;
     [SerializeField] private AudioClip[] cutIngredientClips;
@@ -50,7 +48,6 @@ public class IngredientLogic : MonoBehaviour
 
         instantiateCurrentModel();
 
-        cutParticleEffect = GetComponentInChildren<ParticleSystem>();
         ingredientAudioSource = GetComponentInChildren<AudioSource>();
         
     }
@@ -170,14 +167,15 @@ public class IngredientLogic : MonoBehaviour
 
             if (!isSliced)
             {
-                cutParticleEffect.Play();
+                Instantiate(ingredient.cutParticleEffect,transform.position,transform.rotation);
+                print("GOOOP");
 
-                ingredientAudioSource.PlayOneShot(
-                    cutIngredientClips[Random.Range(0, cutIngredientClips.Length)]
-                    );
-
-                ingredientAudioSource.PlayOneShot(squishedIngredientClip);
-                Debug.Log("Playing cut sound");
+                //ingredientAudioSource.PlayOneShot(
+                //    cutIngredientClips[Random.Range(0, cutIngredientClips.Length)]
+                //    );
+//
+                //ingredientAudioSource.PlayOneShot(squishedIngredientClip);
+                //Debug.Log("Playing cut sound");
             }
                 
         }
