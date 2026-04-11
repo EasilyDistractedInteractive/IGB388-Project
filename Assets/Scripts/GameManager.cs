@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
 
     float cleanRate = 100f;
 
+    [SerializeField] public AudioClip prepCompleted;
+
+    [SerializeField] public AudioClip[] cutIngredientClips;
+    [SerializeField] public AudioClip squishedIngredientClip;
 
 
     public void Update()

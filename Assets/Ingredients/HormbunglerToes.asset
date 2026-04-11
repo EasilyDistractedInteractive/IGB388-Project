@@ -16,6 +16,6 @@ MonoBehaviour:
   modelClean_Unsliced: {fileID: 4982079372640548662, guid: 357186c2988483d4ea97ab708dc4a12e, type: 3}
   modelClean_Sliced: {fileID: 828159189960450115, guid: 8781516721bf4d8419f57f2818015a2b, type: 3}
   modelDirty_Sliced: {fileID: 828159189960450115, guid: 8781516721bf4d8419f57f2818015a2b, type: 3}
-  cutParticleEffect: {fileID: 0}
+  cutParticleEffect: {fileID: 5150223793887423612, guid: 7cfa0b9fd983a884ea89a5eaec33cf79, type: 3}
   ingredientName: Hormbungler Toes
   ingredientComplexity: 100

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class IngredientLogic : MonoBehaviour
 {
+    public GameManager Manager;
     public Ingredient ingredient;
     GameObject ingredientModel;
 
@@ -17,9 +18,8 @@ public class IngredientLogic : MonoBehaviour
     public float cleanliness = 0;
 
     [SerializeField] private AudioSource ingredientAudioSource;
-    [SerializeField] private AudioClip prepCompleted;
-    [SerializeField] private AudioClip[] cutIngredientClips;
-    [SerializeField] private AudioClip squishedIngredientClip;
+    
+    
 
 
     public enum state
@@ -49,6 +49,8 @@ public class IngredientLogic : MonoBehaviour
         instantiateCurrentModel();
 
         ingredientAudioSource = GetComponentInChildren<AudioSource>();
+
+        Manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         
     }
 
@@ -72,14 +74,14 @@ public class IngredientLogic : MonoBehaviour
             ingredientModel = Instantiate (ingredient.modelClean_Sliced, gameObject.transform.position , Quaternion.identity);
             ingredientModel.transform.parent = gameObject.transform;
             currentModel = state.Clean_Sliced;
-            ingredientAudioSource.PlayOneShot(prepCompleted);
+            ingredientAudioSource.PlayOneShot(Manager.prepCompleted);
         }
         if(currentState == state.Dirty_Sliced)
         {
             ingredientModel = Instantiate (ingredient.modelDirty_Sliced, gameObject.transform.position , Quaternion.identity);
             ingredientModel.transform.parent = gameObject.transform;
             currentModel = state.Dirty_Sliced;
-            ingredientAudioSource.PlayOneShot(prepCompleted);
+            ingredientAudioSource.PlayOneShot(Manager.prepCompleted);
         }
     }
 
@@ -165,18 +167,15 @@ public class IngredientLogic : MonoBehaviour
             Debug.Log("Slice");
             slices += 1;
 
-            if (!isSliced)
-            {
-                Instantiate(ingredient.cutParticleEffect,transform.position,transform.rotation);
-                print("GOOOP");
 
-                //ingredientAudioSource.PlayOneShot(
-                //    cutIngredientClips[Random.Range(0, cutIngredientClips.Length)]
-                //    );
-//
-                //ingredientAudioSource.PlayOneShot(squishedIngredientClip);
-                //Debug.Log("Playing cut sound");
-            }
+            Instantiate(ingredient.cutParticleEffect,transform.position,transform.rotation);
+            print("GOOOP");
+
+            ingredientAudioSource.PlayOneShot(Manager.cutIngredientClips[Random.Range(0, Manager.cutIngredientClips.Length)]);
+
+            ingredientAudioSource.PlayOneShot(Manager.squishedIngredientClip);
+            Debug.Log("Playing cut sound");
+            
                 
         }
 

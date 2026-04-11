@@ -12,6 +12,7 @@ TagManager:
   - Water
   - KillBox
   - Utensil
+  - GameManager
   layers:
   - Default
   - TransparentFX
