@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 1193064027230838348}
   - component: {fileID: 2626195288119923285}
   - component: {fileID: 3436505519096272459}
+  - component: {fileID: 3611753056501830822}
   m_Layer: 0
   m_Name: RoobleRoot_Ingredient (1)
   m_TagString: Ingredient
@@ -847,6 +848,18 @@ MonoBehaviour:
   cleanliness: 0
   ingredientAudioSource: {fileID: 0}
   currentModel: 0
+--- !u!114 &3611753056501830822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847465373410616505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467e73d38a565e6409cf194a26dca534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8230054334014590806
 PrefabInstance:
   m_ObjectHideFlags: 0

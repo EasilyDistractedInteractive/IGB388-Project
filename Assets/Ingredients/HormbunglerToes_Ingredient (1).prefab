@@ -595,6 +595,7 @@ GameObject:
   - component: {fileID: 8068901875821496233}
   - component: {fileID: 4755720474159214046}
   - component: {fileID: 3852157687938677641}
+  - component: {fileID: 3528877309499490337}
   m_Layer: 0
   m_Name: HormbunglerToes_Ingredient (1)
   m_TagString: Ingredient
@@ -849,6 +850,18 @@ MonoBehaviour:
   cleanliness: 0
   ingredientAudioSource: {fileID: 0}
   currentModel: 0
+--- !u!114 &3528877309499490337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739515337856977167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467e73d38a565e6409cf194a26dca534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1449157287415271537
 PrefabInstance:
   m_ObjectHideFlags: 0
