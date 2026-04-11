@@ -9,6 +9,8 @@ public class Ingredient : ScriptableObject
     public GameObject modelClean_Sliced;
     public GameObject modelDirty_Sliced;
 
+    public GameObject cutParticleEffect;
+
 
     [Tooltip("The ingredient's name")]
     public string ingredientName;

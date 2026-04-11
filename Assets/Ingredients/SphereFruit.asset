@@ -16,5 +16,6 @@ MonoBehaviour:
   modelClean_Unsliced: {fileID: 7808943584397307564, guid: b90c78caba3005f4b9ab92c08acdd86b, type: 3}
   modelClean_Sliced: {fileID: 1224121026871121474, guid: c4cf9c1ba7cd2224abaed250e6385062, type: 3}
   modelDirty_Sliced: {fileID: 7808943584397307564, guid: 924385ac994d88045979b4679fae14cb, type: 3}
+  cutParticleEffect: {fileID: 5150223793887423612, guid: 7cfa0b9fd983a884ea89a5eaec33cf79, type: 3}
   ingredientName: SphereFruit
   ingredientComplexity: 0
