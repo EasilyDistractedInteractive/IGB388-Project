@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21abe0128ef9274f9979cdc8fac3600, type: 3}
   m_Name: HormbunglerToes
   m_EditorClassIdentifier: 
-  modelDirty_Unsliced: {fileID: 5218522551024320342, guid: cfaf46548d79d5448a7d3d2dc7a628b5, type: 3}
-  modelClean_Unsliced: {fileID: 5218522551024320342, guid: cfaf46548d79d5448a7d3d2dc7a628b5, type: 3}
-  modelClean_Sliced: {fileID: 5218522551024320342, guid: cfaf46548d79d5448a7d3d2dc7a628b5, type: 3}
-  modelDirty_Sliced: {fileID: 5218522551024320342, guid: cfaf46548d79d5448a7d3d2dc7a628b5, type: 3}
+  modelDirty_Unsliced: {fileID: 4982079372640548662, guid: 357186c2988483d4ea97ab708dc4a12e, type: 3}
+  modelClean_Unsliced: {fileID: 4982079372640548662, guid: 357186c2988483d4ea97ab708dc4a12e, type: 3}
+  modelClean_Sliced: {fileID: 828159189960450115, guid: 8781516721bf4d8419f57f2818015a2b, type: 3}
+  modelDirty_Sliced: {fileID: 828159189960450115, guid: 8781516721bf4d8419f57f2818015a2b, type: 3}
+  cutParticleEffect: {fileID: 0}
   ingredientName: Hormbungler Toes
   ingredientComplexity: 100

@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 1393612182111135634}
   m_Layer: 0
   m_Name: ColliderRoobleRoot
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 2236651570179025302}
   m_Layer: 0
   m_Name: Interaction Affordance
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 179188661839751056}
   m_Layer: 0
   m_Name: AttachPoint
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -727,9 +727,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3708024905838525118}
     m_Modifications:
+    - target: {fileID: 417197727828173939, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632615248472258452, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4928585245549221792, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
       propertyPath: m_Name
       value: RoobleRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928585245549221792, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928585245549221792, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 5576285424799960493, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -769,6 +785,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5576285424799960493, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930854224390504510, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
