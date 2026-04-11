@@ -714,6 +714,10 @@ MonoBehaviour:
   isInSink: 0
   framesOutOfSink: 0
   cleanliness: 0
+  ingredientAudioSource: {fileID: 0}
+  prepCompleted: {fileID: 0}
+  cutIngredientClips: []
+  squishedIngredientClip: {fileID: 0}
   currentModel: 0
 --- !u!1001 &8641576278657025841
 PrefabInstance:
@@ -741,19 +745,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5576285424799960493, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5576285424799960493, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5576285424799960493, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5576285424799960493, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5576285424799960493, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

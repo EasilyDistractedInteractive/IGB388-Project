@@ -16,6 +16,6 @@ MonoBehaviour:
   modelClean_Unsliced: {fileID: 4928585245549221792, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
   modelClean_Sliced: {fileID: 4928585245549221792, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
   modelDirty_Sliced: {fileID: 4928585245549221792, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
-  cutParticleEffect: {fileID: 0}
+  cutParticleEffect: {fileID: 5150223793887423612, guid: 7cfa0b9fd983a884ea89a5eaec33cf79, type: 3}
   ingredientName: RoobleRoot
   ingredientComplexity: 0
