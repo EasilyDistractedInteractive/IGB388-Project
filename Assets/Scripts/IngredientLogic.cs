@@ -167,16 +167,16 @@ public class IngredientLogic : MonoBehaviour
             Debug.Log("Slice");
             slices += 1;
 
+            if (!isSliced)
+            {
+                Instantiate(ingredient.cutParticleEffect, transform.position, transform.rotation);
+                print("GOOOP");
 
-            Instantiate(ingredient.cutParticleEffect,transform.position,transform.rotation);
-            print("GOOOP");
+                ingredientAudioSource.PlayOneShot(Manager.cutIngredientClips[Random.Range(0, Manager.cutIngredientClips.Length)]);
 
-            ingredientAudioSource.PlayOneShot(Manager.cutIngredientClips[Random.Range(0, Manager.cutIngredientClips.Length)]);
-
-            ingredientAudioSource.PlayOneShot(Manager.squishedIngredientClip);
-            Debug.Log("Playing cut sound");
-            
-                
+                ingredientAudioSource.PlayOneShot(Manager.squishedIngredientClip);
+                Debug.Log("Playing cut sound");
+            }
         }
 
 

@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 201088608572175168}
   - component: {fileID: 7038595756190297441}
   - component: {fileID: 6638326213517170704}
-  - component: {fileID: 7956315934899663737}
+  - component: {fileID: -3694804915881752991}
   m_Layer: 0
   m_Name: SphereFruit_Ingredient (1)
   m_TagString: Ingredient
@@ -677,7 +677,7 @@ MonoBehaviour:
   cleanliness: 0
   ingredientAudioSource: {fileID: 0}
   currentModel: 0
---- !u!114 &7956315934899663737
+--- !u!114 &-3694804915881752991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,9 +686,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3413039493605981544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467e73d38a565e6409cf194a26dca534, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &7418224510824033846
 GameObject:
   m_ObjectHideFlags: 0
