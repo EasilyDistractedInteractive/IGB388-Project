@@ -18441,7 +18441,7 @@ Transform:
   m_GameObject: {fileID: 1916275106}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.679, y: 0.959, z: 4.189}
+  m_LocalPosition: {x: 0.679, y: 0.959, z: 4.207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18780,9 +18780,16 @@ MonoBehaviour:
   currentObjectInSink: {fileID: 0}
   ingredientsList:
   - {fileID: 3413039493605981544, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
+  - {fileID: 7739515337856977167, guid: 1cfe506b480dce74fbe11c3a95a9239a, type: 3}
+  - {fileID: 8847465373410616505, guid: 38669b04feafbe24e9ad42f2a6d6cf3a, type: 3}
   ingredientSpawnPoint: {fileID: 1824249188}
   tapWaterParticles: {fileID: 2076191940}
   tapOn: 0
+  prepCompleted: {fileID: 8300000, guid: fb6c37ca667fecb458c29ed324b0cf53, type: 3}
+  cutIngredientClips:
+  - {fileID: 8300000, guid: 19a714ed9321cd544a2a4af57911db04, type: 3}
+  - {fileID: 8300000, guid: 1816fd0c64f8f72408fab86ad96f3fde, type: 3}
+  squishedIngredientClip: {fileID: 8300000, guid: a87c764752d95604aadaf06284b4e170, type: 3}
 --- !u!4 &2022313672
 Transform:
   m_ObjectHideFlags: 0
