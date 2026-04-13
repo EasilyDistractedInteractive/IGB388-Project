@@ -29,32 +29,33 @@ public class OrderHandler : MonoBehaviour
     //Technically can scale infinitely but can be hardcapped if need be
     public void GenerateOrder(float orderComplexity)
     {
-        int ingredientCount = 1;
         float tempOrderComplexity = 0;
-        bool orderValid = false;
+        //bool orderValid = false;
 
-        Debug.Log(orderComplexity);
-        while (orderComplexity > (ingredientMaxComplexity * ingredientCount)) Debug.Log(ingredientMaxComplexity * ingredientCount); ingredientCount++;
+        int ingredientCount = Mathf.RoundToInt(orderComplexity / ingredientMaxComplexity);
+        if (ingredientCount == 0) { ingredientCount = 1; }
 
         Order newOrder = new Order();
         newOrder.ingredients = new Ingredient[ingredientCount];
 
-        while (!orderValid)
+        for (int i = 0; i < ingredientCount; i++)
         {
-            for (int i = 0; i < ingredientCount; i++)
-            {
-                Ingredient tempIng = ingredientPool[UnityEngine.Random.Range(0, ingredientPool.Length)];
-                tempOrderComplexity += tempIng.ingredientComplexity;
-                newOrder.ingredients[i] = tempIng;
-            }
-            if ((orderComplexity * 0.75 <= tempOrderComplexity) && (tempOrderComplexity <= orderComplexity * 1.25)) { orderValid = true; break; }
+            Ingredient tempIng = ingredientPool[UnityEngine.Random.Range(0, ingredientPool.Length)];
+            tempOrderComplexity += tempIng.ingredientComplexity;
+            newOrder.ingredients[i] = tempIng;
         }
-
         Debug.Log($"New order: Complexity range is {orderComplexity * 0.75} to {orderComplexity * 1.25}; ingredients are:");
         foreach (var ingredient in newOrder.ingredients)
         {
             Debug.Log (ingredient.name);
         }
-        orderQueue.Add(currentOrder);
+        orderQueue.Add(newOrder);
+        if (currentOrder == null) { currentOrder = newOrder; };
+    }
+
+    public void OrderComplete()
+    {
+        UpdateOrderQueue(currentOrder);
+        //Add function to add score for completed order
     }
 }

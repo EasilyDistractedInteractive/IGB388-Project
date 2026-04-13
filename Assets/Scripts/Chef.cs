@@ -24,6 +24,7 @@ public class Chef : MonoBehaviour
     {
         if (Time.time > nextOrderTimer)
         {
+            Debug.Log("Generating Order");
             orderHandler.GenerateOrder(orderComplexity);
             nextOrderTimer += nextOrderInterval;
         }
