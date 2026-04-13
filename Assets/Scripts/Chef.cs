@@ -24,18 +24,15 @@ public class Chef : MonoBehaviour
     {
         if (Time.time > nextOrderTimer)
         {
-            Debug.Log("Generating Order");
             orderHandler.GenerateOrder(orderComplexity);
             nextOrderTimer += nextOrderInterval;
         }
         
-        /*
         if (Time.time > moodCheckTimer)
         {
             MoodCheck();
             moodCheckTimer += moodCheckInterval;
         }
-        */
     }
 
     public int ChefMood

@@ -7,7 +7,7 @@ public class OrderChecker : MonoBehaviour
     //List<Ingredient> submittedIngredients = new List<Ingredient>();
     Ingredient submittedIngredient;
     OrderHandler orderHandler;
-    GameObject orderCorrectEffect;
+    [SerializeField] private GameObject orderCorrectEffect;
 
     void Start()
     {
@@ -17,9 +17,10 @@ public class OrderChecker : MonoBehaviour
     //Currently only built to handle single ingredient orders, will expand after prototype submission
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Ingredient")
+        if (other.CompareTag("Ingredient"))
         {
-            submittedIngredient = other.transform.GetComponent<Ingredient>();
+            submittedIngredient = other.GetComponent<Ingredient>();
+            IngredientsCheck();
         }
     }
 
