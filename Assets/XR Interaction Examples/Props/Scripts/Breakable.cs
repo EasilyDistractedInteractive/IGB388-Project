@@ -37,6 +37,10 @@ namespace UnityEngine.XR.Content.Interaction
             if (m_Destroyed)
                 return;
 
+            XRGrabInteractable interactable = collision.gameObject.GetComponentInParent<XRGrabInteractable>();
+            if (interactable == null) return;
+            if (interactable.interactorsSelecting.Count < 2) return;
+
             if (collision.gameObject.tag.Equals(m_ColliderTag, System.StringComparison.InvariantCultureIgnoreCase))
             {
                 m_Destroyed = true;
