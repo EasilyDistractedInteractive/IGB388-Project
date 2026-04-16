@@ -536,6 +536,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -23
       objectReference: {fileID: 0}
+    - target: {fileID: 5302184824291981782, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615298655898832136, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694660346389679006, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867393351944209716, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324439472033582582, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545877, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_Name
       value: XR Origin Hands (XR Rig)
@@ -579,6 +599,10 @@ PrefabInstance:
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198422107358218110, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11922,11 +11946,9 @@ MonoBehaviour:
   orderQueue: []
   currentOrder: {fileID: 0}
   ingredientPool:
-  - {fileID: 11400000, guid: 3b8b146ce481e064ab5b62c640430c40, type: 2}
-  - {fileID: 11400000, guid: 004d8163a21ec844a85208a5fd3d21a2, type: 2}
-  - {fileID: 11400000, guid: eef2f9a673885a24c8519e70c91ed7b6, type: 2}
-  - {fileID: 11400000, guid: 8fb9cd213d917014ca44c0fe990ff244, type: 2}
-  - {fileID: 11400000, guid: fbcffd299efa39f4a82df2c4cbcd95c8, type: 2}
+  - {fileID: 3852157687938677641, guid: 1cfe506b480dce74fbe11c3a95a9239a, type: 3}
+  - {fileID: 3436505519096272459, guid: 38669b04feafbe24e9ad42f2a6d6cf3a, type: 3}
+  - {fileID: 6638326213517170704, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
 --- !u!1001 &885669336
 PrefabInstance:
   m_ObjectHideFlags: 0

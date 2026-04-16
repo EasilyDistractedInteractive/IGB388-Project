@@ -11,6 +11,7 @@ public class Ingredient : ScriptableObject
 
     public GameObject cutParticleEffect;
 
+    public IngredientLogic associatedObject;
 
     [Tooltip("The ingredient's name")]
     public string ingredientName;

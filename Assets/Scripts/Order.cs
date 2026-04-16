@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Order", menuName = "Scriptable Objects/Order")]
-public class Order : ScriptableObject
+public class Order
 {
     [Tooltip("The ingredients in this order")]
     public Ingredient[] ingredients; //Depending on if we want to exclusively have one ingredient per order this can be changed to a single object
