@@ -8,22 +8,22 @@ public class OrderHandler : MonoBehaviour
     public Order currentOrder;
 
     [Tooltip("The available ingredients")]
-    public Ingredient[] ingredientPool;
+    public IngredientLogic[] ingredientPool;
 
     float ingredientMaxComplexity = 0;
 
     void Start()
     {
         //Finding the most complex individual ingredient
-        foreach (Ingredient ingredient in ingredientPool)
+        foreach (IngredientLogic tempIngredient in ingredientPool)
         {
-            if (ingredient.ingredientComplexity > ingredientMaxComplexity) { ingredientMaxComplexity = ingredient.ingredientComplexity; }
+            if (tempIngredient.ingredient.ingredientComplexity > ingredientMaxComplexity) { ingredientMaxComplexity = tempIngredient.ingredient.ingredientComplexity; }
         }
     }
 
     void UpdateOrderQueue(bool popOrder)
     {
-
+        //NEED TO DO THIS FOR PROGRESSION!!
     }
 
     //Technically can scale infinitely but can be hardcapped if need be
@@ -40,9 +40,9 @@ public class OrderHandler : MonoBehaviour
 
         for (int i = 0; i < ingredientCount; i++)
         {
-            Ingredient tempIng = ingredientPool[UnityEngine.Random.Range(0, ingredientPool.Length)];
-            tempOrderComplexity += tempIng.ingredientComplexity;
-            newOrder.ingredients[i] = tempIng;
+            IngredientLogic tempIng = ingredientPool[UnityEngine.Random.Range(0, ingredientPool.Length)];
+            tempOrderComplexity += tempIng.ingredient.ingredientComplexity;
+            newOrder.ingredients[i] = tempIng.ingredient;
         }
         Debug.Log($"New order: Complexity range is {orderComplexity * 0.75} to {orderComplexity * 1.25}; ingredients are:");
         foreach (var ingredient in newOrder.ingredients)
