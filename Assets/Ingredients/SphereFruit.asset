@@ -19,4 +19,4 @@ MonoBehaviour:
   cutParticleEffect: {fileID: 5150223793887423612, guid: 7cfa0b9fd983a884ea89a5eaec33cf79, type: 3}
   associatedObject: {fileID: 6638326213517170704, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
   ingredientName: SphereFruit
-  ingredientComplexity: 0
+  ingredientComplexity: 25

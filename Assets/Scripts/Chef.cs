@@ -25,8 +25,7 @@ public class Chef : MonoBehaviour
         if (Time.time > nextOrderTimer)
         {
             orderHandler.GenerateOrder(orderComplexity);
-            Debug.Log(orderHandler.orderQueue.Peek().orderComplexity);
-            //Instantiate(orderHandler.orderQueue.Peek().ingredients[0].associatedObject, transform.position, Quaternion.identity);
+            Instantiate(orderHandler.orderQueue.Peek().ingredients[0].associatedObject, transform.position, Quaternion.identity);
             nextOrderTimer += nextOrderInterval;
         }
         
