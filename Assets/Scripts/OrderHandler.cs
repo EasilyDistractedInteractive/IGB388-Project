@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using TMPro;
 
 public class OrderHandler : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class OrderHandler : MonoBehaviour
 
     [Tooltip("The available ingredients")]
     public IngredientLogic[] ingredientPool;
+
+    public TMP_Text textObject;
 
     float ingredientMaxComplexity = 0;
 
@@ -24,7 +27,7 @@ public class OrderHandler : MonoBehaviour
     void UpdateOrderQueue()
     {
         orderQueue.Dequeue();
-        currentOrder = orderQueue.Peek();
+        if (orderQueue.Count != 0) currentOrder = orderQueue.Peek();
     }
 
     //Technically can scale infinitely but can be hardcapped if need be
@@ -49,6 +52,7 @@ public class OrderHandler : MonoBehaviour
 
         orderQueue.Enqueue(new Order { ingredients = tempIngredients, orderComplexity = tempOrderComplexity});
         if (orderQueue.Count == 1) { currentOrder = orderQueue.Peek(); };
+        textObject.text = currentOrder.ingredients[0].ToString();
     }
 
     public void OrderComplete()
