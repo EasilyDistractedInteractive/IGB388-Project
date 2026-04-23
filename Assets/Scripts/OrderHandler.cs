@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 
 public class OrderHandler : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class OrderHandler : MonoBehaviour
     public TMP_Text textObject;
 
     float ingredientMaxComplexity = 0;
+
+    public Image ingredientIcon;
 
     void Start()
     {
@@ -53,6 +56,7 @@ public class OrderHandler : MonoBehaviour
         orderQueue.Enqueue(new Order { ingredients = tempIngredients, orderComplexity = tempOrderComplexity});
         if (orderQueue.Count == 1) { currentOrder = orderQueue.Peek(); };
         textObject.text = currentOrder.ingredients[0].ToString();
+        ingredientIcon.sprite = currentOrder.ingredients[0].associatedObject.ingredientIcon;
     }
 
     public void OrderComplete()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IngredientLogic : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class IngredientLogic : MonoBehaviour
     public float cleanliness = 0;
 
     [SerializeField] private AudioSource ingredientAudioSource;
-    
-    
+
+    public Sprite ingredientIcon;
 
 
     public enum state
