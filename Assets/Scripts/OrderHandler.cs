@@ -55,7 +55,6 @@ public class OrderHandler : MonoBehaviour
 
         orderQueue.Enqueue(new Order { ingredients = tempIngredients, orderComplexity = tempOrderComplexity});
         if (orderQueue.Count == 1) { currentOrder = orderQueue.Peek(); };
-        textObject.text = currentOrder.ingredients[0].ToString();
         ingredientIcon.sprite = currentOrder.ingredients[0].associatedObject.ingredientIcon;
     }
 

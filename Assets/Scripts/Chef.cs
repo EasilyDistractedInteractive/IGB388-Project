@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Chef : MonoBehaviour
@@ -25,7 +26,7 @@ public class Chef : MonoBehaviour
         if (Time.time > nextOrderTimer)
         {
             orderHandler.GenerateOrder(orderComplexity);
-            Instantiate(orderHandler.orderQueue.Peek().ingredients[0].associatedObject, transform.position, Quaternion.identity);
+            Instantiate(orderHandler.orderQueue.Peek().ingredients[0].associatedObject, transform.position, Quaternion.identity); //Spawns ingredients for testing, remove when integrating
             nextOrderTimer += nextOrderInterval;
         }
         
@@ -47,6 +48,25 @@ public class Chef : MonoBehaviour
     }
     public enum Moods { Frustrated, Exasperated, Neutral, Satisfied, Happy };
     public Moods mood = Moods.Neutral;
+
+    [SerializeField] VoiceLines[] voiceLines = new VoiceLines[4];
+
+    [Serializable]
+    struct VoiceLines
+    {
+        public Moods voiceLinesMood;
+        public VoiceLine[] orderSubmittedVoiceLines;
+        public VoiceLine[] orderLateVoiceLines;
+        public VoiceLine[] orderIncorrectVoiceLines;
+    }
+    
+    [Serializable]
+    public struct VoiceLine
+    {
+        public string voiceLineText;
+        public AudioClip voiceLineAudio;
+    }
+
     void MoodCheck()
     {
         switch (chefMood)
@@ -67,6 +87,11 @@ public class Chef : MonoBehaviour
                 mood = Moods.Happy;
                 break;
         }
+    }
+
+    public void OrderCompleteInteraction()
+    {
+
     }
 
     void PrintOrder()
