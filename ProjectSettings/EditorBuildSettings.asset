@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PantryPanicGame/Main Menu.unity
     guid: d9d54641eebabff42b99348f8b26a613
   - enabled: 0
-    path: Assets/Scenes/PantryPanicGame/Game.unity
+    path: Assets/Scenes/PantryPanicGame/Deprecated.unity
     guid: 85e4fe8f340690d4d9d764671902e8bc
   - enabled: 0
     path: Assets/Scenes/PantryPanicGame/Ash Contributions.unity
