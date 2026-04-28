@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq;
 
 public class OrderHandler : MonoBehaviour
 {
@@ -12,11 +13,14 @@ public class OrderHandler : MonoBehaviour
     [Tooltip("The available ingredients")]
     public IngredientLogic[] ingredientPool;
 
-    public TMP_Text textObject;
-
     float ingredientMaxComplexity = 0;
 
-    public Image ingredientIcon;
+    public TMP_Text[] docketTexts;
+
+    int orderCounter = 0;
+    int currentOrderCount = 0;
+
+    public GameObject[] dockets;
 
     void Start()
     {
@@ -30,19 +34,29 @@ public class OrderHandler : MonoBehaviour
     void UpdateOrderQueue()
     {
         orderQueue.Dequeue();
+        currentOrderCount--;
         if (orderQueue.Count != 0) currentOrder = orderQueue.Peek();
+
+        //Updating the queued dockets so the leftmost docket is the first remaining one to have been generated
+        for (int i = 0; i < docketTexts.Length-1; i++)
+        {
+            docketTexts[i].text = docketTexts[i+1].text;
+        }
+
+        //If there are less current orders than there are dockets, makes the last dockets invisible
+        for (int i = dockets.Length; i > currentOrderCount; i--)
+        {
+            dockets[i].SetActive(false);
+        }
     }
 
     //Technically can scale infinitely but can be hardcapped if need be
     public void GenerateOrder(float orderComplexity)
     {
         float tempOrderComplexity = 0;
-        //bool orderValid = false;
 
         int ingredientCount = Mathf.RoundToInt(orderComplexity / ingredientMaxComplexity);
         if (ingredientCount == 0) { ingredientCount = 1; }
-
-        //Order tempOrder = new Order();
 
         Ingredient[] tempIngredients = new Ingredient[ingredientCount];
 
@@ -54,8 +68,14 @@ public class OrderHandler : MonoBehaviour
         }
 
         orderQueue.Enqueue(new Order { ingredients = tempIngredients, orderComplexity = tempOrderComplexity});
+        orderCounter++;
+
         if (orderQueue.Count == 1) { currentOrder = orderQueue.Peek(); };
-        ingredientIcon.sprite = currentOrder.ingredients[0].associatedObject.ingredientIcon;
+        if (orderQueue.Count > dockets.Length)
+        {
+            dockets[orderQueue.Count].SetActive(true);
+            docketTexts[orderQueue.Count].text = $"Order #{orderCounter}\n {tempIngredients[0]}\n Sliced"; //Not fully built out, needs to be expanded, just temp for testing
+        }
     }
 
     public void OrderComplete()
