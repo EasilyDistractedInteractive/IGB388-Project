@@ -15,12 +15,17 @@ public class OrderHandler : MonoBehaviour
 
     float ingredientMaxComplexity = 0;
 
-    public TMP_Text[] docketTexts;
+    public GameObject docketPrefab;
+    public GameObject docketCanvas;
+
+    public int[] docketPositions;
+    public int docketY;
+    int docketMax = 6;
 
     int orderCounter = 0;
     int currentOrderCount = 0;
 
-    public GameObject[] dockets;
+    public List<GameObject> dockets; //public for testing
 
     void Start()
     {
@@ -37,17 +42,16 @@ public class OrderHandler : MonoBehaviour
         currentOrderCount--;
         if (orderQueue.Count != 0) currentOrder = orderQueue.Peek();
 
-        //Updating the queued dockets so the leftmost docket is the first remaining one to have been generated
-        for (int i = 0; i < docketTexts.Length-1; i++)
-        {
-            docketTexts[i].text = docketTexts[i+1].text;
-        }
+        Destroy(dockets[0]);
+        dockets.RemoveAt(0);
 
-        //If there are less current orders than there are dockets, makes the last dockets invisible
-        for (int i = dockets.Length; i > currentOrderCount; i--)
+        //Updating the queued dockets so the leftmost docket is the first remaining one to have been generated
+        for (int i = 0; i < dockets.Count; i++)
         {
-            dockets[i].SetActive(false);
+            RectTransform rt = dockets[i].GetComponent<RectTransform>();
+            rt.anchoredPosition = new Vector2(docketPositions[i], docketY);
         }
+        
     }
 
     //Technically can scale infinitely but can be hardcapped if need be
@@ -71,10 +75,19 @@ public class OrderHandler : MonoBehaviour
         orderCounter++;
 
         if (orderQueue.Count == 1) { currentOrder = orderQueue.Peek(); };
-        if (orderQueue.Count > dockets.Length)
+        GameObject newDocket = Instantiate(docketPrefab, docketCanvas.transform);
+        dockets.Add(newDocket);
+        TMP_Text docketText = newDocket.GetComponentInChildren<TMP_Text>();
+        docketText.text = $"Order #{orderCounter}\n{tempIngredients[0]}\nSliced"; //Not fully built out, needs to be expanded, just temp for testing
+
+        if (dockets.Count <= docketMax)
         {
-            dockets[orderQueue.Count].SetActive(true);
-            docketTexts[orderQueue.Count].text = $"Order #{orderCounter}\n {tempIngredients[0]}\n Sliced"; //Not fully built out, needs to be expanded, just temp for testing
+            RectTransform rt = newDocket.GetComponent<RectTransform>();
+            rt.anchoredPosition = new Vector3(docketPositions[dockets.Count-1], docketY, 0);
+            //rt.position = new Vector3(-120, -40, 0);
+            Debug.Log(rt.position.x);
+            Debug.Log(rt.position.y);
+            newDocket.SetActive(true);
         }
     }
 
