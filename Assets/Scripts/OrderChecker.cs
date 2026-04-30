@@ -17,7 +17,6 @@ public class OrderChecker : MonoBehaviour
     //Currently only built to handle single ingredient orders
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if (other.CompareTag("Ingredient"))
         {
             submittedIngredient = other.GetComponentInParent<IngredientLogic>();
@@ -28,18 +27,19 @@ public class OrderChecker : MonoBehaviour
 
     private void IngredientsCheck(IngredientLogic submittedIngredient)
     {
-        Debug.Log("Checking ingredient");
         Order currentOrder = orderHandler.currentOrder;
+        //Checks if the ingredient is of the correct type
         if (submittedIngredient.ingredientName == currentOrder.ingredient.ingredientName)
         {
-            Debug.Log($"{submittedIngredient.currentState} {currentOrder.requiredPrepMethod}");
             //Compares the state of the submitted ingredient with the required state
             if (submittedIngredient.currentState.ToString() == currentOrder.requiredPrepMethod.ToString())
             {
                 orderHandler.OrderComplete();
                 GameObject juiceEffect = Instantiate(orderCorrectEffect);
 
+                //Destroys the 
                 Destroy(juiceEffect, 2);
+                Destroy(submittedIngredient.gameObject);
             }
         }
     }

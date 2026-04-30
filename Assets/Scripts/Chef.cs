@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class Chef : MonoBehaviour
@@ -15,10 +16,16 @@ public class Chef : MonoBehaviour
 
     public OrderHandler orderHandler;
 
+    public GameObject speechBubble;
+    public TMP_Text speechBubbleText;
+    AudioSource chefAudioSource;
+
     void Start()
     {
         nextOrderTimer = Time.time + nextOrderInterval;
         moodCheckTimer = Time.time + moodCheckInterval;
+        currentLinePool = voiceLines[1];
+        chefAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,7 +55,9 @@ public class Chef : MonoBehaviour
     public enum Moods { Frustrated, Neutral, Happy };
     public Moods mood = Moods.Neutral;
 
-    [SerializeField] VoiceLines[] voiceLines = new VoiceLines[4];
+    [SerializeField] VoiceLines[] voiceLines;
+
+    VoiceLines currentLinePool;
 
     [Serializable]
     struct VoiceLines
@@ -80,6 +89,15 @@ public class Chef : MonoBehaviour
                 mood = Moods.Happy;
                 break;
         }
+    }
+
+    public void PlayVoiceline(VoiceLine[] voiceLinePool)
+    {
+        VoiceLine selectedLine = voiceLinePool[UnityEngine.Random.Range(0, voiceLinePool.Length)];
+
+        speechBubble.SetActive(true);
+        speechBubbleText.text = selectedLine.voiceLineText;
+        chefAudioSource.PlayOneShot(selectedLine.voiceLineAudio);
     }
 
     public void OrderCompleteInteraction()
