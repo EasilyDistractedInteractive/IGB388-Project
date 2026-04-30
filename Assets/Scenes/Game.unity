@@ -14403,7 +14403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &740548447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14438,10 +14438,10 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 20
+  m_Intensity: 6
+  m_Range: 21.3
   m_SpotAngle: 179
-  m_InnerSpotAngle: 147.49051
+  m_InnerSpotAngle: 147.4905
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -14480,7 +14480,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.4
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -76158,6 +76158,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 714811963}
+  - {fileID: 1111312571}
   - {fileID: 1107664820}
   - {fileID: 608155070}
   - {fileID: 1160351605}
@@ -76173,7 +76174,6 @@ SceneRoots:
   - {fileID: 680372616}
   - {fileID: 560530323}
   - {fileID: 1765883274}
-  - {fileID: 1111312571}
   - {fileID: 1689491265}
   - {fileID: 627230241}
   - {fileID: 1942574458}
