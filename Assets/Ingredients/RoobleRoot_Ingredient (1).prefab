@@ -969,6 +969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Manager: {fileID: 0}
   ingredient: {fileID: 11400000, guid: c07856c416fbbaa498bb455382f8ed15, type: 2}
+  ingredientName: Rooble Root
   isDirty: 0
   isSliced: 0
   isOnCuttingBoard: 0
@@ -978,6 +979,8 @@ MonoBehaviour:
   cleanliness: 0
   ingredientAudioSource: {fileID: 0}
   ingredientIcon: {fileID: 21300000, guid: 26ab8319d4f601c43b9620269d65efbd, type: 3}
+  statesCount: 4
+  currentState: 0
   currentModel: 0
 --- !u!114 &3611753056501830822
 MonoBehaviour:

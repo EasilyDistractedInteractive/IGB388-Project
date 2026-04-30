@@ -42,16 +42,17 @@ public class OrderHandler : MonoBehaviour
         currentOrderCount--;
         if (orderQueue.Count != 0) currentOrder = orderQueue.Peek();
 
-        Destroy(dockets[0]);
-        dockets.RemoveAt(0);
-
+        GameObject tempDocket = dockets[0];
+        dockets.Remove(dockets[0]);
+        Destroy(tempDocket);
+        
         //Updating the queued dockets so the leftmost docket is the first remaining one to have been generated
         for (int i = 0; i < dockets.Count; i++)
         {
             RectTransform rt = dockets[i].GetComponent<RectTransform>();
             rt.anchoredPosition = new Vector2(docketPositions[i], docketY);
+            if (dockets[i].activeSelf == false && i < docketMax) { dockets[i].SetActive(true); }
         }
-        
     }
 
     //Technically can scale infinitely but can be hardcapped if need be
@@ -62,31 +63,24 @@ public class OrderHandler : MonoBehaviour
         int ingredientCount = Mathf.RoundToInt(orderComplexity / ingredientMaxComplexity);
         if (ingredientCount == 0) { ingredientCount = 1; }
 
-        Ingredient[] tempIngredients = new Ingredient[ingredientCount];
+        IngredientLogic tempIng = ingredientPool[UnityEngine.Random.Range(0, ingredientPool.Length)];
+        tempOrderComplexity += tempIng.ingredient.ingredientComplexity;
 
-        for (int i = 0; i < ingredientCount; i++)
-        {
-            IngredientLogic tempIng = ingredientPool[UnityEngine.Random.Range(0, ingredientPool.Length)];
-            tempOrderComplexity += tempIng.ingredient.ingredientComplexity;
-            tempIngredients[i] = tempIng.ingredient;
-        }
+        int orderState = UnityEngine.Random.Range(0, tempIng.statesCount);
 
-        orderQueue.Enqueue(new Order { ingredients = tempIngredients, orderComplexity = tempOrderComplexity});
+        orderQueue.Enqueue(new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredPrepMethod = (Order.prepMethod)orderState });
         orderCounter++;
 
         if (orderQueue.Count == 1) { currentOrder = orderQueue.Peek(); };
         GameObject newDocket = Instantiate(docketPrefab, docketCanvas.transform);
         dockets.Add(newDocket);
         TMP_Text docketText = newDocket.GetComponentInChildren<TMP_Text>();
-        docketText.text = $"Order #{orderCounter}\n{tempIngredients[0]}\nSliced"; //Not fully built out, needs to be expanded, just temp for testing
+        docketText.text = $"Order #{orderCounter}\n{tempIng.ingredientName}\n{currentOrder.prepMethodNames[orderState]}";
 
         if (dockets.Count <= docketMax)
         {
             RectTransform rt = newDocket.GetComponent<RectTransform>();
             rt.anchoredPosition = new Vector3(docketPositions[dockets.Count-1], docketY, 0);
-            //rt.position = new Vector3(-120, -40, 0);
-            Debug.Log(rt.position.x);
-            Debug.Log(rt.position.y);
             newDocket.SetActive(true);
         }
     }

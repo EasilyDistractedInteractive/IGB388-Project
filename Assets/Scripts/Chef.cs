@@ -26,7 +26,6 @@ public class Chef : MonoBehaviour
         if (Time.time > nextOrderTimer)
         {
             orderHandler.GenerateOrder(orderComplexity);
-            Instantiate(orderHandler.orderQueue.Peek().ingredients[0].associatedObject, transform.position, Quaternion.identity); //Spawns ingredients for testing, remove when integrating
             nextOrderTimer += nextOrderInterval;
         }
         
@@ -46,7 +45,7 @@ public class Chef : MonoBehaviour
             MoodCheck();
         } 
     }
-    public enum Moods { Frustrated, Exasperated, Neutral, Satisfied, Happy };
+    public enum Moods { Frustrated, Neutral, Happy };
     public Moods mood = Moods.Neutral;
 
     [SerializeField] VoiceLines[] voiceLines = new VoiceLines[4];
@@ -54,10 +53,10 @@ public class Chef : MonoBehaviour
     [Serializable]
     struct VoiceLines
     {
-        public Moods voiceLinesMood;
-        public VoiceLine[] orderSubmittedVoiceLines;
-        public VoiceLine[] orderLateVoiceLines;
-        public VoiceLine[] orderIncorrectVoiceLines;
+        [SerializeField] public Moods voiceLinesMood;
+        [SerializeField] public VoiceLine[] orderReceivedVoiceLines;
+        [SerializeField] public VoiceLine[] orderLateVoiceLines;
+        [SerializeField] public VoiceLine[] orderIncorrectVoiceLines;
     }
     
     [Serializable]
@@ -71,19 +70,13 @@ public class Chef : MonoBehaviour
     {
         switch (chefMood)
         {
-            case <= 20:
+            case <= 30:
                 mood = Moods.Frustrated;
                 break;
-            case <= 40:
-                mood = Moods.Exasperated;
-                break;
-            case <= 60:
+            case <= 70:
                 mood = Moods.Neutral;
                 break;
-            case <= 80:
-                mood = Moods.Satisfied;
-                break;
-            case > 80:
+            case <= 100:
                 mood = Moods.Happy;
                 break;
         }
@@ -92,14 +85,5 @@ public class Chef : MonoBehaviour
     public void OrderCompleteInteraction()
     {
 
-    }
-
-    void PrintOrder()
-    {
-        Order newOrder = orderHandler.currentOrder;
-        for (int i = 0; i < newOrder.ingredients.Length; i++)
-        {
-            Debug.Log(newOrder.ingredients[i]);
-        }
     }
 }

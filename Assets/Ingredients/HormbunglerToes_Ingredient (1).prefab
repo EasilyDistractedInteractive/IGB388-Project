@@ -971,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Manager: {fileID: 0}
   ingredient: {fileID: 11400000, guid: eef2f9a673885a24c8519e70c91ed7b6, type: 2}
+  ingredientName: Hormbungler Toes
   isDirty: 0
   isSliced: 0
   isOnCuttingBoard: 0
@@ -980,6 +981,8 @@ MonoBehaviour:
   cleanliness: 0
   ingredientAudioSource: {fileID: 0}
   ingredientIcon: {fileID: 21300000, guid: a9222d4c3bf01bd4aa104bf504382b32, type: 3}
+  statesCount: 4
+  currentState: 0
   currentModel: 0
 --- !u!114 &3528877309499490337
 MonoBehaviour:

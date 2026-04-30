@@ -7,6 +7,8 @@ public class IngredientLogic : MonoBehaviour
     public Ingredient ingredient;
     GameObject ingredientModel;
 
+    public string ingredientName;
+
     public bool isDirty;
     public bool isSliced;
     int slices = 0;
@@ -31,7 +33,9 @@ public class IngredientLogic : MonoBehaviour
         Dirty_Sliced
     }
 
-    state currentState = state.Dirty_Unsliced;
+    [HideInInspector] public int statesCount = 4; //Update if more states are added
+
+    [HideInInspector] public state currentState = state.Dirty_Unsliced;
     public state currentModel = state.Dirty_Unsliced;
 
     

@@ -5,7 +5,7 @@ using System;
 public class OrderChecker : MonoBehaviour
 {
     //List<Ingredient> submittedIngredients = new List<Ingredient>();
-    Ingredient submittedIngredient;
+    IngredientLogic submittedIngredient;
     OrderHandler orderHandler;
     [SerializeField] private GameObject orderCorrectEffect;
 
@@ -14,26 +14,32 @@ public class OrderChecker : MonoBehaviour
         orderHandler = FindAnyObjectByType<OrderHandler>();
     }
 
-    //Currently only built to handle single ingredient orders, will expand after prototype submission
+    //Currently only built to handle single ingredient orders
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.tag);
         if (other.CompareTag("Ingredient"))
         {
-            submittedIngredient = other.GetComponentInParent<IngredientLogic>().ingredient;
+            submittedIngredient = other.GetComponentInParent<IngredientLogic>();
             IngredientsCheck(submittedIngredient);
             Destroy(other.gameObject);
         }
     }
 
-    private void IngredientsCheck(Ingredient submittedIngredient)
+    private void IngredientsCheck(IngredientLogic submittedIngredient)
     {
-        if (submittedIngredient.name == orderHandler.currentOrder.ingredients[0].name)
+        Order currentOrder = orderHandler.currentOrder;
+        if (submittedIngredient.ingredientName == currentOrder.ingredient.name)
         {
-            orderHandler.OrderComplete();
-            GameObject juiceEffect = Instantiate(orderCorrectEffect);
+            Debug.Log($"{submittedIngredient.currentState} {currentOrder.requiredPrepMethod}");
+            //Compares the state of the submitted ingredient with the required state
+            if (submittedIngredient.currentState.ToString() == currentOrder.requiredPrepMethod.ToString())
+            {
+                orderHandler.OrderComplete();
+                GameObject juiceEffect = Instantiate(orderCorrectEffect);
 
-            Destroy(juiceEffect, 2);
+                Destroy(juiceEffect, 2);
+            }
         }
     }
 }
