@@ -28,8 +28,9 @@ public class OrderChecker : MonoBehaviour
 
     private void IngredientsCheck(IngredientLogic submittedIngredient)
     {
+        Debug.Log("Checking ingredient");
         Order currentOrder = orderHandler.currentOrder;
-        if (submittedIngredient.ingredientName == currentOrder.ingredient.name)
+        if (submittedIngredient.ingredientName == currentOrder.ingredient.ingredientName)
         {
             Debug.Log($"{submittedIngredient.currentState} {currentOrder.requiredPrepMethod}");
             //Compares the state of the submitted ingredient with the required state

@@ -18,5 +18,5 @@ MonoBehaviour:
   modelDirty_Sliced: {fileID: 7725193609583481023, guid: 312001628cf47fe4d96a52f06ffb4e4f, type: 3}
   cutParticleEffect: {fileID: 5150223793887423612, guid: 7fa506eabba1ffa4fb37e4b207e5de0f, type: 3}
   associatedObject: {fileID: 3436505519096272459, guid: 38669b04feafbe24e9ad42f2a6d6cf3a, type: 3}
-  ingredientName: RoobleRoot
+  ingredientName: Rooble Root
   ingredientComplexity: 50
