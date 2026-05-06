@@ -1222,7 +1222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.93
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.w
@@ -79832,6 +79832,7 @@ GameObject:
   - component: {fileID: 2090836219}
   - component: {fileID: 2090836221}
   - component: {fileID: 2090836220}
+  - component: {fileID: 2090836222}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -79846,7 +79847,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090836218}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -79878,7 +79879,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a75e15777f7f8424eb2a06706f89c1bc, type: 2}
   m_sharedMaterial: {fileID: 1006333667400242352, guid: a75e15777f7f8424eb2a06706f89c1bc, type: 2}
@@ -79957,6 +79958,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090836218}
   m_CullTransparentMesh: 1
+--- !u!114 &2090836222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090836218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f02b50ac0eb88247a7aa6f7b491f57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playCountdown: 1
+  minutes: 5
+  seconds: 1
+  countdownTimer: {fileID: 2090836220}
 --- !u!1001 &2093616371
 PrefabInstance:
   m_ObjectHideFlags: 0
