@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 3436505519096272459}
   - component: {fileID: 3611753056501830822}
   m_Layer: 0
-  m_Name: RoobleRoot_Ingredient (1)
+  m_Name: RoobleRoot_IngredientLogic
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

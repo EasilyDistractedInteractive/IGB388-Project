@@ -6,8 +6,31 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Bin : MonoBehaviour
 {
-    // have function that destroys objects within the collider that have interaction layers set to ingredients and bomb
+    List<GameObject> binObjects;
 
-    public InteractionLayerMask destroyableInteractionLayers;
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Ingredient") || collision.transform.CompareTag("Bomb"))
+        {
+            binObjects.Add(collision.gameObject);
+        }
+    }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.CompareTag("Ingredient") || collision.transform.CompareTag("Bomb"))
+        {
+            binObjects.Remove(collision.gameObject);
+        }
+    }
+
+    public void EmptyBin()
+    {
+        foreach (GameObject binObject in binObjects)
+        {
+            Destroy(binObject);
+        }
+
+        binObjects.Clear();
+    }
 }

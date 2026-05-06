@@ -681,7 +681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5419331889293473514, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DestroyContents
+      value: EmptyBin
       objectReference: {fileID: 0}
     - target: {fileID: 5419331889293473514, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -11133,6 +11133,7 @@ MonoBehaviour:
   - {fileID: 3852157687938677641, guid: 1cfe506b480dce74fbe11c3a95a9239a, type: 3}
   - {fileID: 3436505519096272459, guid: 38669b04feafbe24e9ad42f2a6d6cf3a, type: 3}
   - {fileID: 6638326213517170704, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
+  - {fileID: 6638326213517170704, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
   docketPrefab: {fileID: 8919714013826283736, guid: 21466585691129741bba7cbfe661315e, type: 3}
   docketCanvas: {fileID: 183756545}
   docketPositions: 88ffffffbaffffffecffffff1e0000005000000082000000
@@ -18788,8 +18789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb049e1499cc83449d51825f6b84cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyableInteractionLayers:
-    m_Bits: 20
 --- !u!1 &821192011
 GameObject:
   m_ObjectHideFlags: 0
