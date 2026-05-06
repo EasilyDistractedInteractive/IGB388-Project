@@ -1004,6 +1004,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904695160077484518}
     m_Modifications:
+    - target: {fileID: 404347060138962914, guid: 357186c2988483d4ea97ab708dc4a12e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3015927226984721751, guid: 357186c2988483d4ea97ab708dc4a12e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1047,6 +1051,10 @@ PrefabInstance:
     - target: {fileID: 4982079372640548662, guid: 357186c2988483d4ea97ab708dc4a12e, type: 3}
       propertyPath: m_Name
       value: HormbunglerToes_Unsliced
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982079372640548662, guid: 357186c2988483d4ea97ab708dc4a12e, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

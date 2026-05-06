@@ -1,16 +1,13 @@
+using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Bin : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    // have function that destroys objects within the collider that have interaction layers set to ingredients and bomb
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public InteractionLayerMask destroyableInteractionLayers;
+
 }
