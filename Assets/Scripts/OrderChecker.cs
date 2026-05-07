@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEngine.XR.Content.Interaction;
 
 public class OrderChecker : MonoBehaviour
 {
@@ -20,13 +21,14 @@ public class OrderChecker : MonoBehaviour
         if (other.CompareTag("Ingredient"))
         {
             submittedIngredient = other.GetComponentInParent<IngredientLogic>();
-            IngredientsCheck(submittedIngredient);
-            Destroy(other.gameObject);
+            IngredientsCheck(submittedIngredient, other.transform.parent.gameObject);
         }
     }
 
-    private void IngredientsCheck(IngredientLogic submittedIngredient)
+    private void IngredientsCheck(IngredientLogic submittedIngredient, GameObject ingredientObject)
     {
+        Destroy(ingredientObject, 1.0f);
+
         Order currentOrder = orderHandler.currentOrder;
         //Checks if the ingredient is of the correct type
         if (submittedIngredient.ingredientName == currentOrder.ingredient.ingredientName)
@@ -37,9 +39,8 @@ public class OrderChecker : MonoBehaviour
                 orderHandler.OrderComplete();
                 GameObject juiceEffect = Instantiate(orderCorrectEffect);
 
-                //Destroys the 
+                //Destroys juice effect
                 Destroy(juiceEffect, 2);
-                Destroy(submittedIngredient.gameObject);
             }
         }
     }
