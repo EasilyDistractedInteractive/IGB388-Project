@@ -16,6 +16,15 @@ public class IngredientLogic : MonoBehaviour
     public bool isOnCuttingBoard;
     public int framesOffCuttingBoard;
 
+    public bool isOnSlopA;
+    public int framesOffSlopA;
+
+    public bool isOnSlopB;
+    public int framesOffSlopB;
+
+    public bool isOnSlopC;
+    public int framesOffSlopC;
+
     public bool isInSink;
     public int framesOutOfSink;
     public float cleanliness = 0;
@@ -98,21 +107,24 @@ public class IngredientLogic : MonoBehaviour
             isSliced = true;
         }
 
-        if(isDirty == true && isSliced == false)
+        if(ingredient.isSlopBowl == false)
         {
-            currentState = state.Dirty_Unsliced;
-        }
-        if(isDirty == false && isSliced == false)
-        {
-            currentState = state.Clean_Unsliced;
-        }
-        if(isDirty == false && isSliced == true)
-        {
-            currentState = state.Clean_Sliced;
-        }
-        if(isDirty == true && isSliced == true)
-        {
-            currentState = state.Dirty_Sliced;
+            if(isDirty == true && isSliced == false)
+            {
+                currentState = state.Dirty_Unsliced;
+            }
+            if(isDirty == false && isSliced == false)
+            {
+                currentState = state.Clean_Unsliced;
+            }
+            if(isDirty == false && isSliced == true)
+            {
+                currentState = state.Clean_Sliced;
+            }
+            if(isDirty == true && isSliced == true)
+            {
+                currentState = state.Dirty_Sliced;
+            }
         }
 
         if(currentState != currentModel)
@@ -141,6 +153,8 @@ public class IngredientLogic : MonoBehaviour
         framesOffCuttingBoard += 1;
         framesOutOfSink += 1;
     }
+
+    
 
 
 
@@ -192,5 +206,31 @@ public class IngredientLogic : MonoBehaviour
     
     }
 
+    public void SetSlopA()
+    {
+        if(ingredient.isSlopBowl == true)
+        {
+            currentState = state.Clean_Unsliced;
+            print("SlopB!");
+        }
+    }
+
+    public void SetSlopB()
+    {
+        if(ingredient.isSlopBowl == true)
+        {
+            currentState = state.Clean_Sliced;
+            print("SlopB!");
+        }
+    }
+
+    public void SetSlopC()
+    {
+        if(ingredient.isSlopBowl == true)
+        {
+            currentState = state.Dirty_Sliced;
+            print("SlopB!");
+        }
+    }
 
 }

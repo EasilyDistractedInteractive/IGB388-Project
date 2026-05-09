@@ -34,7 +34,7 @@ public class Chef : MonoBehaviour
 
     void Update()
     {
-        moodText.text = "Chef Mood: " + chefMood;
+        //moodText.text = "Chef Mood: " + chefMood;
 
         if (Time.time > nextOrderTimer)
         {

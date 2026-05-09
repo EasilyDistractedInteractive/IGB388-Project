@@ -7,17 +7,25 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class GameManager : MonoBehaviour
 {
-    public XRSocketInteractor cuttingBoard;
+    public XRSocketInteractor cuttingBoardSocket;
     public GameObject currentObjectOnBoard;
     IngredientLogic ingredientOnCuttingBoard;
 
-    public XRSocketInteractor sink;
+    public XRSocketInteractor sinkSocket;
     public GameObject currentObjectInSink;
     IngredientLogic ingredientInSink;
 
-    public XRSocketInteractor SlopADispenser;
-    public GameObject currentObjectOnSlopA;
-    IngredientLogic ingredientOnSlopA;
+    public XRSocketInteractor SlopADispenserSocket;
+    public GameObject SlopAcurrentObject;
+    IngredientLogic IngredientOnSlopA;
+
+    public XRSocketInteractor SlopBDispenserSocket;
+    public GameObject SlopBCurrentObject;
+    IngredientLogic IngredientOnSlopB;
+
+    public XRSocketInteractor SlopCDispenserSocket;
+    public GameObject SlopCcurrentObject;
+    IngredientLogic IngredientOnSlopC;
 
     public List<GameObject> ingredientsList = new List<GameObject>();
     public GameObject ingredientSpawnPoint;
@@ -36,8 +44,35 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+
+        IXRSelectInteractable slopAInteractable = SlopADispenserSocket.GetOldestInteractableSelected();
+        if(slopAInteractable != null)
+        {
+            SlopAcurrentObject = slopAInteractable.transform.gameObject;
+
+            IngredientOnSlopA = SlopAcurrentObject.GetComponent<IngredientLogic>();
+        }
+
+        IXRSelectInteractable slopBInteractable = SlopBDispenserSocket.GetOldestInteractableSelected();
+        if(slopBInteractable != null)
+        {
+            SlopBCurrentObject = slopBInteractable.transform.gameObject;
+
+            IngredientOnSlopB = SlopBCurrentObject.GetComponent<IngredientLogic>();
+        }
+
+        IXRSelectInteractable slopCInteractable = SlopCDispenserSocket.GetOldestInteractableSelected();
+        if(slopCInteractable != null)
+        {
+            SlopCcurrentObject = slopCInteractable.transform.gameObject;
+
+            IngredientOnSlopC = SlopCcurrentObject.GetComponent<IngredientLogic>();
+        }
+
+        
+
       
-        IXRSelectInteractable boardInteractable = cuttingBoard.GetOldestInteractableSelected();
+        IXRSelectInteractable boardInteractable = cuttingBoardSocket.GetOldestInteractableSelected();
         if(boardInteractable != null)
         {
             currentObjectOnBoard = boardInteractable.transform.gameObject;
@@ -48,7 +83,7 @@ public class GameManager : MonoBehaviour
 
         //currentObjectOnBoard = null;
 
-        IXRSelectInteractable sinkInteractable = sink.GetOldestInteractableSelected();
+        IXRSelectInteractable sinkInteractable = sinkSocket.GetOldestInteractableSelected();
         if(sinkInteractable != null)
         {
             currentObjectInSink = sinkInteractable.transform.gameObject;
@@ -66,6 +101,19 @@ public class GameManager : MonoBehaviour
 
         
 
+    }
+    public void SlopAActivate()
+    {
+        IngredientOnSlopA.SetSlopA();
+    }
+
+    public void SlopBActivate()
+    {
+        IngredientOnSlopB.SetSlopB();
+    }
+    public void SlopCActivate()
+    {
+        IngredientOnSlopC.SetSlopC();
     }
 
     public void SinkWaterOn()

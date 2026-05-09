@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21abe0128ef9274f9979cdc8fac3600, type: 3}
+  m_Name: SlopBowl
+  m_EditorClassIdentifier: 
+  isSlopBowl: 1
+  modelDirty_Unsliced: {fileID: 4229548286792680542, guid: be1ccb86f52a96e4bb2654546b37de46, type: 3}
+  modelClean_Unsliced: {fileID: 6092413516689428824, guid: 0ae61d00d2d9c414fafa8ff30506df8a, type: 3}
+  modelClean_Sliced: {fileID: 4927824316783115076, guid: 0c3a72f638b569c4598d3e545f3ee66b, type: 3}
+  modelDirty_Sliced: {fileID: 347912645079634731, guid: cd1c92e8803d2d2498b4f6b89f042aec, type: 3}
+  cutParticleEffect: {fileID: 5150223793887423612, guid: 7cfa0b9fd983a884ea89a5eaec33cf79, type: 3}
+  associatedObject: {fileID: 6638326213517170704, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
+  ingredientName: Slop Bowl
+  ingredientComplexity: 25
