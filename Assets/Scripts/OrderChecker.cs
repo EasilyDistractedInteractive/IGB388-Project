@@ -27,7 +27,7 @@ public class OrderChecker : MonoBehaviour
 
     private void IngredientsCheck(IngredientLogic submittedIngredient, GameObject ingredientObject)
     {
-        Destroy(ingredientObject, 1.0f);
+        
 
         Order currentOrder = orderHandler.currentOrder;
         //Checks if the ingredient is of the correct type
@@ -43,5 +43,7 @@ public class OrderChecker : MonoBehaviour
                 Destroy(juiceEffect, 2);
             }
         }
+
+        Destroy(ingredientObject, 1.0f);
     }
 }

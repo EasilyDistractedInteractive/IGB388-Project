@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a278b0e91bb9eb845b6d168c16f1e1d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.393
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a278b0e91bb9eb845b6d168c16f1e1d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9869
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a278b0e91bb9eb845b6d168c16f1e1d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.576
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a278b0e91bb9eb845b6d168c16f1e1d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d809ed71dfb4aa944bc4ebd7885e3336, type: 2}
     - target: {fileID: 919132149155446097, guid: a278b0e91bb9eb845b6d168c16f1e1d6, type: 3}
       propertyPath: m_Name
-      value: JorkbeastTail
+      value: JorkbeastTail_Clean_Unsliced
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

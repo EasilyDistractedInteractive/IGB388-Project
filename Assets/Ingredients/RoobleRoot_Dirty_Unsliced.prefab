@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5576285424799960493}
   m_Layer: 0
-  m_Name: RoobleRoot_Clean_Unsliced
+  m_Name: RoobleRoot_Dirty_Unsliced
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,6 +96,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7577739868436781572, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 960b6b7becb706949893e35a894b956d, type: 2}
+    - target: {fileID: -7221983376496805624, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b47444c6825dc734fb006cfdb76373b3, type: 2}
     - target: {fileID: 919132149155446097, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
       propertyPath: m_Name
       value: 'Rooble Root UV Unwrap '
