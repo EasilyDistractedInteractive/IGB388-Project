@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ChefFace
+  m_Mask: 00000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Body
+    m_Weight: 0
+  - m_Path: ChefArmature
+    m_Weight: 0
+  - m_Path: ChefArmature/Body
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/Head
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/Head/EyeBrow1.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeBrow1.L/EyeBrow2.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeBrow1.L/EyeBrow2.L/EyeBrow2.L_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeBrow1.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeBrow1.R/EyeBrow2.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeBrow1.R/EyeBrow2.R/EyeBrow2.R_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.L/Eye.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.L/Eye.L/EyeBall.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.L/Eye.L/EyeBall.L/EyeBall.L_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.L/Eye.L/EyelidBottom.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.L/Eye.L/EyelidBottom.L/EyelidBottom.L_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.L/Eye.L/EyeLidTop.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.L/Eye.L/EyeLidTop.L/EyeLidTop.L_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.R/Eye.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.R/Eye.R/EyeBall.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.R/Eye.R/EyeBall.R/EyeBall.R_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.R/Eye.R/EyelidBottom.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.R/Eye.R/EyelidBottom.R/EyelidBottom.R_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.R/Eye.R/EyeLidTop.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/EyeStalk.R/Eye.R/EyeLidTop.R/EyeLidTop.R_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Hat
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Hat/Hat_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/Head/Moustache1.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Moustache1.L/Moustache2.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Moustache1.L/Moustache2.L/Moustache3.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Moustache1.L/Moustache2.L/Moustache3.L/Moustache4.L
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Moustache1.L/Moustache2.L/Moustache3.L/Moustache4.L/Moustache4.L_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Moustache1.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Moustache1.R/Moustache2.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Moustache1.R/Moustache2.R/Moustache3.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Moustache1.R/Moustache2.R/Moustache3.R/Moustache4.R
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/Head/Moustache1.R/Moustache2.R/Moustache3.R/Moustache4.R/Moustache4.R_end
+    m_Weight: 1
+  - m_Path: ChefArmature/Body/UpperArm.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.L/LowerArm.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.L/LowerArm.L/Wrist.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.L/LowerArm.L/Wrist.L/IndexFinger.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.L/LowerArm.L/Wrist.L/IndexFinger.L/IndexFinger.L_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger.L/PinkyFinger.L_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.L/LowerArm.L/Wrist.L/Thumb.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.L/LowerArm.L/Wrist.L/Thumb.L/Thumb.L_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.R/LowerArm.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.R/LowerArm.R/Wrist.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.R/LowerArm.R/Wrist.R/IndexFinger.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.R/LowerArm.R/Wrist.R/IndexFinger.R/IndexFinger.R_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger.R/PinkyFinger.R_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.R/LowerArm.R/Wrist.R/Thumb.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Body/UpperArm.R/LowerArm.R/Wrist.R/Thumb.R/Thumb.R_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.L/ExteriorCalve.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.L/ExteriorCalve.L/ExteriorFoot.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.L/ExteriorCalve.L/ExteriorFoot.L/ExteriorFoot.L_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.L/InteriorCalve.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.L/InteriorCalve.L/InteriorFoot.L
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.L/InteriorCalve.L/InteriorFoot.L/InteriorFoot.L_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.R/ExteriorCalve.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.R/ExteriorCalve.R/ExteriorFoot.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.R/ExteriorCalve.R/ExteriorFoot.R/ExteriorFoot.R_end
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.R/InteriorCalve.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.R/InteriorCalve.R/InteriorFoot.R
+    m_Weight: 0
+  - m_Path: ChefArmature/Thigh.R/InteriorCalve.R/InteriorFoot.R/InteriorFoot.R_end
+    m_Weight: 0
+  - m_Path: Cube
+    m_Weight: 0
+  - m_Path: ExteriorLegs
+    m_Weight: 0
+  - m_Path: Eyeball
+    m_Weight: 0
+  - m_Path: Eyebrows
+    m_Weight: 0
+  - m_Path: EyelidBack
+    m_Weight: 0
+  - m_Path: EyelidBottom
+    m_Weight: 0
+  - m_Path: EyelidTop
+    m_Weight: 0
+  - m_Path: Eyestalks
+    m_Weight: 0
+  - m_Path: Feet
+    m_Weight: 0
+  - m_Path: FingerBalls
+    m_Weight: 0
+  - m_Path: Hands
+    m_Weight: 0
+  - m_Path: Hat
+    m_Weight: 0
+  - m_Path: Head
+    m_Weight: 0
+  - m_Path: IndexFingers
+    m_Weight: 0
+  - m_Path: InteriorLegs
+    m_Weight: 0
+  - m_Path: LowerArms
+    m_Weight: 0
+  - m_Path: Moustache
+    m_Weight: 0
+  - m_Path: PinkyFingers
+    m_Weight: 0
+  - m_Path: Pupil
+    m_Weight: 0
+  - m_Path: Thumbs
+    m_Weight: 0
+  - m_Path: UpperArms
+    m_Weight: 0

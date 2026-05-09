@@ -27,6 +27,8 @@ public class OrderHandler : MonoBehaviour
 
     public List<GameObject> dockets; //public for testing
 
+    public Chef chef;
+
     void Start()
     {
         //Finding the most complex individual ingredient
@@ -89,5 +91,8 @@ public class OrderHandler : MonoBehaviour
     {
         UpdateOrderQueue();
         //Add function to add score for completed order
+
+        chef.incrementChefMood(5);
+
     }
 }

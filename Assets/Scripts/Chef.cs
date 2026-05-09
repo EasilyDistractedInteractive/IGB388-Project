@@ -10,7 +10,7 @@ public class Chef : MonoBehaviour
     private float moodCheckTimer;
     [SerializeField] private float moodCheckInterval;
 
-    private int chefMood;
+    private float chefMood = 50;
 
     public int orderComplexity; //Public for testing, hide later
 
@@ -19,6 +19,10 @@ public class Chef : MonoBehaviour
     public GameObject speechBubble;
     public TMP_Text speechBubbleText;
     AudioSource chefAudioSource;
+
+    public Animator chefAnim;
+
+    public TextMeshProUGUI moodText;
 
     void Start()
     {
@@ -30,9 +34,12 @@ public class Chef : MonoBehaviour
 
     void Update()
     {
+        moodText.text = "Chef Mood: " + chefMood;
+
         if (Time.time > nextOrderTimer)
         {
             orderHandler.GenerateOrder(orderComplexity);
+            incrementChefMood(-3);
             nextOrderTimer += nextOrderInterval;
         }
         
@@ -41,9 +48,23 @@ public class Chef : MonoBehaviour
             MoodCheck();
             moodCheckTimer += moodCheckInterval;
         }
+
+        if(mood == Moods.Disappointed)
+        {
+            chefAnim.SetInteger("Emotion", -1);
+        }
+        if(mood == Moods.Neutral)
+        {
+            chefAnim.SetInteger("Emotion", 0);
+        }
+        if(mood == Moods.Excited)
+        {
+            chefAnim.SetInteger("Emotion", 1);
+        }
+        print(chefMood);
     }
 
-    public int ChefMood
+    public float ChefMood
     {
         get { return chefMood; }
         set 
@@ -52,7 +73,7 @@ public class Chef : MonoBehaviour
             MoodCheck();
         } 
     }
-    public enum Moods { Frustrated, Neutral, Happy };
+    public enum Moods { Disappointed, Neutral, Excited };
     public Moods mood = Moods.Neutral;
 
     [SerializeField] VoiceLines[] voiceLines;
@@ -75,18 +96,24 @@ public class Chef : MonoBehaviour
         public AudioClip voiceLineAudio;
     }
 
+    public void incrementChefMood(float amount )
+    {
+        chefMood += amount;
+    }
+
+
     void MoodCheck()
     {
         switch (chefMood)
         {
             case <= 30:
-                mood = Moods.Frustrated;
+                mood = Moods.Disappointed;
                 break;
-            case <= 70:
+            case <= 65:
                 mood = Moods.Neutral;
                 break;
-            case <= 100:
-                mood = Moods.Happy;
+            case <= 80:
+                mood = Moods.Excited;
                 break;
         }
     }
