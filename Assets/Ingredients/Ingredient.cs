@@ -3,11 +3,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Ingredient", menuName = "Scriptable Objects/Ingredient")]
 public class Ingredient : ScriptableObject
 {
+    public bool isSlopBowl;
 
     public GameObject modelDirty_Unsliced;
     public GameObject modelClean_Unsliced;
     public GameObject modelClean_Sliced;
     public GameObject modelDirty_Sliced;
+
+    
 
     public GameObject cutParticleEffect;
 

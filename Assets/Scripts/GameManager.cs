@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     public GameObject currentObjectInSink;
     IngredientLogic ingredientInSink;
 
+    public XRSocketInteractor SlopADispenser;
+    public GameObject currentObjectOnSlopA;
+    IngredientLogic ingredientOnSlopA;
+
     public List<GameObject> ingredientsList = new List<GameObject>();
     public GameObject ingredientSpawnPoint;
 
