@@ -35,7 +35,7 @@ public class Chef : MonoBehaviour
 
     Timer gameTimer;
 
-    public bool replay = false; //Bool to check if game is being replayed, will disable tutorial if true
+    public bool replay = true; //Bool to check if game is being replayed, will disable tutorial if true
 
     bool gameActive = false;
 

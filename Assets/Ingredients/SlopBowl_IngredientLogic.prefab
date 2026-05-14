@@ -568,7 +568,7 @@ MonoBehaviour:
   framesOutOfSink: 0
   cleanliness: 0
   ingredientAudioSource: {fileID: 0}
-  ingredientIcon: {fileID: 21300000, guid: fcc73ccf9702bf14ab8270daf038d811, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: b398f58ecc9d0ac4c8de2c6e007b5c95, type: 3}
   statesCount: 4
   currentState: 0
   currentModel: 0
