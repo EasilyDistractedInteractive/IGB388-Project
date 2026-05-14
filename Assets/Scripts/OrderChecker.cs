@@ -27,7 +27,7 @@ public class OrderChecker : MonoBehaviour
 
     private void IngredientsCheck(IngredientLogic submittedIngredient, GameObject ingredientObject)
     {
-        Destroy(ingredientObject, 1.0f);
+        Destroy(ingredientObject);
 
         Order currentOrder = orderHandler.currentOrder;
         //Checks if the ingredient is of the correct type

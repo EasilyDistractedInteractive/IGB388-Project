@@ -89,7 +89,8 @@ public class OrderHandler : MonoBehaviour
         orderCounter++;
 
         if (orderQueue.Count == 1) { currentOrder = orderQueue.Peek(); };
-        GameObject newDocket = Instantiate(docketPrefab, docketCanvas.transform);
+        //GameObject newDocket = Instantiate(docketPrefab, docketCanvas.transform);
+        GameObject newDocket = Instantiate(docketPrefab);
         dockets.Add(newDocket);
         TMP_Text docketText = newDocket.GetComponentInChildren<TMP_Text>();
         docketText.text = $"Order #{orderCounter}\n{tempIng.ingredientName}\n{currentOrder.prepMethodNames[orderState]}";
