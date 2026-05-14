@@ -4,6 +4,7 @@ using TMPro;
 using Unity.Tutorials.Core.Editor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class Chef : MonoBehaviour
 {
@@ -19,8 +20,8 @@ public class Chef : MonoBehaviour
 
     public OrderHandler orderHandler;
 
-    public GameObject speechBubble;
-    public TMP_Text speechBubbleText;
+    public Dialogue chefDialogue;
+
     public Button tutorialButton;
     public bool tutorialButtonPressed = false;
 
@@ -125,16 +126,24 @@ public class Chef : MonoBehaviour
         chefMood += amount;
     }
 
+    public void TutorialButtonPressed()
+    { 
+        tutorialButtonPressed = true;
+    }
+
     public IEnumerator Tutorial()
     {
         foreach (VoiceLine voiceLine in tutorialVoiceLines)
         {
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            chefDialogue.ActivateDialogue(voiceLine.voiceLineText, voiceLine.voiceLineAudio, chefAudioSource);
+
+            yield return new WaitUntil(() => tutorialButtonPressed);
             tutorialButtonPressed = false;
         }
 
         manager.gameTimer.timerRunning = true;
         gameActive = true;
+
     }
 
     void MoodCheck()
@@ -157,8 +166,8 @@ public class Chef : MonoBehaviour
     {
         VoiceLine selectedLine = voiceLinePool[UnityEngine.Random.Range(0, voiceLinePool.Length)];
 
-        speechBubble.SetActive(true);
-        speechBubbleText.text = selectedLine.voiceLineText;
+        //speechBubble.SetActive(true);
+        //speechBubbleText.text = selectedLine.voiceLineText;
         chefAudioSource.PlayOneShot(selectedLine.voiceLineAudio);
     }
 
