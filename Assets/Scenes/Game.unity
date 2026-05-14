@@ -22159,7 +22159,7 @@ MonoBehaviour:
   tapWaterParticles: {fileID: 687513230}
   tapOn: 0
   SlopADispenserSocket: {fileID: 504618343}
-  SlopAcurrentObject: {fileID: 0}
+  SlopACurrentObject: {fileID: 0}
   SlopAParticles: {fileID: 193941988}
   SlopBDispenserSocket: {fileID: 973424456}
   SlopBCurrentObject: {fileID: 0}
@@ -80539,7 +80539,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.6, y: 0.6, z: 0.6}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1942574457
 MonoBehaviour:
@@ -80563,7 +80563,7 @@ Transform:
   m_GameObject: {fileID: 1942574455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.463, z: 2.703}
+  m_LocalPosition: {x: 0, y: 1.306, z: 1.975}
   m_LocalScale: {x: 5.548706, y: 2.7804, z: 3.3307}
   m_ConstrainProportionsScale: 0
   m_Children: []
