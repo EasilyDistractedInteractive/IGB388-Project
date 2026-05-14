@@ -29,7 +29,7 @@ public class OrderHandler : MonoBehaviour
 
     public Chef chef;
 
-    void Start()
+    private void Start()
     {
         //Finding the most complex individual ingredient
         foreach (IngredientLogic tempIngredient in ingredientPool)

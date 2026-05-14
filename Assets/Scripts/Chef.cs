@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using TMPro;
+using Unity.Tutorials.Core.Editor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Chef : MonoBehaviour
 {
@@ -18,11 +21,22 @@ public class Chef : MonoBehaviour
 
     public GameObject speechBubble;
     public TMP_Text speechBubbleText;
+    public Button tutorialButton;
+    public bool tutorialButtonPressed = false;
+
     AudioSource chefAudioSource;
 
     public Animator chefAnim;
 
     public TextMeshProUGUI moodText;
+
+    GameManager manager;
+
+    Timer gameTimer;
+
+    public bool replay = false; //Bool to check if game is being replayed, will disable tutorial if true
+
+    bool gameActive = false;
 
     void Start()
     {
@@ -30,23 +44,30 @@ public class Chef : MonoBehaviour
         moodCheckTimer = Time.time + moodCheckInterval;
         currentLinePool = voiceLines[1];
         chefAudioSource = GetComponent<AudioSource>();
+        manager = FindAnyObjectByType<GameManager>();
+        gameTimer = manager.gameTimer;
+
+        if (!replay) Tutorial();
     }
 
     void Update()
     {
         //moodText.text = "Chef Mood: " + chefMood;
 
-        if (Time.time > nextOrderTimer)
+        if (gameActive)
         {
-            orderHandler.GenerateOrder(orderComplexity);
-            incrementChefMood(-3);
-            nextOrderTimer += nextOrderInterval;
-        }
-        
-        if (Time.time > moodCheckTimer)
-        {
-            MoodCheck();
-            moodCheckTimer += moodCheckInterval;
+            if (Time.time > nextOrderTimer)
+            {
+                orderHandler.GenerateOrder(orderComplexity);
+                incrementChefMood(-3);
+                nextOrderTimer += nextOrderInterval;
+            }
+
+            if (Time.time > moodCheckTimer)
+            {
+                MoodCheck();
+                moodCheckTimer += moodCheckInterval;
+            }
         }
 
         if(mood == Moods.Disappointed)
@@ -73,6 +94,9 @@ public class Chef : MonoBehaviour
             MoodCheck();
         } 
     }
+
+    [SerializeField] public VoiceLine[] tutorialVoiceLines;
+
     public enum Moods { Disappointed, Neutral, Excited };
     public Moods mood = Moods.Neutral;
 
@@ -101,6 +125,17 @@ public class Chef : MonoBehaviour
         chefMood += amount;
     }
 
+    public IEnumerator Tutorial()
+    {
+        foreach (VoiceLine voiceLine in tutorialVoiceLines)
+        {
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            tutorialButtonPressed = false;
+        }
+
+        manager.gameTimer.timerRunning = true;
+        gameActive = true;
+    }
 
     void MoodCheck()
     {

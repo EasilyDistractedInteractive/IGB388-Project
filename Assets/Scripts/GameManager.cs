@@ -7,6 +7,10 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class GameManager : MonoBehaviour
 {
+    public Chef chef;
+    public OrderHandler orderHandler;
+    public Timer gameTimer;
+
     [Header("Cutting Board")]
 
     public XRSocketInteractor cuttingBoardSocket;
@@ -51,9 +55,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public AudioClip[] cutIngredientClips;
     [SerializeField] public AudioClip squishedIngredientClip;
-
-
-    
 
     public void Update()
     {
@@ -163,6 +164,11 @@ public class GameManager : MonoBehaviour
         tapOn = false;
     }
 
+
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+    }
 
     /// <summary>
     /// Testing function to spawn random ingredient when slop lever pulled. Goo goo ga ga
