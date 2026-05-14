@@ -10727,6 +10727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 354722821}
+  - component: {fileID: 354722822}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -10750,6 +10751,21 @@ Transform:
   - {fileID: 2126092611}
   m_Father: {fileID: 1160351605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &354722822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354722820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f02b50ac0eb88247a7aa6f7b491f57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownText: {fileID: 2090836220}
+  remainingTime: 120
+  timerRunning: 0
 --- !u!1001 &356934132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15968,10 +15984,13 @@ MonoBehaviour:
   moodCheckInterval: 20
   orderComplexity: 50
   orderHandler: {fileID: 627230242}
-  speechBubble: {fileID: 0}
-  speechBubbleText: {fileID: 0}
+  chefDialogue: {fileID: 0}
+  tutorialButton: {fileID: 0}
+  tutorialButtonPressed: 0
   chefAnim: {fileID: 1013047683}
   moodText: {fileID: 0}
+  replay: 0
+  tutorialVoiceLines: []
   mood: 2
   voiceLines:
   - voiceLinesMood: 0
@@ -22152,6 +22171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b41d4bcef14624e835d4228069257e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chef: {fileID: 627230243}
+  orderHandler: {fileID: 627230242}
+  gameTimer: {fileID: 354722822}
   cuttingBoardSocket: {fileID: 1107664819}
   currentObjectOnBoard: {fileID: 0}
   sinkSocket: {fileID: 608155071}
@@ -78506,13 +78528,14 @@ GameObject:
   - component: {fileID: 1783472566}
   - component: {fileID: 1783472565}
   - component: {fileID: 1783472564}
+  - component: {fileID: 1783472568}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1783472564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78596,6 +78619,20 @@ RectTransform:
   m_AnchoredPosition: {x: -0.678, y: 2.215}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1783472568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783472563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc4dbe26c580e44f90a7674ba0dbd3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechBubble: {fileID: 1783472563}
+  speechBubbleText: {fileID: 1891261133}
 --- !u!1 &1785756957
 GameObject:
   m_ObjectHideFlags: 0
@@ -95010,7 +95047,6 @@ GameObject:
   - component: {fileID: 2090836219}
   - component: {fileID: 2090836221}
   - component: {fileID: 2090836220}
-  - component: {fileID: 2090836222}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -95136,20 +95172,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090836218}
   m_CullTransparentMesh: 1
---- !u!114 &2090836222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090836218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f02b50ac0eb88247a7aa6f7b491f57c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countdownText: {fileID: 2090836220}
-  remainingTime: 300
 --- !u!1 &2091755688
 GameObject:
   m_ObjectHideFlags: 0
