@@ -900,6 +900,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7579740484700728548, guid: c1b1a4277f56ac84fbb53692e26b628a, type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
+    - target: {fileID: -7067917022921033367, guid: c1b1a4277f56ac84fbb53692e26b628a, type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: -5017809157875554572, guid: c1b1a4277f56ac84fbb53692e26b628a, type: 3}
       propertyPath: m_Enabled
       value: 0
