@@ -7,28 +7,17 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Cutting Board")]
+
     public XRSocketInteractor cuttingBoardSocket;
     public GameObject currentObjectOnBoard;
     IngredientLogic ingredientOnCuttingBoard;
 
+    [Header("Sink")]
+
     public XRSocketInteractor sinkSocket;
     public GameObject currentObjectInSink;
     IngredientLogic ingredientInSink;
-
-    public XRSocketInteractor SlopADispenserSocket;
-    public GameObject SlopAcurrentObject;
-    IngredientLogic IngredientOnSlopA;
-
-    public XRSocketInteractor SlopBDispenserSocket;
-    public GameObject SlopBCurrentObject;
-    IngredientLogic IngredientOnSlopB;
-
-    public XRSocketInteractor SlopCDispenserSocket;
-    public GameObject SlopCcurrentObject;
-    IngredientLogic IngredientOnSlopC;
-
-    public List<GameObject> ingredientsList = new List<GameObject>();
-    public GameObject ingredientSpawnPoint;
 
     public GameObject tapWaterParticles;
 
@@ -36,11 +25,35 @@ public class GameManager : MonoBehaviour
 
     float cleanRate = 100f;
 
+    [Header("Slop Dispensers")]
+
+    public XRSocketInteractor SlopADispenserSocket;
+    public GameObject SlopACurrentObject;
+    IngredientLogic IngredientOnSlopA;
+    public GameObject SlopAParticles;
+
+    public XRSocketInteractor SlopBDispenserSocket;
+    public GameObject SlopBCurrentObject;
+    IngredientLogic IngredientOnSlopB;
+    public GameObject SlopBParticles;
+
+    public XRSocketInteractor SlopCDispenserSocket;
+    public GameObject SlopCCurrentObject;
+    IngredientLogic IngredientOnSlopC;
+    public GameObject SlopCParticles;
+
+    //public List<GameObject> ingredientsList = new List<GameObject>();
+    //public GameObject ingredientSpawnPoint;
+
+    [Header("Sound files")]
+
     [SerializeField] public AudioClip prepCompleted;
 
     [SerializeField] public AudioClip[] cutIngredientClips;
     [SerializeField] public AudioClip squishedIngredientClip;
 
+
+    
 
     public void Update()
     {
@@ -48,9 +61,9 @@ public class GameManager : MonoBehaviour
         IXRSelectInteractable slopAInteractable = SlopADispenserSocket.GetOldestInteractableSelected();
         if(slopAInteractable != null)
         {
-            SlopAcurrentObject = slopAInteractable.transform.gameObject;
+            SlopACurrentObject = slopAInteractable.transform.gameObject;
 
-            IngredientOnSlopA = SlopAcurrentObject.GetComponent<IngredientLogic>();
+            IngredientOnSlopA = SlopACurrentObject.GetComponent<IngredientLogic>();
         }
 
         IXRSelectInteractable slopBInteractable = SlopBDispenserSocket.GetOldestInteractableSelected();
@@ -64,9 +77,9 @@ public class GameManager : MonoBehaviour
         IXRSelectInteractable slopCInteractable = SlopCDispenserSocket.GetOldestInteractableSelected();
         if(slopCInteractable != null)
         {
-            SlopCcurrentObject = slopCInteractable.transform.gameObject;
+            SlopCCurrentObject = slopCInteractable.transform.gameObject;
 
-            IngredientOnSlopC = SlopCcurrentObject.GetComponent<IngredientLogic>();
+            IngredientOnSlopC = SlopCCurrentObject.GetComponent<IngredientLogic>();
         }
 
         
@@ -102,19 +115,41 @@ public class GameManager : MonoBehaviour
         
 
     }
+
     public void SlopAActivate()
     {
         IngredientOnSlopA.SetSlopA();
+        SlopAParticles.SetActive(true);
     }
 
     public void SlopBActivate()
     {
         IngredientOnSlopB.SetSlopB();
+        SlopBParticles.SetActive(true);
     }
+
     public void SlopCActivate()
     {
         IngredientOnSlopC.SetSlopC();
+        SlopCParticles.SetActive(true);
     }
+
+
+    public void SlopADeactivate()
+    {
+        SlopAParticles.SetActive(false);
+    }
+
+    public void SlopBDeactivate()
+    {
+        SlopBParticles.SetActive(false);
+    }
+    
+    public void SlopCDeactivate()
+    {
+        SlopCParticles.SetActive(false);
+    }
+
 
     public void SinkWaterOn()
     {
@@ -133,9 +168,9 @@ public class GameManager : MonoBehaviour
     /// Testing function to spawn random ingredient when slop lever pulled. Goo goo ga ga
     /// By Maximus K
     /// </summary>
-    public void SpawnRandomIngredient()
-    {
-        Debug.Log("Spawning random ingredient");
-        Instantiate(ingredientsList[Random.Range(0, ingredientsList.Count)], ingredientSpawnPoint.transform.position, ingredientSpawnPoint.transform.rotation);
-    }
+    //public void SpawnRandomIngredient()
+    //{
+    //    Debug.Log("Spawning random ingredient");
+    //    Instantiate(ingredientsList[Random.Range(0, ingredientsList.Count)], ingredientSpawnPoint.transform.position, ingredientSpawnPoint.transform.rotation);
+    //}
 }
