@@ -162,15 +162,6 @@ public class Chef : MonoBehaviour
         }
     }
 
-    public void PlayVoiceline(VoiceLine[] voiceLinePool)
-    {
-        VoiceLine selectedLine = voiceLinePool[UnityEngine.Random.Range(0, voiceLinePool.Length)];
-
-        //speechBubble.SetActive(true);
-        //speechBubbleText.text = selectedLine.voiceLineText;
-        chefAudioSource.PlayOneShot(selectedLine.voiceLineAudio);
-    }
-
     public void OrderCompleteInteraction()
     {
 

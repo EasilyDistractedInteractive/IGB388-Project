@@ -18,7 +18,8 @@ public class OrderHandler : MonoBehaviour
     public GameObject docketPrefab;
     public GameObject docketCanvas;
 
-    public int[] docketPositions;
+    public Vector3[] docketPositions;
+    public Vector3[] docketRotations;
     public int docketY;
     int docketMax = 6;
 
@@ -44,16 +45,30 @@ public class OrderHandler : MonoBehaviour
         currentOrderCount--;
         if (orderQueue.Count != 0) currentOrder = orderQueue.Peek();
 
-        GameObject tempDocket = dockets[0];
-        dockets.Remove(dockets[0]);
-        Destroy(tempDocket);
-        
-        //Updating the queued dockets so the leftmost docket is the first remaining one to have been generated
-        for (int i = 0; i < dockets.Count; i++)
+        GameObject tempDocket = null;
+
+        foreach (GameObject docket in dockets)
         {
-            RectTransform rt = dockets[i].GetComponent<RectTransform>();
-            rt.anchoredPosition = new Vector2(docketPositions[i], docketY);
-            if (dockets[i].activeSelf == false && i < docketMax) { dockets[i].SetActive(true); }
+            if (docket.transform.CompareTag("Complete"))
+            {
+                tempDocket = docket;
+                break;
+            }
+        }
+        
+        if (tempDocket != null)
+        {
+            dockets.Remove(dockets[0]);
+            Destroy(tempDocket);
+
+            //Updating the queued dockets so the leftmost docket is the first remaining one to have been generated
+            for (int i = 0; i < dockets.Count; i++)
+            {
+                RectTransform rt = dockets[i].GetComponent<RectTransform>();
+                rt.anchoredPosition = docketPositions[i];
+
+                if (dockets[i].activeSelf == false && i < docketMax) { dockets[i].SetActive(true); }
+            }
         }
     }
 
@@ -70,7 +85,7 @@ public class OrderHandler : MonoBehaviour
 
         int orderState = UnityEngine.Random.Range(0, tempIng.statesCount);
 
-        orderQueue.Enqueue(new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredPrepMethod = (Order.prepMethod)orderState });
+        orderQueue.Enqueue(new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredPrepMethod = (Order.PrepMethod)orderState });
         orderCounter++;
 
         if (orderQueue.Count == 1) { currentOrder = orderQueue.Peek(); };
@@ -82,7 +97,7 @@ public class OrderHandler : MonoBehaviour
         if (dockets.Count <= docketMax)
         {
             RectTransform rt = newDocket.GetComponent<RectTransform>();
-            rt.anchoredPosition = new Vector3(docketPositions[dockets.Count-1], docketY, 0);
+            rt.anchoredPosition = docketPositions[dockets.Count-1];
             newDocket.SetActive(true);
         }
     }

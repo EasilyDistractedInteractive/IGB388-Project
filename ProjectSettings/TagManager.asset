@@ -13,6 +13,7 @@ TagManager:
   - KillBox
   - Utensil
   - GameManager
+  - Complete
   layers:
   - Default
   - TransparentFX

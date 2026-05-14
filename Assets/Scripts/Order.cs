@@ -3,17 +3,21 @@ using UnityEngine;
 public class Order
 {
     [Tooltip("The ingredients in this order")]
-    public Ingredient ingredient; //Depending on if we want to exclusively have one ingredient per order this can be changed to a single object
+    public Ingredient ingredient;
 
-    public enum prepMethod
+    public enum PrepMethod
     {
         Dirty_Unsliced,
         Clean_Unsliced,
         Clean_Sliced,
-        Dirty_Sliced
+        Dirty_Sliced,
+        Dirty_Cooked,
+        Clean_Cooked,
+        Sliced_Cooked,
+        Clean_Sliced_Cooked
     }
 
-    public prepMethod requiredPrepMethod;
+    public PrepMethod requiredPrepMethod;
 
     public string[] prepMethodNames = { "None", "Clean", "Clean + Cut", "Cut"};
 
