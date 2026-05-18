@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
     IngredientLogic IngredientOnSlopC;
     public GameObject SlopCParticles;
 
+    [Header("Grill")]
+    public XRSocketInteractor grillSocket;
+    public GameObject currentObjectOnGrill;
+    IngredientLogic ingredientOnGrill;
+
     //public List<GameObject> ingredientsList = new List<GameObject>();
     //public GameObject ingredientSpawnPoint;
 
@@ -83,8 +88,6 @@ public class GameManager : MonoBehaviour
             IngredientOnSlopC = SlopCCurrentObject.GetComponent<IngredientLogic>();
         }
 
-        
-
       
         IXRSelectInteractable boardInteractable = cuttingBoardSocket.GetOldestInteractableSelected();
         if(boardInteractable != null)
@@ -113,8 +116,16 @@ public class GameManager : MonoBehaviour
 
         //currentObjectInSink = null;
 
-        
 
+        //Handles grill logic
+        IXRSelectInteractable grillInteractable = grillSocket.GetOldestInteractableSelected();
+        if (grillInteractable != null)
+        {
+            currentObjectOnGrill = grillInteractable.transform.gameObject;
+
+            ingredientOnGrill = currentObjectOnGrill.GetComponent<IngredientLogic>();
+            ingredientOnGrill.setIsOnGrillTrue();
+        }
     }
 
     public void SlopAActivate()

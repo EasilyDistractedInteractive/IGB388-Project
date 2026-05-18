@@ -25,19 +25,21 @@ public class Chef : MonoBehaviour
     public Button tutorialButton;
     public bool tutorialButtonPressed = false;
 
-    AudioSource chefAudioSource;
+    [HideInInspector] public AudioSource chefAudioSource;
 
     public Animator chefAnim;
 
     public TextMeshProUGUI moodText;
 
-    GameManager manager;
+    [HideInInspector] public GameManager manager;
 
     Timer gameTimer;
 
+    public TutorialManager tutManager;
+
     public bool replay = true; //Bool to check if game is being replayed, will disable tutorial if true
 
-    bool gameActive = false;
+    [HideInInspector] public bool gameActive = false;
 
     void Start()
     {
@@ -48,7 +50,7 @@ public class Chef : MonoBehaviour
         manager = FindAnyObjectByType<GameManager>();
         gameTimer = manager.gameTimer;
 
-        if (!replay) Tutorial();
+        if (!replay) tutManager.Tutorial();
     }
 
     void Update()
@@ -124,26 +126,6 @@ public class Chef : MonoBehaviour
     public void incrementChefMood(float amount )
     {
         chefMood += amount;
-    }
-
-    public void TutorialButtonPressed()
-    { 
-        tutorialButtonPressed = true;
-    }
-
-    public IEnumerator Tutorial()
-    {
-        foreach (VoiceLine voiceLine in tutorialVoiceLines)
-        {
-            chefDialogue.ActivateDialogue(voiceLine.voiceLineText, voiceLine.voiceLineAudio, chefAudioSource);
-
-            yield return new WaitUntil(() => tutorialButtonPressed);
-            tutorialButtonPressed = false;
-        }
-
-        manager.gameTimer.timerRunning = true;
-        gameActive = true;
-
     }
 
     void MoodCheck()

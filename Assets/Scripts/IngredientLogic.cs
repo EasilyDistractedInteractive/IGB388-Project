@@ -11,6 +11,7 @@ public class IngredientLogic : MonoBehaviour
 
     public bool isDirty;
     public bool isSliced;
+    public bool isCooked;
     int slices = 0;
 
     public bool isOnCuttingBoard;
@@ -28,6 +29,10 @@ public class IngredientLogic : MonoBehaviour
     public bool isInSink;
     public int framesOutOfSink;
     public float cleanliness = 0;
+
+    public bool isOnGrill;
+    public int framesOffGrill;
+    public float cookedness = 0;
 
     [SerializeField] private AudioSource ingredientAudioSource;
 
@@ -47,6 +52,7 @@ public class IngredientLogic : MonoBehaviour
     [HideInInspector] public state currentState = state.Dirty_Unsliced;
     public state currentModel = state.Dirty_Unsliced;
 
+    public TutorialManager tutManager;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,6 +60,7 @@ public class IngredientLogic : MonoBehaviour
     {
         isSliced = false;
         isDirty = true;
+        isCooked = false;
 
         if(isDirty)
         {
@@ -65,7 +72,14 @@ public class IngredientLogic : MonoBehaviour
         ingredientAudioSource = GetComponentInChildren<AudioSource>();
 
         Manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+
+        tutManager = Manager.chef.tutManager;
         
+    }
+
+    public void SetGrabbedBool()
+    {
+        tutManager.ingredientGrabbed = true;
     }
 
     void instantiateCurrentModel()
@@ -105,6 +119,7 @@ public class IngredientLogic : MonoBehaviour
         if(slices >= 3)
         {
             isSliced = true;
+            tutManager.ingredientCut = true;
         }
 
         if(ingredient.isSlopBowl == false)
@@ -136,6 +151,7 @@ public class IngredientLogic : MonoBehaviour
         {
             isOnCuttingBoard = false;
         }
+
         if(framesOutOfSink >= 2)
         {
             isInSink = false;
@@ -144,6 +160,13 @@ public class IngredientLogic : MonoBehaviour
         if(cleanliness >= 100f)
         {
             isDirty = false;
+            tutManager.ingredientWashed = true;
+        }
+
+        if (cookedness >= 100f)
+        {
+            isCooked = true;
+            tutManager.ingredientCooked = true;
         }
 
     }
@@ -152,11 +175,8 @@ public class IngredientLogic : MonoBehaviour
     {
         framesOffCuttingBoard += 1;
         framesOutOfSink += 1;
+        framesOffGrill++;
     }
-
-    
-
-
 
     public void setIsOnCuttingBoardTrue()
     {
@@ -168,6 +188,12 @@ public class IngredientLogic : MonoBehaviour
     {
         isInSink = true;
         framesOutOfSink = 0;
+    }
+
+    public void setIsOnGrillTrue()
+    {
+        isOnGrill = true;
+        framesOffGrill = 0;
     }
 
     public void Wash(float cleanRate)
