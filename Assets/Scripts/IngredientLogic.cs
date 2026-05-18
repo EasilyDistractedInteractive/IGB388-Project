@@ -292,7 +292,7 @@ public class IngredientLogic : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Knife" && isOnCuttingBoard == true)
+        if(collision.gameObject.tag == "Utensil" && isOnCuttingBoard == true)
         {
             Debug.Log("Slice");
             slices += 1;

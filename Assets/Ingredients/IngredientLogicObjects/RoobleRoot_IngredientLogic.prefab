@@ -1003,7 +1003,7 @@ MonoBehaviour:
   ingredientIcon: {fileID: 21300000, guid: 26ab8319d4f601c43b9620269d65efbd, type: 3}
   statesCount: 4
   currentState: 0
-  currentModel: 0
+  currentModel: 7
   tutorialManager: {fileID: 0}
 --- !u!114 &3611753056501830822
 MonoBehaviour:

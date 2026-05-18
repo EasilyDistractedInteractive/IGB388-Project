@@ -54,6 +54,59 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 735832125838740290, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
+--- !u!1 &1377882202440855630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4177581496678724471}
+  - component: {fileID: 2898018479221745924}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4177581496678724471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377882202440855630}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.069, y: 0.081, z: 0}
+  m_LocalScale: {x: 0.21, y: 0.21, z: 0.21}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 3904695160077484518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2898018479221745924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377882202440855630}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2095844880609008307
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +804,7 @@ Transform:
   - {fileID: 2452118066441783480}
   - {fileID: 4451466328717671718}
   - {fileID: 4153536655175977501}
+  - {fileID: 4177581496678724471}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5592314621586469705
@@ -1005,7 +1059,7 @@ MonoBehaviour:
   ingredientIcon: {fileID: 21300000, guid: a9222d4c3bf01bd4aa104bf504382b32, type: 3}
   statesCount: 4
   currentState: 0
-  currentModel: 0
+  currentModel: 7
   tutorialManager: {fileID: 0}
 --- !u!114 &3528877309499490337
 MonoBehaviour:
@@ -1078,6 +1132,10 @@ PrefabInstance:
     - target: {fileID: 4982079372640548662, guid: 357186c2988483d4ea97ab708dc4a12e, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982079372640548662, guid: 357186c2988483d4ea97ab708dc4a12e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

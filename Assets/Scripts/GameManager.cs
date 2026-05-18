@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.UI;
+using Unity.XR.CoreUtils;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +13,12 @@ public class GameManager : MonoBehaviour
     public OrderHandler orderHandler;
     public Timer gameTimer;
     public TutorialManager tutorialManager;
+
+    public Slider tableHeightSlider;
+    public Transform tableTransform;
+
+    public Slider playerHeightSlider;
+    public XROrigin playerOrigin;
 
     [Header("Cutting Board")]
 
@@ -69,6 +77,9 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+        tableTransform.position = new Vector3(0,tableHeightSlider.value,0);
+        playerOrigin.CameraYOffset = playerHeightSlider.value;
+
 
         IXRSelectInteractable slopAInteractable = SlopADispenserSocket.GetOldestInteractableSelected();
         if(slopAInteractable != null)
