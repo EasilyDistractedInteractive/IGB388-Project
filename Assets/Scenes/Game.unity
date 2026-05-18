@@ -16265,9 +16265,13 @@ MonoBehaviour:
   chefDialogue: {fileID: 1783472568}
   tutorialButton: {fileID: 600386710}
   tutorialButtonPressed: 0
+  chefAudioSource: {fileID: 0}
   chefAnim: {fileID: 1013047683}
   moodText: {fileID: 0}
+  manager: {fileID: 0}
+  tutManager: {fileID: 0}
   replay: 0
+  gameActive: 0
   tutorialVoiceLines:
   - voiceLineText: Hello, welcome to the galaxies hottest diner
     voiceLineAudio: {fileID: 0}
@@ -22456,12 +22460,15 @@ MonoBehaviour:
   chef: {fileID: 627230243}
   orderHandler: {fileID: 627230242}
   gameTimer: {fileID: 354722822}
+  tutorialManager: {fileID: 0}
   cuttingBoardSocket: {fileID: 1107664819}
   currentObjectOnBoard: {fileID: 0}
   sinkSocket: {fileID: 608155071}
   currentObjectInSink: {fileID: 0}
   tapWaterParticles: {fileID: 687513230}
   tapOn: 0
+  grillSocket: {fileID: 0}
+  currentObjectOnGrill: {fileID: 0}
   SlopADispenserSocket: {fileID: 504618343}
   SlopACurrentObject: {fileID: 0}
   SlopAParticles: {fileID: 193941988}
@@ -79849,6 +79856,51 @@ Transform:
   - {fileID: 1753111047}
   m_Father: {fileID: 1990350006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1852864388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852864390}
+  - component: {fileID: 1852864389}
+  m_Layer: 0
+  m_Name: Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1852864389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852864388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599582367e3d3be469817dfb67ac78d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Manager: {fileID: 0}
+--- !u!4 &1852864390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852864388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1859704149
 GameObject:
   m_ObjectHideFlags: 0
@@ -80843,11 +80895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46515c57678f65a4c8d5d94f097fd6a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.62500066
+      value: -5.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46515c57678f65a4c8d5d94f097fd6a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.7208222
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46515c57678f65a4c8d5d94f097fd6a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -97462,3 +97514,4 @@ SceneRoots:
   - {fileID: 108356914}
   - {fileID: 238212639}
   - {fileID: 1925468811}
+  - {fileID: 1852864390}

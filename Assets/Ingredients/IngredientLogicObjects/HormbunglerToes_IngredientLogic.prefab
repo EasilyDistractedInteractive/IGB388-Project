@@ -1001,7 +1001,7 @@ MonoBehaviour:
   isOnGrill: 0
   framesOffGrill: 0
   cookedness: 0
-  ingredientAudioSource: {fileID: 0}
+  ingredientAudioSource: {fileID: 3935915256399123089}
   ingredientIcon: {fileID: 21300000, guid: a9222d4c3bf01bd4aa104bf504382b32, type: 3}
   statesCount: 4
   currentState: 0

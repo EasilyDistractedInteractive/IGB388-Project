@@ -67,6 +67,10 @@ public class IngredientLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+
+        tutorialManager = Manager.tutorialManager;
+
         isSliced = false;
         isDirty = true;
         isCooked = false;
@@ -78,11 +82,9 @@ public class IngredientLogic : MonoBehaviour
 
         instantiateCurrentModel();
 
-        ingredientAudioSource = GetComponentInChildren<AudioSource>();
+        //ingredientAudioSource = GetComponentInChildren<AudioSource>();
 
-        Manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
-
-        tutorialManager = Manager.tutorialManager;
+        
         
     }
 
