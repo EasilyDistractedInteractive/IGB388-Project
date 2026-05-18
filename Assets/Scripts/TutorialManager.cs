@@ -1,6 +1,7 @@
-using UnityEngine;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static Chef;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class TutorialManager : MonoBehaviour
 
     [SerializeField] private Chef chef;
 
+
+    [SerializeField] public Chef.VoiceLine[] tutorialVoiceLines;
+
     private void Start()
     {
         tutorialProgressionSteps = new bool[] { ingredientGrabbed, ingredientCut, ingredientWashed, ingredientCooked, ingredientSubmitted};
@@ -25,9 +29,9 @@ public class TutorialManager : MonoBehaviour
 
     public IEnumerator Tutorial()
     {
-        for (int i = 0; i < chef.tutorialVoiceLines.Length; i++)
+        for (int i = 0; i < tutorialVoiceLines.Length; i++)
         {
-            Chef.VoiceLine voiceLine = chef.tutorialVoiceLines[i];
+            Chef.VoiceLine voiceLine = tutorialVoiceLines[i];
             bool nextStep = tutorialProgressionSteps[i];
 
             chef.chefDialogue.ActivateDialogue(voiceLine.voiceLineText, voiceLine.voiceLineAudio, chef.chefAudioSource);

@@ -34548,7 +34548,7 @@ MonoBehaviour:
   ingredientWashed: 0
   ingredientCooked: 0
   ingredientSubmitted: 0
-  chef: {fileID: 0}
+  chef: {fileID: 627230243}
 --- !u!43 &659777214
 Mesh:
   m_ObjectHideFlags: 0
@@ -41320,12 +41320,15 @@ MonoBehaviour:
   chef: {fileID: 0}
   orderHandler: {fileID: 0}
   gameTimer: {fileID: 0}
+  tutorialManager: {fileID: 0}
   cuttingBoardSocket: {fileID: 1107664819}
   currentObjectOnBoard: {fileID: 0}
   sinkSocket: {fileID: 608155071}
   currentObjectInSink: {fileID: 0}
   tapWaterParticles: {fileID: 687513230}
   tapOn: 0
+  grillSocket: {fileID: 0}
+  currentObjectOnGrill: {fileID: 0}
   SlopADispenserSocket: {fileID: 504618343}
   SlopACurrentObject: {fileID: 0}
   SlopAParticles: {fileID: 193941988}
@@ -41335,8 +41338,6 @@ MonoBehaviour:
   SlopCDispenserSocket: {fileID: 574145222}
   SlopCCurrentObject: {fileID: 0}
   SlopCParticles: {fileID: 2049510177}
-  grillSocket: {fileID: 0}
-  currentObjectOnGrill: {fileID: 0}
   prepCompleted: {fileID: 8300000, guid: fb6c37ca667fecb458c29ed324b0cf53, type: 3}
   cutIngredientClips:
   - {fileID: 8300000, guid: 19a714ed9321cd544a2a4af57911db04, type: 3}
