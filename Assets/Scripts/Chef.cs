@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using TMPro;
-using Unity.Tutorials.Core.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
@@ -21,9 +20,6 @@ public class Chef : MonoBehaviour
     public OrderHandler orderHandler;
 
     public Dialogue chefDialogue;
-
-    public Button tutorialButton;
-    public bool tutorialButtonPressed = false;
 
     [HideInInspector] public AudioSource chefAudioSource;
 
@@ -97,8 +93,6 @@ public class Chef : MonoBehaviour
             MoodCheck();
         } 
     }
-
-    [SerializeField] public VoiceLine[] tutorialVoiceLines;
 
     public enum Moods { Disappointed, Neutral, Excited };
     public Moods mood = Moods.Neutral;

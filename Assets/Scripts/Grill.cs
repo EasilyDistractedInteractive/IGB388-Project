@@ -13,7 +13,7 @@ public class Grill : MonoBehaviour
     void Start()
     {
         IngredientsInTrigger = 0; // Or however many cubes at start
-        grillInactiveSmoke.SetActive(false);
+        grillInactiveSmoke.SetActive(true);
     }
 
     void OnTriggerEnter(Collider col)
