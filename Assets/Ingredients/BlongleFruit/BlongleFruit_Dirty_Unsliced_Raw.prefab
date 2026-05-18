@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1383925315769553120}
   m_Layer: 0
-  m_Name: SphereFruit_Dirty_Unsliced
+  m_Name: BlongleFruit_Dirty_Unsliced_Raw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

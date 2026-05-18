@@ -5,10 +5,14 @@ public class Ingredient : ScriptableObject
 {
     public bool isSlopBowl;
 
-    public GameObject modelDirty_Unsliced;
-    public GameObject modelClean_Unsliced;
-    public GameObject modelClean_Sliced;
-    public GameObject modelDirty_Sliced;
+    public GameObject model_Clean_Sliced_Cooked;
+    public GameObject model_Clean_Sliced_Raw;
+    public GameObject model_Clean_Unsliced_Cooked;
+    public GameObject model_Clean_Unsliced_Raw;
+    public GameObject model_Dirty_Sliced_Cooked;
+    public GameObject model_Dirty_Sliced_Raw;
+    public GameObject model_Dirty_Unsliced_Cooked;
+    public GameObject model_Dirty_Unsliced_Raw;
 
     
 
@@ -23,4 +27,13 @@ public class Ingredient : ScriptableObject
     public float ingredientComplexity;
 
     //public string ingredientDescription; //Not in use yet but could be good to add for final submission to increase alien ingredient vibes
+
+    
+    
+    
+    
+    
+    
+    
+    
 }

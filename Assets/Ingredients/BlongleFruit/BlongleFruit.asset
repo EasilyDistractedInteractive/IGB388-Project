@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21abe0128ef9274f9979cdc8fac3600, type: 3}
+  m_Name: BlongleFruit
+  m_EditorClassIdentifier: 
+  isSlopBowl: 0
+  model_Clean_Sliced_Cooked: {fileID: 1224121026871121474, guid: d8ce2abae8d06d143a75e0a3837a3f71, type: 3}
+  model_Clean_Sliced_Raw: {fileID: 1224121026871121474, guid: c4cf9c1ba7cd2224abaed250e6385062, type: 3}
+  model_Clean_Unsliced_Cooked: {fileID: 7808943584397307564, guid: ddeed743886e33b44b03ad98cdc900b4, type: 3}
+  model_Clean_Unsliced_Raw: {fileID: 7808943584397307564, guid: b90c78caba3005f4b9ab92c08acdd86b, type: 3}
+  model_Dirty_Sliced_Cooked: {fileID: 7808943584397307564, guid: dacb07223ccce0a439da16f86ec0ae77, type: 3}
+  model_Dirty_Sliced_Raw: {fileID: 7808943584397307564, guid: 924385ac994d88045979b4679fae14cb, type: 3}
+  model_Dirty_Unsliced_Cooked: {fileID: 7808943584397307564, guid: 1b53eccd75d00dd479ddabbbb9ef698e, type: 3}
+  model_Dirty_Unsliced_Raw: {fileID: 7808943584397307564, guid: 0b4c666d192451c4d877d3d461cb5385, type: 3}
+  cutParticleEffect: {fileID: 5150223793887423612, guid: 7cfa0b9fd983a884ea89a5eaec33cf79, type: 3}
+  associatedObject: {fileID: 6638326213517170704, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
+  ingredientName: Blongle Fruit
+  ingredientComplexity: 25

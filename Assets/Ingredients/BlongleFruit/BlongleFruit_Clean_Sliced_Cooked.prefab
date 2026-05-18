@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8232203619070195160}
   m_Layer: 0
-  m_Name: SphereFruit_Clean_Sliced
+  m_Name: BlongleFruit_Clean_Sliced_Cooked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: -2282018847242632700, guid: eb585a151c7d740488b7a795902bb423, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b3028af3229753d48bccf9903db561bd, type: 2}
+      objectReference: {fileID: 2100000, guid: 3cc63e833f272024f8f1ae149a8a72cc, type: 2}
     - target: {fileID: 919132149155446097, guid: eb585a151c7d740488b7a795902bb423, type: 3}
       propertyPath: m_Name
       value: BlongleFruit_Sliced

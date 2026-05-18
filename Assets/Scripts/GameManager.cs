@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Chef chef;
     public OrderHandler orderHandler;
     public Timer gameTimer;
+    public TutorialManager tutorialManager;
 
     [Header("Cutting Board")]
 
@@ -24,10 +25,18 @@ public class GameManager : MonoBehaviour
     IngredientLogic ingredientInSink;
 
     public GameObject tapWaterParticles;
-
+    float cleanRate = 100f;
     public bool tapOn;
 
-    float cleanRate = 100f;
+    [Header("Grill")]
+    public XRSocketInteractor grillSocket;
+    public GameObject currentObjectOnGrill;
+    IngredientLogic ingredientOnGrill;
+
+    float cookRate = 60f;
+    
+
+    
 
     [Header("Slop Dispensers")]
 
@@ -46,10 +55,7 @@ public class GameManager : MonoBehaviour
     IngredientLogic IngredientOnSlopC;
     public GameObject SlopCParticles;
 
-    [Header("Grill")]
-    public XRSocketInteractor grillSocket;
-    public GameObject currentObjectOnGrill;
-    IngredientLogic ingredientOnGrill;
+    
 
     //public List<GameObject> ingredientsList = new List<GameObject>();
     //public GameObject ingredientSpawnPoint;
@@ -125,6 +131,8 @@ public class GameManager : MonoBehaviour
 
             ingredientOnGrill = currentObjectOnGrill.GetComponent<IngredientLogic>();
             ingredientOnGrill.setIsOnGrillTrue();
+
+            ingredientOnGrill.Cook(cookRate);
         }
     }
 

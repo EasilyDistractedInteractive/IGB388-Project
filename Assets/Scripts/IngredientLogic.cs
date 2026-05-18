@@ -41,18 +41,27 @@ public class IngredientLogic : MonoBehaviour
 
     public enum state
     {
-        Dirty_Unsliced,
-        Clean_Unsliced,
-        Clean_Sliced,
-        Dirty_Sliced
+        Clean_Sliced_Cooked,
+        Clean_Sliced_Raw,
+        Clean_Unsliced_Cooked,
+        Clean_Unsliced_Raw,
+        Dirty_Sliced_Cooked,
+        Dirty_Sliced_Raw,
+        Dirty_Unsliced_Cooked,
+        Dirty_Unsliced_Raw,
+        
+        
+        
     }
 
     [HideInInspector] public int statesCount = 4; //Update if more states are added
 
-    [HideInInspector] public state currentState = state.Dirty_Unsliced;
-    public state currentModel = state.Dirty_Unsliced;
+    [HideInInspector] public state currentState = state.Dirty_Unsliced_Raw;
+    public state currentModel = state.Dirty_Unsliced_Raw;
 
-    public TutorialManager tutManager;
+    public TutorialManager tutorialManager;
+
+
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -73,42 +82,73 @@ public class IngredientLogic : MonoBehaviour
 
         Manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
 
-        tutManager = Manager.chef.tutManager;
+        tutorialManager = Manager.tutorialManager;
         
     }
 
     public void SetGrabbedBool()
     {
-        tutManager.ingredientGrabbed = true;
+        if(tutorialManager != null)
+        {
+            tutorialManager.ingredientGrabbed = true;
+        }
     }
 
     void instantiateCurrentModel()
     {
         Destroy(ingredientModel);
-        if(currentState == state.Dirty_Unsliced)
+        if(currentState == state.Dirty_Unsliced_Raw)
         {
-            ingredientModel = Instantiate (ingredient.modelDirty_Unsliced, gameObject.transform.position , Quaternion.identity);
+            ingredientModel = Instantiate (ingredient.model_Dirty_Unsliced_Raw, gameObject.transform.position , Quaternion.identity);
             ingredientModel.transform.parent = gameObject.transform;
-            currentModel = state.Dirty_Unsliced;
+            currentModel = state.Dirty_Unsliced_Raw;
         }
-        if(currentState == state.Clean_Unsliced)
+        if(currentState == state.Clean_Unsliced_Raw)
         {
-            ingredientModel = Instantiate (ingredient.modelClean_Unsliced, gameObject.transform.position , Quaternion.identity);
+            ingredientModel = Instantiate (ingredient.model_Clean_Unsliced_Raw, gameObject.transform.position , Quaternion.identity);
             ingredientModel.transform.parent = gameObject.transform;
-            currentModel = state.Clean_Unsliced;
+            currentModel = state.Clean_Unsliced_Raw;
         }
-        if(currentState == state.Clean_Sliced)
+        if(currentState == state.Clean_Sliced_Raw)
         {
-            ingredientModel = Instantiate (ingredient.modelClean_Sliced, gameObject.transform.position , Quaternion.identity);
+            ingredientModel = Instantiate (ingredient.model_Clean_Sliced_Raw, gameObject.transform.position , Quaternion.identity);
             ingredientModel.transform.parent = gameObject.transform;
-            currentModel = state.Clean_Sliced;
+            currentModel = state.Clean_Sliced_Raw;
             ingredientAudioSource.PlayOneShot(Manager.prepCompleted);
         }
-        if(currentState == state.Dirty_Sliced)
+        if(currentState == state.Dirty_Sliced_Raw)
         {
-            ingredientModel = Instantiate (ingredient.modelDirty_Sliced, gameObject.transform.position , Quaternion.identity);
+            ingredientModel = Instantiate (ingredient.model_Dirty_Sliced_Raw, gameObject.transform.position , Quaternion.identity);
             ingredientModel.transform.parent = gameObject.transform;
-            currentModel = state.Dirty_Sliced;
+            currentModel = state.Dirty_Sliced_Raw;
+            ingredientAudioSource.PlayOneShot(Manager.prepCompleted);
+        }
+
+
+        if(currentState == state.Dirty_Unsliced_Cooked)
+        {
+            ingredientModel = Instantiate (ingredient.model_Dirty_Unsliced_Cooked, gameObject.transform.position , Quaternion.identity);
+            ingredientModel.transform.parent = gameObject.transform;
+            currentModel = state.Dirty_Unsliced_Cooked;
+        }
+        if(currentState == state.Clean_Unsliced_Cooked)
+        {
+            ingredientModel = Instantiate (ingredient.model_Clean_Unsliced_Cooked, gameObject.transform.position , Quaternion.identity);
+            ingredientModel.transform.parent = gameObject.transform;
+            currentModel = state.Clean_Unsliced_Cooked;
+        }
+        if(currentState == state.Clean_Sliced_Cooked)
+        {
+            ingredientModel = Instantiate (ingredient.model_Clean_Sliced_Cooked, gameObject.transform.position , Quaternion.identity);
+            ingredientModel.transform.parent = gameObject.transform;
+            currentModel = state.Clean_Sliced_Cooked;
+            ingredientAudioSource.PlayOneShot(Manager.prepCompleted);
+        }
+        if(currentState == state.Dirty_Sliced_Cooked)
+        {
+            ingredientModel = Instantiate (ingredient.model_Dirty_Sliced_Cooked, gameObject.transform.position , Quaternion.identity);
+            ingredientModel.transform.parent = gameObject.transform;
+            currentModel = state.Dirty_Sliced_Cooked;
             ingredientAudioSource.PlayOneShot(Manager.prepCompleted);
         }
     }
@@ -119,27 +159,52 @@ public class IngredientLogic : MonoBehaviour
         if(slices >= 3)
         {
             isSliced = true;
-            tutManager.ingredientCut = true;
+            if(tutorialManager != null)
+            {
+                tutorialManager.ingredientCut = true;
+            }
         }
 
         if(ingredient.isSlopBowl == false)
         {
-            if(isDirty == true && isSliced == false)
+            if(isDirty == true && isSliced == false && isCooked == false)
             {
-                currentState = state.Dirty_Unsliced;
+                currentState = state.Dirty_Unsliced_Raw;
             }
-            if(isDirty == false && isSliced == false)
+            if(isDirty == false && isSliced == false && isCooked == false)
             {
-                currentState = state.Clean_Unsliced;
+                currentState = state.Clean_Unsliced_Raw;
             }
-            if(isDirty == false && isSliced == true)
+            if(isDirty == false && isSliced == true && isCooked == false)
             {
-                currentState = state.Clean_Sliced;
+                currentState = state.Clean_Sliced_Raw;
             }
-            if(isDirty == true && isSliced == true)
+            if(isDirty == true && isSliced == true && isCooked == false)
             {
-                currentState = state.Dirty_Sliced;
+                currentState = state.Dirty_Sliced_Raw;
             }
+
+
+
+
+            if(isDirty == true && isSliced == false && isCooked == true)
+            {
+                currentState = state.Dirty_Unsliced_Cooked;
+            }
+            if(isDirty == false && isSliced == false && isCooked == true)
+            {
+                currentState = state.Clean_Unsliced_Cooked;
+            }
+            if(isDirty == false && isSliced == true && isCooked == true)
+            {
+                currentState = state.Clean_Sliced_Cooked;
+            }
+            if(isDirty == true && isSliced == true && isCooked == true)
+            {
+                currentState = state.Dirty_Sliced_Cooked;
+            }
+
+            
         }
 
         if(currentState != currentModel)
@@ -160,14 +225,24 @@ public class IngredientLogic : MonoBehaviour
         if(cleanliness >= 100f)
         {
             isDirty = false;
-            tutManager.ingredientWashed = true;
+            if(tutorialManager != null)
+            {
+            tutorialManager.ingredientWashed = true;
+            }
         }
+
+
 
         if (cookedness >= 100f)
         {
             isCooked = true;
-            tutManager.ingredientCooked = true;
+            if(tutorialManager != null)
+            {
+                tutorialManager.ingredientCooked = true;
+            }
         }
+
+    
 
     }
 
@@ -203,6 +278,14 @@ public class IngredientLogic : MonoBehaviour
             cleanliness += cleanRate * Time.deltaTime;
         }
     }
+
+    public void Cook(float cookRate)
+    {
+        if(isOnGrill == true)
+        {
+            cookedness += cookRate * Time.deltaTime;
+        }
+    }
     
 
     void OnCollisionEnter(Collision collision)
@@ -236,8 +319,8 @@ public class IngredientLogic : MonoBehaviour
     {
         if(ingredient.isSlopBowl == true)
         {
-            currentState = state.Clean_Unsliced;
-            print("SlopB!");
+            currentState = state.Clean_Unsliced_Raw;
+            print("SlopA!");
         }
     }
 
@@ -245,7 +328,7 @@ public class IngredientLogic : MonoBehaviour
     {
         if(ingredient.isSlopBowl == true)
         {
-            currentState = state.Clean_Sliced;
+            currentState = state.Clean_Sliced_Raw;
             print("SlopB!");
         }
     }
@@ -254,8 +337,8 @@ public class IngredientLogic : MonoBehaviour
     {
         if(ingredient.isSlopBowl == true)
         {
-            currentState = state.Dirty_Sliced;
-            print("SlopB!");
+            currentState = state.Dirty_Sliced_Raw;
+            print("SlopC!");
         }
     }
 
