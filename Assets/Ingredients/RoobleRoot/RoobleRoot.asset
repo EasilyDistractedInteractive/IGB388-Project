@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21abe0128ef9274f9979cdc8fac3600, type: 3}
+  m_Name: RoobleRoot
+  m_EditorClassIdentifier: 
+  isSlopBowl: 0
+  model_Clean_Sliced_Cooked: {fileID: 7725193609583481023, guid: 0573286f025e7ca45b64d3b6b8ebe7e3, type: 3}
+  model_Clean_Sliced_Raw: {fileID: 7725193609583481023, guid: 312001628cf47fe4d96a52f06ffb4e4f, type: 3}
+  model_Clean_Unsliced_Cooked: {fileID: 4928585245549221792, guid: b28a9f24ad8e6f54d8059603d572eba3, type: 3}
+  model_Clean_Unsliced_Raw: {fileID: 4928585245549221792, guid: 9c7a10b1d58031145a34792bd87d8f62, type: 3}
+  model_Dirty_Sliced_Cooked: {fileID: 7725193609583481023, guid: 7588c57274f66804995914c80e2710dc, type: 3}
+  model_Dirty_Sliced_Raw: {fileID: 7725193609583481023, guid: 33ab9b40cf7269f44a6c893c0d527dd7, type: 3}
+  model_Dirty_Unsliced_Cooked: {fileID: 4928585245549221792, guid: 608798406b2076c418c74bab3299f23b, type: 3}
+  model_Dirty_Unsliced_Raw: {fileID: 4928585245549221792, guid: 5d69427d098c55b4f9236d72db4578dc, type: 3}
+  cutParticleEffect: {fileID: 5150223793887423612, guid: 7fa506eabba1ffa4fb37e4b207e5de0f, type: 3}
+  associatedObject: {fileID: 3436505519096272459, guid: 38669b04feafbe24e9ad42f2a6d6cf3a, type: 3}
+  ingredientName: Rooble Root
+  ingredientComplexity: 50

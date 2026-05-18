@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5576285424799960493}
   m_Layer: 0
-  m_Name: RoobleRoot_Dirty_Unsliced
+  m_Name: RoobleRoot_Clean_Unsliced_Raw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,14 +96,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -7577739868436781572, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 58a224f34cf351b4a924d66cb0276970, type: 2}
-    - target: {fileID: -7221983376496805624, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 58a224f34cf351b4a924d66cb0276970, type: 2}
     - target: {fileID: 919132149155446097, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
       propertyPath: m_Name
       value: 'Rooble Root UV Unwrap '
@@ -114,14 +106,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 28057422563860438}
+      addedObject: {fileID: 6288667682110508380}
   m_SourcePrefab: {fileID: 100100000, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
 --- !u!1 &7307181132707383788 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
   m_PrefabInstance: {fileID: 7613681892184356029}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &28057422563860438
+--- !u!114 &6288667682110508380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

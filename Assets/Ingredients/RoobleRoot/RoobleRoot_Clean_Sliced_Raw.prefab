@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5953380158007929248}
   m_Layer: 0
-  m_Name: RoobleRoot_Clean_Sliced
+  m_Name: RoobleRoot_Clean_Sliced_Raw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
