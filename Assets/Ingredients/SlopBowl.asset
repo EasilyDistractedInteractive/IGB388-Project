@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSlopBowl: 1
   model_Clean_Sliced_Cooked: {fileID: 4229548286792680542, guid: be1ccb86f52a96e4bb2654546b37de46, type: 3}
-  model_Clean_Sliced_Raw: {fileID: 6092413516689428824, guid: 0ae61d00d2d9c414fafa8ff30506df8a, type: 3}
-  model_Clean_Unsliced_Cooked: {fileID: 4927824316783115076, guid: 0c3a72f638b569c4598d3e545f3ee66b, type: 3}
-  model_Clean_Unsliced_Raw: {fileID: 347912645079634731, guid: cd1c92e8803d2d2498b4f6b89f042aec, type: 3}
+  model_Clean_Sliced_Raw: {fileID: 4927824316783115076, guid: 0c3a72f638b569c4598d3e545f3ee66b, type: 3}
+  model_Clean_Unsliced_Cooked: {fileID: 0}
+  model_Clean_Unsliced_Raw: {fileID: 6092413516689428824, guid: 0ae61d00d2d9c414fafa8ff30506df8a, type: 3}
   model_Dirty_Sliced_Cooked: {fileID: 0}
-  model_Dirty_Sliced_Raw: {fileID: 0}
+  model_Dirty_Sliced_Raw: {fileID: 347912645079634731, guid: cd1c92e8803d2d2498b4f6b89f042aec, type: 3}
   model_Dirty_Unsliced_Cooked: {fileID: 0}
-  model_Dirty_Unsliced_Raw: {fileID: 0}
+  model_Dirty_Unsliced_Raw: {fileID: 4229548286792680542, guid: be1ccb86f52a96e4bb2654546b37de46, type: 3}
   cutParticleEffect: {fileID: 0}
   associatedObject: {fileID: 3848663074845542660, guid: 998ea5fc583ffee4a98cf89bd54c9d0c, type: 3}
   ingredientName: Slop Bowl
