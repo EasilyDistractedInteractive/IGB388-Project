@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PantryPanicGame/Main Menu.unity
+    path: Assets/Scenes/PantryPanicScenes/Main Menu.unity
     guid: d9d54641eebabff42b99348f8b26a613
   - enabled: 1
-    path: Assets/Scenes/PantryPanicLevelRedesign.unity
+    path: Assets/Scenes/PantryPanicScenes/PantryPanicLevelRedesign.unity
     guid: 1bac7ad587df06c48ab07964d98c48c9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
