@@ -26,27 +26,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0298
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0043
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6943404
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7196468
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -92.051
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 476aa5e216e1f6c4d9a27cb9c3464a37, type: 2}
     - target: {fileID: 919132149155446097, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: m_Name
-      value: JorkbeastTail_Clean_Sliced
+      value: JorkbeastTail_Clean_Sliced_Raw
       objectReference: {fileID: 0}
     - target: {fileID: 3616844112969948802, guid: 5b3fafe992223d0478c5e859b15c8b9d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
