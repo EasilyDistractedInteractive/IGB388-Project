@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 8800235971784589974}
   - component: {fileID: 1281453663183790047}
   m_Layer: 5
-  m_Name: New Docket (for round world)
+  m_Name: Docket (for round world)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8800235971784589974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +275,8 @@ MonoBehaviour:
   - {fileID: 1583391197138650606}
   - {fileID: 1973469783285400010}
   activeImages: []
+  ingredientIcon: {fileID: 0}
+  orderNumberText: {fileID: 5025715680333670896}
 --- !u!1 &1682792725816656713
 GameObject:
   m_ObjectHideFlags: 0

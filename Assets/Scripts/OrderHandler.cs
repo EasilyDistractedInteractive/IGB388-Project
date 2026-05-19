@@ -9,6 +9,7 @@ public class OrderHandler : MonoBehaviour
 {
     public Queue<Order> orderQueue = new Queue<Order>();
     public Order currentOrder;
+    public List<Order> currentOrders;
 
     [Tooltip("The available ingredients")]
     public IngredientLogic[] ingredientPool;
@@ -16,15 +17,12 @@ public class OrderHandler : MonoBehaviour
     float ingredientMaxComplexity = 0;
 
     public GameObject docketPrefab;
-    public GameObject docketCanvas;
 
-    public Vector3[] docketPositions;
-    public Vector3[] docketRotations;
+    public GameObject[] docketPositions;
+
     public int docketY;
-    int docketMax = 6;
 
     int orderCounter = 0;
-    int currentOrderCount = 0;
 
     public List<GameObject> dockets; //public for testing
 
@@ -37,21 +35,24 @@ public class OrderHandler : MonoBehaviour
         {
             if (tempIngredient.ingredient.ingredientComplexity > ingredientMaxComplexity) { ingredientMaxComplexity = tempIngredient.ingredient.ingredientComplexity; }
         }
-
-        GenerateOrder(0);
     }
 
-    void UpdateOrderQueue()
+    public Queue<Order> RemoveFromQueue(Queue<Order> myQueue, Order itemToRemove)
     {
-        orderQueue.Dequeue();
-        currentOrderCount--;
-        if (orderQueue.Count != 0) currentOrder = orderQueue.Peek();
+        //Filters out the item and creates a new queue from the result
+        Queue<Order> newQueue = new(myQueue.Where(x => x != itemToRemove));
+        return newQueue;
+    }
+
+    void UpdateOrderQueue(Order order)
+    {
+        orderQueue = RemoveFromQueue(orderQueue, order);
 
         GameObject tempDocket = null;
 
         foreach (GameObject docket in dockets)
         {
-            if (docket.transform.CompareTag("Complete"))
+            if (docket.GetComponent<Docket>().docketOrder.orderComplete)
             {
                 tempDocket = docket;
                 break;
@@ -62,14 +63,14 @@ public class OrderHandler : MonoBehaviour
         {
             dockets.Remove(dockets[0]);
             Destroy(tempDocket);
+            currentOrders.Remove(order);
 
             //Updating the queued dockets so the leftmost docket is the first remaining one to have been generated
             for (int i = 0; i < dockets.Count; i++)
             {
-                RectTransform rt = dockets[i].GetComponent<RectTransform>();
-                rt.anchoredPosition = docketPositions[i];
+                dockets[i].transform.parent = docketPositions[i].transform;
 
-                if (dockets[i].activeSelf == false && i < docketMax) { dockets[i].SetActive(true); }
+                if (dockets[i].activeSelf == false && i < docketPositions.Length) { dockets[i].SetActive(true); }
             }
         }
     }
@@ -87,27 +88,30 @@ public class OrderHandler : MonoBehaviour
 
         int orderState = UnityEngine.Random.Range(0, tempIng.statesCount);
 
-        orderQueue.Enqueue(new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredPrepMethod = (Order.PrepMethod)orderState });
+        Order tempOrder = new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredPrepMethod = (Order.PrepMethod)orderState };
+
+        orderQueue.Enqueue(tempOrder);
         orderCounter++;
 
-        if (orderQueue.Count == 1) { currentOrder = orderQueue.Peek(); };
-        //GameObject newDocket = Instantiate(docketPrefab, docketCanvas.transform);
+        if (orderQueue.Count <= docketPositions.Length) currentOrders.Add(tempOrder);
         GameObject newDocket = Instantiate(docketPrefab);
         dockets.Add(newDocket);
-        TMP_Text docketText = newDocket.GetComponentInChildren<TMP_Text>();
-        docketText.text = $"Order #{orderCounter}\n{tempIng.ingredientName}\n{currentOrder.prepMethodNames[orderState]}";
 
-        if (dockets.Count <= docketMax)
+        TMP_Text docketText = newDocket.GetComponent<Docket>().orderNumberText;
+        docketText.text = $"Order #{orderCounter}";
+
+        if (dockets.Count <= docketPositions.Length)
         {
-            RectTransform rt = newDocket.GetComponent<RectTransform>();
-            rt.anchoredPosition = docketPositions[dockets.Count-1];
+            newDocket.transform.parent = docketPositions[dockets.Count - 1].transform;
             newDocket.SetActive(true);
         }
     }
 
-    public void OrderComplete()
+    public void OrderComplete(Order order)
     {
-        UpdateOrderQueue();
+        order.orderComplete = true;
+        UpdateOrderQueue(order);
+
         //Add function to add score for completed order
 
         chef.incrementChefMood(5);

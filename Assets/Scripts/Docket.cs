@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Docket : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Docket : MonoBehaviour
     public Order docketOrder;
 
     public Image ingredientIcon;
+
+    public TMP_Text orderNumberText;
 
     public void DocketSetup()
     {

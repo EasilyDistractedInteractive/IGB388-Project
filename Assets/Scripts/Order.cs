@@ -17,6 +17,8 @@ public class Order
         Clean_Sliced_Cooked
     }
 
+    public bool orderComplete;
+
     public PrepMethod requiredPrepMethod;
 
     public string[] prepMethodNames = { "None", "Clean", "Clean + Cut", "Cut"};

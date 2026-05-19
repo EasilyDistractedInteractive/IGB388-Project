@@ -10,6 +10,8 @@ public class OrderChecker : MonoBehaviour
     OrderHandler orderHandler;
     [SerializeField] private GameObject orderCorrectEffect;
 
+    List<Order> validOrders;
+
     void Start()
     {
         orderHandler = FindAnyObjectByType<OrderHandler>();
@@ -30,16 +32,27 @@ public class OrderChecker : MonoBehaviour
         Destroy(ingredientObject);
 
         Order currentOrder = orderHandler.currentOrder;
-        //Checks if the ingredient is of the correct type
-        if (submittedIngredient.ingredientName == currentOrder.ingredient.ingredientName)
-        {
-            //Compares the state of the submitted ingredient with the required state
-            if (submittedIngredient.currentState.ToString() == currentOrder.requiredPrepMethod.ToString())
-            {
-                orderHandler.OrderComplete();
-                GameObject juiceEffect = Instantiate(orderCorrectEffect);
 
-                //Destroys juice effect
+        validOrders = new List<Order>();
+
+        //Gets all the orders with the same ingredient type as the submitted order
+        foreach (Order order in orderHandler.currentOrders)
+        {
+            if (submittedIngredient.ingredientName == currentOrder.ingredient.ingredientName)
+            {
+                validOrders.Add(order);
+            }
+        }
+
+        //Compares the required state of each orders required ingredient with the state of the submitted ingredient
+        foreach (Order order in validOrders)
+        {
+            if (submittedIngredient.currentState.ToString() == order.requiredPrepMethod.ToString())
+            {
+                orderHandler.OrderComplete(order);
+
+                //Spawns and destroys the added juice effect
+                GameObject juiceEffect = Instantiate(orderCorrectEffect);
                 Destroy(juiceEffect, 2);
             }
         }

@@ -46,7 +46,7 @@ public class Chef : MonoBehaviour
         manager = FindAnyObjectByType<GameManager>();
         gameTimer = manager.gameTimer;
 
-        if (!replay) tutManager.Tutorial();
+        if (!replay) StartCoroutine(tutManager.Tutorial());
     }
 
     void Update()
