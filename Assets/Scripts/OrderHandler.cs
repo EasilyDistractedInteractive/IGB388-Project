@@ -37,6 +37,8 @@ public class OrderHandler : MonoBehaviour
         {
             if (tempIngredient.ingredient.ingredientComplexity > ingredientMaxComplexity) { ingredientMaxComplexity = tempIngredient.ingredient.ingredientComplexity; }
         }
+
+        GenerateOrder(0);
     }
 
     void UpdateOrderQueue()

@@ -48,10 +48,7 @@ public class IngredientLogic : MonoBehaviour
         Dirty_Sliced_Cooked,
         Dirty_Sliced_Raw,
         Dirty_Unsliced_Cooked,
-        Dirty_Unsliced_Raw,
-        
-        
-        
+        Dirty_Unsliced_Raw,       
     }
 
     [HideInInspector] public int statesCount = 4; //Update if more states are added

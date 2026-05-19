@@ -724,7 +724,6 @@ GameObject:
   - component: {fileID: 1193064027230838348}
   - component: {fileID: 2626195288119923285}
   - component: {fileID: 3436505519096272459}
-  - component: {fileID: 3611753056501830822}
   m_Layer: 0
   m_Name: JorkbeastTail_IngredientLogic
   m_TagString: Ingredient
@@ -1006,18 +1005,6 @@ MonoBehaviour:
   currentState: 0
   currentModel: 7
   tutorialManager: {fileID: 0}
---- !u!114 &3611753056501830822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847465373410616505}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467e73d38a565e6409cf194a26dca534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7233365038009831975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1070,7 +1057,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: JorkbeastTail_Dirty_Unsliced
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4229237699704557745, guid: b72822e8f7dcf0c42a2b6a14bc8ed30e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
