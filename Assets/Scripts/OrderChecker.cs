@@ -35,6 +35,8 @@ public class OrderChecker : MonoBehaviour
 
         validOrders = new List<Order>();
 
+        
+
         //Gets all the orders with the same ingredient type as the submitted order
         foreach (Order order in orderHandler.currentOrders)
         {
@@ -44,17 +46,34 @@ public class OrderChecker : MonoBehaviour
             }
         }
 
+        //Slop bowl Logic
+        if (submittedIngredient.ingredient.isSlopBowl)
+        {
+            foreach (Order order in validOrders)
+            {
+                if (submittedIngredient.currentSlopState.ToString() == order.requiredSlopState.ToString())
+                {
+                    OrderCorrect(order);
+                }
+            }
+        }
+
         //Compares the required state of each orders required ingredient with the state of the submitted ingredient
         foreach (Order order in validOrders)
         {
             if (submittedIngredient.currentState.ToString() == order.requiredPrepMethod.ToString())
             {
-                orderHandler.OrderComplete(order);
-
-                //Spawns and destroys the added juice effect
-                GameObject juiceEffect = Instantiate(orderCorrectEffect);
-                Destroy(juiceEffect, 2);
+                OrderCorrect(order);
             }
         }
+    }
+
+    void OrderCorrect(Order order)
+    {
+        orderHandler.OrderComplete(order);
+
+        //Spawns and destroys the added juice effect
+        GameObject juiceEffect = Instantiate(orderCorrectEffect);
+        Destroy(juiceEffect, 2);
     }
 }

@@ -35,7 +35,7 @@ public class Chef : MonoBehaviour
 
     public bool replay = true; //Bool to check if game is being replayed, will disable tutorial if true
 
-    [HideInInspector] public bool gameActive = false;
+    public bool gameActive;
 
     void Start()
     {
@@ -81,7 +81,7 @@ public class Chef : MonoBehaviour
         {
             chefAnim.SetInteger("Emotion", 1);
         }
-        print(chefMood);
+        //print(chefMood);
     }
 
     public float ChefMood

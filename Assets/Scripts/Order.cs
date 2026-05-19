@@ -7,21 +7,32 @@ public class Order
 
     public enum PrepMethod
     {
-        Dirty_Unsliced,
-        Clean_Unsliced,
-        Clean_Sliced,
-        Dirty_Sliced,
-        Dirty_Cooked,
-        Clean_Cooked,
-        Sliced_Cooked,
-        Clean_Sliced_Cooked
+        Clean_Sliced_Cooked,
+        Clean_Sliced_Raw,
+        Clean_Unsliced_Cooked,
+        Clean_Unsliced_Raw,
+        Dirty_Sliced_Cooked,
+        Dirty_Sliced_Raw,
+        Dirty_Unsliced_Cooked,
+        Dirty_Unsliced_Raw
     }
+
+    public enum SlopStates
+    {
+        Slop_A_Empty,
+        Slop_A_Full,
+        Slop_B_Empty,
+        Slop_B_Full,
+        Slop_C_Empty,
+        Slop_C_Full
+    }
+
+    public bool isSlopBowl;
 
     public bool orderComplete;
 
     public PrepMethod requiredPrepMethod;
-
-    public string[] prepMethodNames = { "None", "Clean", "Clean + Cut", "Cut"};
+    public SlopStates requiredSlopState;
 
     [Tooltip("The time the player has to complete the order before they are reprimanded by the chef")]
     public float timeLimit;

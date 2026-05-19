@@ -16,26 +16,41 @@ public class Docket : MonoBehaviour
 
     public TMP_Text orderNumberText;
 
+    public Image[] prepImages;
+
     public void DocketSetup()
     {
-        switch (docketOrder.requiredPrepMethod)
+        if (docketOrder.isSlopBowl)
         {
-            case Order.PrepMethod.Dirty_Sliced or Order.PrepMethod.Dirty_Cooked or Order.PrepMethod.Clean_Unsliced:
-                activeImages = onePrepMethodLocations;
-                break;
+            activeImages = onePrepMethodLocations;
+        }
 
-            case Order.PrepMethod.Clean_Sliced or Order.PrepMethod.Clean_Cooked or Order.PrepMethod.Sliced_Cooked:
-                activeImages = twoPrepMethodLocations;
-                break;
+        else
+        {
+            switch (docketOrder.requiredPrepMethod)
+            {
+                case Order.PrepMethod.Dirty_Sliced_Raw or Order.PrepMethod.Dirty_Unsliced_Cooked or Order.PrepMethod.Clean_Unsliced_Raw:
+                    activeImages = onePrepMethodLocations;
+                    break;
 
-            case Order.PrepMethod.Clean_Sliced_Cooked:
-                activeImages= threePrepMethodLocations;
-                break;
+                case Order.PrepMethod.Clean_Sliced_Raw or Order.PrepMethod.Clean_Unsliced_Cooked or Order.PrepMethod.Dirty_Sliced_Cooked:
+                    activeImages = twoPrepMethodLocations;
+                    break;
 
-            default:
-                break;
+                case Order.PrepMethod.Clean_Sliced_Cooked:
+                    activeImages = threePrepMethodLocations;
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         ingredientIcon.sprite = docketOrder.ingredient.associatedObject.ingredientIcon;
+
+        for (int i = 0; i < prepImages.Length; i++)
+        {
+            activeImages[i].sprite = prepImages[i].sprite;
+        }
     }
 }

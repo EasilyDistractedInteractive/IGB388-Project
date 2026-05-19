@@ -36531,14 +36531,13 @@ MonoBehaviour:
   - {fileID: 6638326213517170704, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
   - {fileID: 3436505519096272459, guid: a24f1a6e21742244cbdd844afe45ad44, type: 3}
   - {fileID: 3848663074845542660, guid: 998ea5fc583ffee4a98cf89bd54c9d0c, type: 3}
-  docketPrefab: {fileID: 8919714013826283736, guid: 21466585691129741bba7cbfe661315e, type: 3}
+  docketPrefab: {fileID: 1445474474193167488, guid: 75f222055fd795e4d8bb190da952ceda, type: 3}
   docketPositions:
-  - {fileID: 1529154483}
-  - {fileID: 610587911}
-  - {fileID: 1169496131}
-  - {fileID: 1261522531}
   - {fileID: 1606596508}
-  docketY: -40
+  - {fileID: 1261522531}
+  - {fileID: 1169496131}
+  - {fileID: 610587911}
+  - {fileID: 1529154483}
   dockets: []
   chef: {fileID: 627230243}
 --- !u!114 &627230243
@@ -36563,8 +36562,8 @@ MonoBehaviour:
   moodText: {fileID: 0}
   manager: {fileID: 0}
   tutManager: {fileID: 627230244}
-  replay: 0
-  gameActive: 0
+  replay: 1
+  gameActive: 1
   mood: 2
   voiceLines:
   - voiceLinesMood: 0
@@ -132342,7 +132341,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1805903385}
   serializedVersion: 8
   lengthInSec: 1
-  simulationSpeed: 1
+  simulationSpeed: 0.25
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -132587,7 +132586,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -132970,9 +132969,9 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: -0.1, y: -0.21, z: 0}
+    m_Position: {x: -0.13, y: -0.18, z: 0.11}
     m_Rotation: {x: 0, y: 0, z: 40.34}
-    m_Scale: {x: 0.4, y: 1.14, z: 0.1}
+    m_Scale: {x: 0.33, y: 0.55, z: 0.1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -133170,8 +133169,8 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 30
-      minScalar: 20
+      scalar: 10
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -134675,7 +134674,7 @@ ParticleSystem:
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2

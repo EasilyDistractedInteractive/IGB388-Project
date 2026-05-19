@@ -29,6 +29,7 @@ public class TutorialManager : MonoBehaviour
 
     public IEnumerator Tutorial()
     {
+        Debug.Log("Tutorial Beginning");
         for (int i = 0; i < tutorialVoiceLines.Length; i++)
         {
             Chef.VoiceLine voiceLine = tutorialVoiceLines[i];

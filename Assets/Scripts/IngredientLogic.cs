@@ -51,9 +51,23 @@ public class IngredientLogic : MonoBehaviour
         Dirty_Unsliced_Raw,       
     }
 
-    [HideInInspector] public int statesCount = 4; //Update if more states are added
+    public enum slopStates
+    {
+        Slop_A_Empty,
+        Slop_A_Full,
+        Slop_B_Empty,
+        Slop_B_Full,
+        Slop_C_Empty,
+        Slop_C_Full
+    }
+
+    [HideInInspector] public int statesCount = 8; //Update if more states are added
+    [HideInInspector] public int slopStatesCount = 6; //Update if more states are added
 
     [HideInInspector] public state currentState = state.Dirty_Unsliced_Raw;
+
+    [HideInInspector] public slopStates currentSlopState = slopStates.Slop_A_Empty;
+
     public state currentModel = state.Dirty_Unsliced_Raw;
 
     public TutorialManager tutorialManager;
@@ -297,12 +311,12 @@ public class IngredientLogic : MonoBehaviour
             if (!isSliced)
             {
                 Instantiate(ingredient.cutParticleEffect, transform.position, transform.rotation);
-                print("GOOOP");
+                //print("GOOOP");
 
                 ingredientAudioSource.PlayOneShot(Manager.cutIngredientClips[Random.Range(0, Manager.cutIngredientClips.Length)]);
 
                 ingredientAudioSource.PlayOneShot(Manager.squishedIngredientClip);
-                Debug.Log("Playing cut sound");
+                //Debug.Log("Playing cut sound");
             }
         }
 

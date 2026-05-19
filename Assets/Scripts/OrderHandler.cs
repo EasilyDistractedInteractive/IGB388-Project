@@ -20,8 +20,6 @@ public class OrderHandler : MonoBehaviour
 
     public GameObject[] docketPositions;
 
-    public int docketY;
-
     int orderCounter = 0;
 
     public List<GameObject> dockets; //public for testing
@@ -86,15 +84,28 @@ public class OrderHandler : MonoBehaviour
         IngredientLogic tempIng = ingredientPool[UnityEngine.Random.Range(0, ingredientPool.Length)];
         tempOrderComplexity += tempIng.ingredient.ingredientComplexity;
 
-        int orderState = UnityEngine.Random.Range(0, tempIng.statesCount);
+        int orderSlopState;
+        int orderState;
 
-        Order tempOrder = new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredPrepMethod = (Order.PrepMethod)orderState };
+        Order tempOrder = new Order();
+
+        if (tempIng.ingredient.isSlopBowl)
+        {
+            orderSlopState = UnityEngine.Random.Range(0, tempIng.slopStatesCount);
+            tempOrder = new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredSlopState = (Order.SlopStates)orderSlopState };
+        }
+
+        else
+        {
+            orderState = UnityEngine.Random.Range(0, tempIng.statesCount);
+            tempOrder = new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredPrepMethod = (Order.PrepMethod)orderState };
+        }
 
         orderQueue.Enqueue(tempOrder);
         orderCounter++;
 
         if (orderQueue.Count <= docketPositions.Length) currentOrders.Add(tempOrder);
-        GameObject newDocket = Instantiate(docketPrefab);
+        GameObject newDocket = Instantiate(docketPrefab, docketPositions[0].transform.position, new Quaternion (0,0,0,0));
         dockets.Add(newDocket);
 
         TMP_Text docketText = newDocket.GetComponent<Docket>().orderNumberText;
@@ -103,6 +114,10 @@ public class OrderHandler : MonoBehaviour
         if (dockets.Count <= docketPositions.Length)
         {
             newDocket.transform.parent = docketPositions[dockets.Count - 1].transform;
+            RectTransform rt = newDocket.GetComponent<RectTransform>();
+            rt.anchoredPosition = new Vector3(0,0);
+            rt.rotation = new Quaternion (0,0,0,0);
+            //newDocket.transform.position = new Vector3(newDocket.transform.position.x, newDocket.transform.position.y, 0);
             newDocket.SetActive(true);
         }
     }
