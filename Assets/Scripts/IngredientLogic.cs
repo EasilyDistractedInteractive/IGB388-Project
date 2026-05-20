@@ -249,7 +249,8 @@ public class IngredientLogic : MonoBehaviour
         if (cookedness >= 100f)
         {
             isCooked = true;
-            if(tutorialManager != null)
+            ingredientAudioSource.PlayOneShot(Manager.grillingComplete);
+            if (tutorialManager != null)
             {
                 tutorialManager.ingredientCooked = true;
             }

@@ -9,6 +9,8 @@ public class Grill : MonoBehaviour
     public GameObject grillActiveSmoke;
 
     public int IngredientsInTrigger;
+    public AudioClip grillingNoise;
+    public AudioSource grillAudioSource;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class Grill : MonoBehaviour
             IngredientsInTrigger++;
             grillInactiveSmoke.SetActive(false);
             grillActiveSmoke.SetActive(true);
+            grillAudioSource.PlayOneShot(grillingNoise);
+            Debug.Log("Played cook audio");
         }
     }
 
@@ -35,6 +39,8 @@ public class Grill : MonoBehaviour
             IngredientsInTrigger--; // Could use `--cubesInTrigger` inside the if, but this is more readable
             grillInactiveSmoke.SetActive(true);
             grillActiveSmoke.SetActive(false);
+            grillAudioSource.Stop();
+            Debug.Log("Audio Stopped");
         }
     }
 }

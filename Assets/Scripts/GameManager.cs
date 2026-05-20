@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public AudioClip[] cutIngredientClips;
     [SerializeField] public AudioClip squishedIngredientClip;
 
+    [SerializeField] public AudioClip grillingComplete;
+
     public void Update()
     {
         tableTransform.position = new Vector3(0,tableHeightSlider.value,0);
