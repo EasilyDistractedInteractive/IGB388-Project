@@ -9,7 +9,7 @@ public class Grill : MonoBehaviour
     public GameObject grillActiveSmoke;
 
     public int IngredientsInTrigger;
-    public AudioClip grillingNoise;
+    public AudioClip grillSizzle;
     public AudioSource grillAudioSource;
 
     void Start()
@@ -26,7 +26,7 @@ public class Grill : MonoBehaviour
             IngredientsInTrigger++;
             grillInactiveSmoke.SetActive(false);
             grillActiveSmoke.SetActive(true);
-            grillAudioSource.PlayOneShot(grillingNoise);
+            grillAudioSource.PlayOneShot(grillSizzle);
             Debug.Log("Played cook audio");
         }
     }
