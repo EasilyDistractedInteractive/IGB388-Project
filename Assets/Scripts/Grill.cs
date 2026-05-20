@@ -18,29 +18,29 @@ public class Grill : MonoBehaviour
         grillInactiveSmoke.SetActive(true);
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        // check for entering cubes
-        if (col.tag == "Ingredient")
-        {
-            IngredientsInTrigger++;
-            grillInactiveSmoke.SetActive(false);
-            grillActiveSmoke.SetActive(true);
-            grillAudioSource.PlayOneShot(grillSizzle);
-            Debug.Log("Played cook audio");
-        }
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-        // check for exiting cubes
-        if (col.tag == "Ingredient")
-        {
-            IngredientsInTrigger--; // Could use `--cubesInTrigger` inside the if, but this is more readable
-            grillInactiveSmoke.SetActive(true);
-            grillActiveSmoke.SetActive(false);
-            grillAudioSource.Stop();
-            Debug.Log("Audio Stopped");
-        }
-    }
+    //void OnTriggerEnter(Collider col)
+    //{
+    //    // check for entering cubes
+    //    if (col.tag == "Ingredient")
+    //    {
+    //        IngredientsInTrigger++;
+    //        grillInactiveSmoke.SetActive(false);
+    //        grillActiveSmoke.SetActive(true);
+    //        grillAudioSource.PlayOneShot(grillSizzle);
+    //        Debug.Log("Played cook audio");
+    //    }
+    //}
+//
+    //void OnTriggerExit(Collider col)
+    //{
+    //    // check for exiting cubes
+    //    if (col.tag == "Ingredient")
+    //    {
+    //        IngredientsInTrigger--; // Could use `--cubesInTrigger` inside the if, but this is more readable
+    //        grillInactiveSmoke.SetActive(true);
+    //        grillActiveSmoke.SetActive(false);
+    //        grillAudioSource.Stop();
+    //        Debug.Log("Audio Stopped");
+    //    }
+    //}
 }

@@ -38,6 +38,9 @@ public class IngredientLogic : MonoBehaviour
 
     public Sprite ingredientIcon;
 
+    bool playedCookedDing = false;
+    bool playedGrillSizzle = false;
+
 
     public enum state
     {
@@ -249,7 +252,11 @@ public class IngredientLogic : MonoBehaviour
         if (cookedness >= 100f)
         {
             isCooked = true;
-            ingredientAudioSource.PlayOneShot(Manager.grillingComplete);
+            if(playedCookedDing == false)
+            {
+                ingredientAudioSource.PlayOneShot(Manager.grillingComplete);
+                playedCookedDing = true;
+            }
             if (tutorialManager != null)
             {
                 tutorialManager.ingredientCooked = true;
@@ -283,6 +290,11 @@ public class IngredientLogic : MonoBehaviour
     {
         isOnGrill = true;
         framesOffGrill = 0;
+        if(playedGrillSizzle == false)
+        {
+            ingredientAudioSource.PlayOneShot(Manager.grillSizzling);
+            playedGrillSizzle = true;
+        }
     }
 
     public void Wash(float cleanRate)

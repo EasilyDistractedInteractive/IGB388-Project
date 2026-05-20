@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     public GameObject currentObjectOnGrill;
     IngredientLogic ingredientOnGrill;
 
-    float cookRate = 60f;
+    float cookRate = 25f;
     
 
     
@@ -75,12 +75,69 @@ public class GameManager : MonoBehaviour
     [SerializeField] public AudioClip[] cutIngredientClips;
     [SerializeField] public AudioClip squishedIngredientClip;
 
+    [SerializeField] public AudioClip grillSizzling;
+
     [SerializeField] public AudioClip grillingComplete;
+
+    float tableHeight;
+    float playerHeight = 1.7f;
+
+    public GameObject heightAdjustSliders;
+    public GameObject heightAdjustButtons;
+
+    public enum HeightAdjustMode
+    {
+        sliders,
+        buttons,     
+    }
+
+    public HeightAdjustMode heightAdjustMode;
+
+    float playerHeightAdjustRate = 0.1f;
+    float tableHeightAdjustRate = 0.1f;
+
 
     public void Update()
     {
-        tableTransform.position = new Vector3(0,tableHeightSlider.value,0);
-        playerOrigin.CameraYOffset = playerHeightSlider.value;
+        
+
+
+        if(heightAdjustMode == HeightAdjustMode.sliders)
+        {
+            heightAdjustSliders.SetActive(true);
+            heightAdjustButtons.SetActive(false);
+            tableHeight = tableHeightSlider.value;
+            playerHeight = playerHeightSlider.value;
+        }
+
+        if(heightAdjustMode == HeightAdjustMode.buttons)
+        {
+            heightAdjustSliders.SetActive(false);
+            heightAdjustButtons.SetActive(true);
+
+            if(playerHeight >= 2f)
+            {
+                playerHeight = 2f;
+            }
+
+            if(playerHeight <= 1.4f)
+            {
+                playerHeight = 1.4f;
+            }
+
+            if(tableHeight >= 0.675f)
+            {
+                tableHeight = 0.675f;
+            }
+
+            if(tableHeight <= -0.675f)
+            {
+                tableHeight = -0.675f;
+            }
+        }
+
+        tableTransform.position = new Vector3(0,tableHeight,0);
+        playerOrigin.CameraYOffset = playerHeight;
 
 
         IXRSelectInteractable slopAInteractable = SlopADispenserSocket.GetOldestInteractableSelected();
@@ -200,6 +257,28 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
+    }
+
+    public void playerHeightIncrease()
+    {
+        playerHeight += playerHeightAdjustRate;
+    }
+
+    public void playerHeightDecrease()
+    {
+        playerHeight -= playerHeightAdjustRate;
+    }
+
+
+
+    public void tableHeightIncrease()
+    {
+        tableHeight += tableHeightAdjustRate;
+    }
+
+    public void tableHeightDecrease()
+    {
+        tableHeight -= tableHeightAdjustRate;
     }
 
     /// <summary>
