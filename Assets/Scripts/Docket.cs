@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 
@@ -16,29 +17,84 @@ public class Docket : MonoBehaviour
 
     public TMP_Text orderNumberText;
 
-    public Image[] prepImages;
+    [Header("Prep Method Icons")]
+    [SerializeField] private Image sliceIcon;
+    [SerializeField] private Image washIcon;
+    [SerializeField] private Image cookIcon;
+    [SerializeField] private Image slopAIcon;
+    [SerializeField] private Image slopBIcon;
+    [SerializeField] private Image slopCIcon;
 
     public void DocketSetup()
     {
         if (docketOrder.isSlopBowl)
         {
-            activeImages = onePrepMethodLocations;
-        }
+            switch (docketOrder.requiredSlopState)
+            {
+                case Order.SlopStates.Slop_A_Full:
+                    activeImages = onePrepMethodLocations;
+                    activeImages[0].sprite = slopAIcon.sprite;
+                    break;
 
+                case Order.SlopStates.Slop_B_Full:
+                    activeImages = onePrepMethodLocations;
+                    activeImages[0].sprite = slopBIcon.sprite;
+                    break;
+
+                case Order.SlopStates.Slop_C_Full:
+                    activeImages = onePrepMethodLocations;
+                    activeImages[0].sprite = slopCIcon.sprite;
+                    break;
+
+                default:
+                    break;
+            }
+        }
         else
         {
             switch (docketOrder.requiredPrepMethod)
             {
-                case Order.PrepMethod.Dirty_Sliced_Raw or Order.PrepMethod.Dirty_Unsliced_Cooked or Order.PrepMethod.Clean_Unsliced_Raw:
-                    activeImages = onePrepMethodLocations;
-                    break;
-
-                case Order.PrepMethod.Clean_Sliced_Raw or Order.PrepMethod.Clean_Unsliced_Cooked or Order.PrepMethod.Dirty_Sliced_Cooked:
-                    activeImages = twoPrepMethodLocations;
-                    break;
-
                 case Order.PrepMethod.Clean_Sliced_Cooked:
                     activeImages = threePrepMethodLocations;
+                    activeImages[0].sprite = washIcon.sprite;
+                    activeImages[1].sprite = sliceIcon.sprite;
+                    activeImages[2].sprite = cookIcon.sprite;
+                    break;
+
+                case Order.PrepMethod.Clean_Sliced_Raw:
+                    activeImages = twoPrepMethodLocations;
+                    activeImages[0].sprite = washIcon.sprite;
+                   activeImages[1].sprite = sliceIcon.sprite;
+                    break;
+
+                case Order.PrepMethod.Clean_Unsliced_Cooked:
+                    activeImages = twoPrepMethodLocations;
+                    activeImages[0].sprite = washIcon.sprite;
+                    activeImages[1].sprite = cookIcon.sprite;
+                    break;
+
+                case Order.PrepMethod.Clean_Unsliced_Raw:
+                    activeImages = onePrepMethodLocations;
+                    activeImages[0].sprite = washIcon.sprite;
+                    break;
+
+                case Order.PrepMethod.Dirty_Sliced_Cooked:
+                    activeImages = twoPrepMethodLocations;
+                    activeImages[0].sprite = sliceIcon.sprite;
+                    activeImages[1].sprite = cookIcon.sprite;
+                    break;
+
+                case Order.PrepMethod.Dirty_Sliced_Raw:
+                    activeImages = onePrepMethodLocations;
+                    activeImages[0].sprite = sliceIcon.sprite;
+                    break;
+
+                case Order.PrepMethod.Dirty_Unsliced_Cooked:
+                    activeImages = onePrepMethodLocations;
+                    activeImages[0].sprite = cookIcon.sprite;
+                    break;
+
+                case Order.PrepMethod.Dirty_Unsliced_Raw:
                     break;
 
                 default:
@@ -46,11 +102,12 @@ public class Docket : MonoBehaviour
             }
         }
 
+        ingredientIcon.gameObject.SetActive(true);
         ingredientIcon.sprite = docketOrder.ingredient.associatedObject.ingredientIcon;
 
-        for (int i = 0; i < prepImages.Length; i++)
+        foreach (Image activeImage  in activeImages)
         {
-            activeImages[i].sprite = prepImages[i].sprite;
+            activeImage.gameObject.SetActive(true);
         }
     }
 }

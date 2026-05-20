@@ -9,7 +9,7 @@ public class OrderHandler : MonoBehaviour
 {
     public Queue<Order> orderQueue = new Queue<Order>();
     public Order currentOrder;
-    public List<Order> currentOrders;
+    public List<Order> currentOrders = new List<Order>();
 
     [Tooltip("The available ingredients")]
     public IngredientLogic[] ingredientPool;
@@ -67,6 +67,7 @@ public class OrderHandler : MonoBehaviour
             for (int i = 0; i < dockets.Count; i++)
             {
                 dockets[i].transform.parent = docketPositions[i].transform;
+                dockets[i].transform.position = new Vector3(0, 0, 0);
 
                 if (dockets[i].activeSelf == false && i < docketPositions.Length) { dockets[i].SetActive(true); }
             }
@@ -93,31 +94,34 @@ public class OrderHandler : MonoBehaviour
         {
             orderSlopState = UnityEngine.Random.Range(0, tempIng.slopStatesCount);
             tempOrder = new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredSlopState = (Order.SlopStates)orderSlopState };
+
+            orderQueue.Enqueue(tempOrder);
+            orderCounter++;
+
+            if (orderQueue.Count <= docketPositions.Length) currentOrders.Add(tempOrder);
         }
 
         else
         {
             orderState = UnityEngine.Random.Range(0, tempIng.statesCount);
             tempOrder = new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredPrepMethod = (Order.PrepMethod)orderState };
+
+            orderQueue.Enqueue(tempOrder);
+            orderCounter++;
+
+            if (orderQueue.Count <= docketPositions.Length) currentOrders.Add(tempOrder);
         }
 
-        orderQueue.Enqueue(tempOrder);
-        orderCounter++;
-
-        if (orderQueue.Count <= docketPositions.Length) currentOrders.Add(tempOrder);
-        GameObject newDocket = Instantiate(docketPrefab, docketPositions[0].transform.position, new Quaternion (0,0,0,0));
+        GameObject newDocket = Instantiate(docketPrefab);
         dockets.Add(newDocket);
 
-        TMP_Text docketText = newDocket.GetComponent<Docket>().orderNumberText;
+        TMP_Text docketText = newDocket.GetComponentInChildren<Docket>().orderNumberText;
         docketText.text = $"Order #{orderCounter}";
 
         if (dockets.Count <= docketPositions.Length)
         {
             newDocket.transform.parent = docketPositions[dockets.Count - 1].transform;
-            RectTransform rt = newDocket.GetComponent<RectTransform>();
-            rt.anchoredPosition = new Vector3(0,0);
-            rt.rotation = new Quaternion (0,0,0,0);
-            //newDocket.transform.position = new Vector3(newDocket.transform.position.x, newDocket.transform.position.y, 0);
+            newDocket.transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0,0,0,0));
             newDocket.SetActive(true);
         }
     }
