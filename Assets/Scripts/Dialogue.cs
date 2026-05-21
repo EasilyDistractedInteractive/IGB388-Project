@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
 
     public void ActivateDialogue(string dialogueText, AudioClip dialogueAudio, AudioSource dialogueAudioSource)
     {
+        Debug.Log("Dialogue Active");
         this.gameObject.SetActive(true);
         speechBubbleText.text = dialogueText;
         if (dialogueAudio != null && dialogueAudioSource != null)

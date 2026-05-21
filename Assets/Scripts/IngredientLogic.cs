@@ -73,7 +73,7 @@ public class IngredientLogic : MonoBehaviour
 
     public state currentModel = state.Dirty_Unsliced_Raw;
 
-    public TutorialManager tutorialManager;
+    public TutorialManager tutManager;
 
 
     
@@ -83,7 +83,7 @@ public class IngredientLogic : MonoBehaviour
     {
         Manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
 
-        tutorialManager = Manager.tutorialManager;
+        tutManager = Manager.tutorialManager;
 
         isSliced = false;
         isDirty = true;
@@ -100,14 +100,6 @@ public class IngredientLogic : MonoBehaviour
 
         
         
-    }
-
-    public void SetGrabbedBool()
-    {
-        if(tutorialManager != null)
-        {
-            tutorialManager.ingredientGrabbed = true;
-        }
     }
 
     void instantiateCurrentModel()
@@ -175,9 +167,9 @@ public class IngredientLogic : MonoBehaviour
         if(slices >= 3)
         {
             isSliced = true;
-            if(tutorialManager != null)
+            if(tutManager != null)
             {
-                tutorialManager.ingredientCut = true;
+                tutManager.TutorialPhase(2);
             }
         }
 
@@ -241,9 +233,9 @@ public class IngredientLogic : MonoBehaviour
         if(cleanliness >= 100f)
         {
             isDirty = false;
-            if(tutorialManager != null)
+            if(tutManager != null)
             {
-                tutorialManager.ingredientWashed = true;
+                tutManager.TutorialPhase(3);
             }
         }
 
@@ -257,9 +249,9 @@ public class IngredientLogic : MonoBehaviour
                 ingredientAudioSource.PlayOneShot(Manager.grillingComplete);
                 playedCookedDing = true;
             }
-            if (tutorialManager != null)
+            if (tutManager != null)
             {
-                tutorialManager.ingredientCooked = true;
+                tutManager.TutorialPhase(4);
             }
         }
 

@@ -12,17 +12,20 @@ public class OrderChecker : MonoBehaviour
 
     List<Order> validOrders;
 
+    Chef chef;
+
     void Start()
     {
         orderHandler = FindAnyObjectByType<OrderHandler>();
+        chef = orderHandler.chef;
     }
 
     //Currently only built to handle single ingredient orders
     private void OnTriggerEnter(Collider other)
     {
-        
         if (other.CompareTag("Ingredient"))
         {
+            chef.tutManager.TutorialPhase(5);
             submittedIngredient = other.GetComponentInParent<IngredientLogic>();
             Debug.Log($"Order submitted {submittedIngredient.name}");
             IngredientsCheck(submittedIngredient, other.transform.parent.gameObject);

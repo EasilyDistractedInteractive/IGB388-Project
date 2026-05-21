@@ -86,8 +86,7 @@ namespace UnityEngine.XR.Content.Interaction
 
         XRBaseInteractable InstantiateInteractable()
         {
-            Debug.Log("Ingredient Grabbed");
-            tutManager.ingredientGrabbed = true;
+            
             var socketTransform = m_Interactor.transform;
             return Instantiate(m_InteractablePrefab, socketTransform.position, socketTransform.rotation);
         }
@@ -102,6 +101,8 @@ namespace UnityEngine.XR.Content.Interaction
             if (!gameObject.activeInHierarchy || m_Interactor.interactionManager == null)
                 return;
 
+            Debug.Log("Ingredient Grabbed");
+            tutManager.TutorialPhase(1);
             m_Interactor.interactionManager.SelectEnter((IXRSelectInteractor)m_Interactor, InstantiateInteractable());
         }
     }

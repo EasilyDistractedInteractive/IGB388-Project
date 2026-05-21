@@ -38384,8 +38384,8 @@ MonoBehaviour:
   moodText: {fileID: 0}
   manager: {fileID: 0}
   tutManager: {fileID: 627230244}
-  replay: 1
-  gameActive: 1
+  replay: 0
+  gameActive: 0
   mood: 2
   voiceLines:
   - voiceLinesMood: 0
@@ -38412,22 +38412,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c216df8fa384bdf488438a9e9956948e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientGrabbed: 0
-  ingredientCut: 0
-  ingredientWashed: 0
-  ingredientCooked: 0
-  ingredientSubmitted: 0
   chef: {fileID: 627230243}
   tutorialVoiceLines:
-  - voiceLineText: Voice Line 1
+  - voiceLineText: G'day blorblump, glad you've finally made it. Hurry up and grab
+      an ingredient would you?
     voiceLineAudio: {fileID: 0}
-  - voiceLineText: Voice Line 2
+  - voiceLineText: "Nice, that wasn\u2019t too hard was it? Now can you cut that
+      up for me?"
     voiceLineAudio: {fileID: 0}
-  - voiceLineText: Voice Line 3
+  - voiceLineText: Alright, good job. Now, can you wash an ingredient for me? Then
+      maybe yourself after, you kinda stink
     voiceLineAudio: {fileID: 0}
-  - voiceLineText: Voice Line 4
+  - voiceLineText: Geez, took you long enough. Go ahead and throw that one on the
+      grill for me now
     voiceLineAudio: {fileID: 0}
-  - voiceLineText: Voice Line 5
+  - voiceLineText: "Great, that\u2019s all sorted. Just chuck that over to me now,
+      then you can properly start your shift"
     voiceLineAudio: {fileID: 0}
 --- !u!1 &632109388 stripped
 GameObject:

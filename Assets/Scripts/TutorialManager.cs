@@ -5,41 +5,40 @@ using static Chef;
 
 public class TutorialManager : MonoBehaviour
 {
-    public bool ingredientGrabbed = false;
-
-    public bool ingredientCut = false;
-
-    public bool ingredientWashed = false;
-
-    public bool ingredientCooked = false;
-
-    public bool ingredientSubmitted = false;
-
-    bool[] tutorialProgressionSteps;
+    int tutorialProgression = 0;
+    int tutorialCompletionAmt = 5;
 
     [SerializeField] private Chef chef;
 
     [SerializeField] public Chef.VoiceLine[] tutorialVoiceLines;
 
-    private void Start()
+    public void TutorialPhase(int voiceLineInt)
     {
-        tutorialProgressionSteps = new bool[] { ingredientGrabbed, ingredientCut, ingredientWashed, ingredientCooked, ingredientSubmitted};
-    }
-
-    public IEnumerator Tutorial()
-    {
-        Debug.Log("Tutorial Beginning");
-        for (int i = 0; i < tutorialVoiceLines.Length; i++)
+        if (voiceLineInt < tutorialVoiceLines.Length)
         {
-            Chef.VoiceLine voiceLine = tutorialVoiceLines[i];
-            bool nextStep = tutorialProgressionSteps[i];
+            Chef.VoiceLine voiceLine = tutorialVoiceLines[voiceLineInt];
 
             chef.chefDialogue.ActivateDialogue(voiceLine.voiceLineText, voiceLine.voiceLineAudio, chef.chefAudioSource);
-
-            yield return new WaitUntil(() => tutorialProgressionSteps[i] == true);
         }
 
-        chef.manager.gameTimer.timerRunning = true;
-        chef.gameActive = true;
+        tutorialProgression++;
+        if (tutorialProgression >= tutorialCompletionAmt)
+        {
+            chef.chefDialogue.gameObject.SetActive(false);
+            chef.manager.gameTimer.timerRunning = true;
+            chef.gameActive = true;
+            chef.nextOrderTimer = Time.time + chef.nextOrderInterval;
+        }
+    }
+
+    private void Update()
+    {
+        if (tutorialProgression >= tutorialCompletionAmt)
+        {
+            chef.chefDialogue.gameObject.SetActive(false);
+            chef.manager.gameTimer.timerRunning = true;
+            chef.gameActive = true;
+            chef.nextOrderTimer = Time.time + chef.nextOrderInterval;
+        }
     }
 }

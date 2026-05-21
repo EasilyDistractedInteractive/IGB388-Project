@@ -7,8 +7,8 @@ using UnityEngine.XR;
 
 public class Chef : MonoBehaviour
 {
-    private float nextOrderTimer; //Set to 3 for now for testing purposes
-    [SerializeField] private float nextOrderInterval;
+    [HideInInspector] public float nextOrderTimer; //Set to 3 for now for testing purposes
+    public float nextOrderInterval;
 
     private float moodCheckTimer;
     [SerializeField] private float moodCheckInterval;
@@ -46,7 +46,7 @@ public class Chef : MonoBehaviour
         manager = FindAnyObjectByType<GameManager>();
         gameTimer = manager.gameTimer;
 
-        if (!replay) StartCoroutine(tutManager.Tutorial());
+        if (!replay) tutManager.TutorialPhase(0);
     }
 
     void Update()
@@ -55,6 +55,8 @@ public class Chef : MonoBehaviour
 
         if (gameActive)
         {
+
+            Debug.Log("Game Beginning, orders generating");
             if (Time.time > nextOrderTimer)
             {
                 orderHandler.GenerateOrder(orderComplexity);
