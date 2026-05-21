@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5321234387034371472}
   - component: {fileID: 8532306399405059928}
+  - component: {fileID: 4497404267498693484}
   m_Layer: 0
   m_Name: CustomerC
   m_TagString: Untagged
@@ -54,6 +55,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.64, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4497404267498693484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4206992014847348492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc3bbe55b6fdab48a79d262974ce8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1001 &7310023442899582247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,6 +151,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b201d1650897c14f88c7b945718d0fc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3117128266346010424}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b201d1650897c14f88c7b945718d0fc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7934300259279033938}
   m_SourcePrefab: {fileID: 100100000, guid: 8b201d1650897c14f88c7b945718d0fc, type: 3}
 --- !u!4 &7131681913134373580 stripped
 Transform:
@@ -170,3 +187,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7934300259279033938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616433897466986614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc3bbe55b6fdab48a79d262974ce8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 3117128266346010424}

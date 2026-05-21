@@ -40,6 +40,8 @@ public class IngredientLogic : MonoBehaviour
 
     bool playedCookedDing = false;
     bool playedGrillSizzle = false;
+    bool playedSinkSploosh = false;
+    
 
 
     public enum state
@@ -243,7 +245,7 @@ public class IngredientLogic : MonoBehaviour
             isDirty = false;
             if(tutorialManager != null)
             {
-            tutorialManager.ingredientWashed = true;
+                tutorialManager.ingredientWashed = true;
             }
         }
 
@@ -284,6 +286,12 @@ public class IngredientLogic : MonoBehaviour
     {
         isInSink = true;
         framesOutOfSink = 0;
+
+        if(playedSinkSploosh == false)
+        {
+            ingredientAudioSource.PlayOneShot(Manager.sinkSploosh);
+            playedSinkSploosh = true;
+        }
     }
 
     public void setIsOnGrillTrue()
