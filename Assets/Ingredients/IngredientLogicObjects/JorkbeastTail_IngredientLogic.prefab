@@ -1000,9 +1000,11 @@ MonoBehaviour:
   framesOffGrill: 0
   cookedness: 0
   ingredientAudioSource: {fileID: 3878513013349871916}
-  ingredientIcon: {fileID: 21300000, guid: 45d5d868f6ac7433db8072bb252ca290, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: 1893a262ca60c164b9dcfbcd8ccb3f7f, type: 3}
   statesCount: 4
+  slopStatesCount: 6
   currentState: 0
+  currentSlopState: 0
   currentModel: 7
   tutorialManager: {fileID: 0}
 --- !u!1001 &7233365038009831975

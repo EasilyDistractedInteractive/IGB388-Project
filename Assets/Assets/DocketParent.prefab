@@ -391,7 +391,12 @@ MonoBehaviour:
   activeImages: []
   ingredientIcon: {fileID: 5656940836027263562}
   orderNumberText: {fileID: 3496934062080386795}
-  prepImages: []
+  sliceIcon: {fileID: 21300000, guid: db661606cff082e4494ee491cdd24e98, type: 3}
+  washIcon: {fileID: 21300000, guid: 6e02004c758103d4db4622f787b9f268, type: 3}
+  cookIcon: {fileID: 21300000, guid: 74ba82e50b9024540804194db24a1824, type: 3}
+  slopAIcon: {fileID: 21300000, guid: 6d61988b06ba9de4bb77903f0401e126, type: 3}
+  slopBIcon: {fileID: 21300000, guid: 57a461dfb00d59d4589bf0cc2c61b57a, type: 3}
+  slopCIcon: {fileID: 21300000, guid: b4646feb65f00604482e52e95f4ee353, type: 3}
 --- !u!1 &4664984104112805520
 GameObject:
   m_ObjectHideFlags: 0

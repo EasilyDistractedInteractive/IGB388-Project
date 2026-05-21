@@ -114,8 +114,11 @@ public class OrderHandler : MonoBehaviour
 
         GameObject newDocket = Instantiate(docketPrefab);
         dockets.Add(newDocket);
+        Docket newDocketReference = newDocket.GetComponentInChildren<Docket>();
+        newDocketReference.docketOrder = tempOrder;
+        newDocketReference.DocketSetup();
 
-        TMP_Text docketText = newDocket.GetComponentInChildren<Docket>().orderNumberText;
+        TMP_Text docketText = newDocketReference.orderNumberText;
         docketText.text = $"Order #{orderCounter}";
 
         if (dockets.Count <= docketPositions.Length)
