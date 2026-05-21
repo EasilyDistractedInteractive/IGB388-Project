@@ -33,7 +33,7 @@ public class Chef : MonoBehaviour
 
     public TutorialManager tutManager;
 
-    public bool replay = true; //Bool to check if game is being replayed, will disable tutorial if true
+    public bool replay; //Bool to check if game is being replayed, will disable tutorial if true
 
     public bool gameActive;
 
@@ -46,7 +46,10 @@ public class Chef : MonoBehaviour
         manager = FindAnyObjectByType<GameManager>();
         gameTimer = manager.gameTimer;
 
-        if (!replay) tutManager.TutorialPhase(0);
+        if (!replay)
+        {
+            tutManager.TutorialPhase(0, tutManager.tutStarted);
+        }
     }
 
     void Update()

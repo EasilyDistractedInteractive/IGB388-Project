@@ -25,7 +25,11 @@ public class OrderChecker : MonoBehaviour
     {
         if (other.CompareTag("Ingredient"))
         {
-            chef.tutManager.TutorialPhase(5);
+            if (!chef.tutManager.tutComplete && chef.tutManager.ingredientCut && chef.tutManager.ingredientCooked && chef.tutManager.ingredientWashed)
+            {
+                chef.tutManager.TutorialPhase(5, chef.tutManager.ingredientSubmitted);
+            }
+
             submittedIngredient = other.GetComponentInParent<IngredientLogic>();
             Debug.Log($"Order submitted {submittedIngredient.name}");
             IngredientsCheck(submittedIngredient, other.transform.parent.gameObject);

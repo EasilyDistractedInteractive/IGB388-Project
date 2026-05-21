@@ -38374,6 +38374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cae523750c7cf4abf6bb5126df82b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextOrderTimer: 0
   nextOrderInterval: 5
   moodCheckInterval: 20
   orderComplexity: 50
@@ -38412,6 +38413,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c216df8fa384bdf488438a9e9956948e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientGrabbed: 0
+  ingredientCut: 0
+  ingredientWashed: 0
+  ingredientCooked: 0
+  ingredientSubmitted: 0
+  slopDispensed: 0
+  tutComplete: 0
   chef: {fileID: 627230243}
   tutorialVoiceLines:
   - voiceLineText: G'day blorblump, glad you've finally made it. Hurry up and grab
@@ -38427,8 +38435,12 @@ MonoBehaviour:
       grill for me now
     voiceLineAudio: {fileID: 0}
   - voiceLineText: "Great, that\u2019s all sorted. Just chuck that over to me now,
-      then you can properly start your shift"
+      we haven't got all day"
     voiceLineAudio: {fileID: 0}
+  - voiceLineText: Alright, nearly done. Just grab a bowl and fill it up with some
+      slop then you can get into your proper shift
+    voiceLineAudio: {fileID: 0}
+  tutStarted: 0
 --- !u!1 &632109388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: dca032c8ab292654d8b9c015c7e9a130, type: 3}

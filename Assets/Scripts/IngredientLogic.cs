@@ -1,3 +1,4 @@
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -167,10 +168,7 @@ public class IngredientLogic : MonoBehaviour
         if(slices >= 3)
         {
             isSliced = true;
-            if(tutManager != null)
-            {
-                tutManager.TutorialPhase(2);
-            }
+            if (!tutManager.tutComplete) tutManager.TutorialPhase(2, tutManager.ingredientCooked);
         }
 
         if(ingredient.isSlopBowl == false)
@@ -233,10 +231,7 @@ public class IngredientLogic : MonoBehaviour
         if(cleanliness >= 100f)
         {
             isDirty = false;
-            if(tutManager != null)
-            {
-                tutManager.TutorialPhase(3);
-            }
+            if (!tutManager.tutComplete) tutManager.TutorialPhase(3, tutManager.ingredientWashed);
         }
 
 
@@ -249,14 +244,8 @@ public class IngredientLogic : MonoBehaviour
                 ingredientAudioSource.PlayOneShot(Manager.grillingComplete);
                 playedCookedDing = true;
             }
-            if (tutManager != null)
-            {
-                tutManager.TutorialPhase(4);
-            }
+            if (!tutManager.tutComplete) tutManager.TutorialPhase(4, tutManager.ingredientCooked);
         }
-
-    
-
     }
 
     void LateUpdate()
@@ -345,6 +334,7 @@ public class IngredientLogic : MonoBehaviour
         {
             currentState = state.Clean_Unsliced_Raw;
             currentSlopState = slopStates.Slop_A_Full;
+            if (!tutManager.tutComplete) tutManager.TutorialPhase(6, tutManager.slopDispensed);
             print("SlopA!");
         }
     }
@@ -355,6 +345,7 @@ public class IngredientLogic : MonoBehaviour
         {
             currentState = state.Clean_Sliced_Raw;
             currentSlopState = slopStates.Slop_B_Full;
+            if (!tutManager.tutComplete) tutManager.TutorialPhase(6, tutManager.slopDispensed);
             print("SlopB!");
         }
     }
@@ -365,6 +356,7 @@ public class IngredientLogic : MonoBehaviour
         {
             currentState = state.Dirty_Sliced_Raw;
             currentSlopState = slopStates.Slop_C_Full;
+            if (!tutManager.tutComplete) tutManager.TutorialPhase(6, tutManager.slopDispensed);
             print("SlopC!");
         }
     }

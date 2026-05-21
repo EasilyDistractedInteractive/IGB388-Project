@@ -1,7 +1,6 @@
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 namespace UnityEngine.XR.Content.Interaction
@@ -101,8 +100,8 @@ namespace UnityEngine.XR.Content.Interaction
             if (!gameObject.activeInHierarchy || m_Interactor.interactionManager == null)
                 return;
 
-            Debug.Log("Ingredient Grabbed");
-            tutManager.TutorialPhase(1);
+            tutManager.TutorialPhase(1, tutManager.ingredientGrabbed);
+
             m_Interactor.interactionManager.SelectEnter((IXRSelectInteractor)m_Interactor, InstantiateInteractable());
         }
     }
