@@ -47,6 +47,7 @@ public class Docket : MonoBehaviour
                     break;
 
                 default:
+                    Debug.Log("No attached slop status");
                     activeImages = onePrepMethodLocations;
                     activeImages[0].sprite = slopAIcon;
                     docketOrder.ingredient.associatedObject.currentSlopState = IngredientLogic.slopStates.Slop_A_Full;

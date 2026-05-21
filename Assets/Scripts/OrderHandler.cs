@@ -42,6 +42,11 @@ public class OrderHandler : MonoBehaviour
 
         tempOrderQueue.Remove(itemToRemove);
 
+        foreach (Order order in tempOrderQueue)
+        {
+            Debug.Log(order.ingredient.name);
+        }
+
         Queue<Order> newQueue = new Queue<Order>(tempOrderQueue);
         return newQueue;
     }
@@ -50,6 +55,8 @@ public class OrderHandler : MonoBehaviour
     {
         orderQueue = RemoveFromQueue(orderQueue, order);
         currentOrders.Remove(order);
+        dockets.Remove(order.attachedDocket);
+        Destroy(order.attachedDocket);
 
         List<Order> tempOrderQueue = orderQueue.ToList<Order>();
 
@@ -60,10 +67,8 @@ public class OrderHandler : MonoBehaviour
             tempDocket.transform.parent = docketPositions[i].transform;
             tempDocket.transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
             tempDocket.SetActive(true);
+            currentOrders.Add(tempDocket.GetComponentInChildren<Docket>().docketOrder);
         }
-
-        dockets.Remove(order.attachedDocket);
-        Destroy(order.attachedDocket);
 
         /* GameObject tempDocket = order.attachedDocket;
 
