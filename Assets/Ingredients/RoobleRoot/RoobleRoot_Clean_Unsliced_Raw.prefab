@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7221983376496805624, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f6a98c2ded6047848a902cb3d388b42e, type: 2}
     - target: {fileID: 919132149155446097, guid: 316356c21033ab34595eeed8bf10eba0, type: 3}
       propertyPath: m_Name
       value: 'Rooble Root UV Unwrap '

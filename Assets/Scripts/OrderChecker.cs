@@ -20,9 +20,11 @@ public class OrderChecker : MonoBehaviour
     //Currently only built to handle single ingredient orders
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Ingredient"))
         {
             submittedIngredient = other.GetComponentInParent<IngredientLogic>();
+            Debug.Log($"Order submitted {submittedIngredient.name}");
             IngredientsCheck(submittedIngredient, other.transform.parent.gameObject);
         }
     }
@@ -31,16 +33,12 @@ public class OrderChecker : MonoBehaviour
     {
         Destroy(ingredientObject);
 
-        Order currentOrder = orderHandler.currentOrder;
-
         validOrders = new List<Order>();
-
-        
 
         //Gets all the orders with the same ingredient type as the submitted order
         foreach (Order order in orderHandler.currentOrders)
         {
-            if (submittedIngredient.ingredientName == currentOrder.ingredient.ingredientName)
+            if (submittedIngredient.ingredientName == order.ingredient.ingredientName)
             {
                 validOrders.Add(order);
             }
@@ -58,18 +56,22 @@ public class OrderChecker : MonoBehaviour
             }
         }
 
-        //Compares the required state of each orders required ingredient with the state of the submitted ingredient
-        foreach (Order order in validOrders)
+        else
         {
-            if (submittedIngredient.currentState.ToString() == order.requiredPrepMethod.ToString())
+            //Compares the required state of each orders required ingredient with the state of the submitted ingredient
+            foreach (Order order in validOrders)
             {
-                OrderCorrect(order);
+                if (submittedIngredient.currentState.ToString() == order.requiredPrepMethod.ToString())
+                {
+                    OrderCorrect(order);
+                }
             }
         }
     }
 
     void OrderCorrect(Order order)
     {
+        order.orderComplete = true;
         orderHandler.OrderComplete(order);
 
         //Spawns and destroys the added juice effect

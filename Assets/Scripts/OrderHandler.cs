@@ -50,7 +50,7 @@ public class OrderHandler : MonoBehaviour
 
         foreach (GameObject docket in dockets)
         {
-            if (docket.GetComponent<Docket>().docketOrder.orderComplete)
+            if (docket.GetComponentInChildren<Docket>().docketOrder.orderComplete)
             {
                 tempDocket = docket;
                 break;
@@ -67,9 +67,14 @@ public class OrderHandler : MonoBehaviour
             for (int i = 0; i < dockets.Count; i++)
             {
                 dockets[i].transform.parent = docketPositions[i].transform;
-                dockets[i].transform.position = new Vector3(0, 0, 0);
+                dockets[i].transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
 
-                if (dockets[i].activeSelf == false && i < docketPositions.Length) { dockets[i].SetActive(true); }
+                if (dockets[i].activeSelf == false && i < docketPositions.Length) 
+                {
+                    currentOrders.Add(dockets[i].GetComponentInChildren<Docket>().docketOrder);
+                    dockets[i].transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+                    dockets[i].SetActive(true);
+                }
             }
         }
     }
@@ -94,6 +99,8 @@ public class OrderHandler : MonoBehaviour
         {
             orderSlopState = UnityEngine.Random.Range(0, tempIng.slopStatesCount);
             tempOrder = new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredSlopState = (Order.SlopStates)orderSlopState };
+            tempOrder.isSlopBowl = true;
+            tempOrder.orderComplete = false;
 
             orderQueue.Enqueue(tempOrder);
             orderCounter++;
@@ -105,6 +112,8 @@ public class OrderHandler : MonoBehaviour
         {
             orderState = UnityEngine.Random.Range(0, tempIng.statesCount);
             tempOrder = new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredPrepMethod = (Order.PrepMethod)orderState };
+            tempOrder.isSlopBowl = false;
+            tempOrder.orderComplete = false;
 
             orderQueue.Enqueue(tempOrder);
             orderCounter++;
@@ -131,7 +140,6 @@ public class OrderHandler : MonoBehaviour
 
     public void OrderComplete(Order order)
     {
-        order.orderComplete = true;
         UpdateOrderQueue(order);
 
         //Add function to add score for completed order
