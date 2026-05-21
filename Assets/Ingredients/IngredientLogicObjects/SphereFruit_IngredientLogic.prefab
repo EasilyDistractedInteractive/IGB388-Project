@@ -518,7 +518,19 @@ MonoBehaviour:
       m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6638326213517170704}
+        m_TargetAssemblyTypeName: IngredientLogic, Assembly-CSharp
+        m_MethodName: SetGrabbedBool
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_LastSelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -688,7 +700,9 @@ MonoBehaviour:
   ingredientAudioSource: {fileID: 7409355119600558989}
   ingredientIcon: {fileID: 21300000, guid: fcc73ccf9702bf14ab8270daf038d811, type: 3}
   statesCount: 4
+  slopStatesCount: 6
   currentState: 0
+  currentSlopState: 0
   currentModel: 7
   tutorialManager: {fileID: 0}
 --- !u!1 &7418224510824033846

@@ -69,7 +69,7 @@ public class OrderHandler : MonoBehaviour
                 dockets[i].transform.parent = docketPositions[i].transform;
                 dockets[i].transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
 
-                if (dockets[i].activeSelf == false && i < docketPositions.Length) 
+                if (dockets[i].activeSelf == false && i < docketPositions.Length && docketPositions[i].transform.childCount == 0)
                 {
                     currentOrders.Add(dockets[i].GetComponentInChildren<Docket>().docketOrder);
                     dockets[i].transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
