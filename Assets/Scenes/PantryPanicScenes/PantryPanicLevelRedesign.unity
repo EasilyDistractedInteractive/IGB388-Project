@@ -38444,6 +38444,7 @@ MonoBehaviour:
   tutManager: {fileID: 627230244}
   replay: 0
   gameActive: 0
+  orderChecker: {fileID: 1942574457}
   mood: 2
   voiceLines:
   - voiceLinesMood: 0
@@ -38491,7 +38492,7 @@ MonoBehaviour:
   - voiceLineText: Geez, took you long enough. Go ahead and throw that one on the
       grill for me now
     voiceLineAudio: {fileID: 0}
-  - voiceLineText: "Great, that\u2019s all sorted. Just chuck that over to me now,
+  - voiceLineText: "Great, that\u2019s all sorted. Just chuck that towards me now,
       we haven't got all day"
     voiceLineAudio: {fileID: 0}
   - voiceLineText: Alright, nearly done. Just grab a bowl and fill it up with some
@@ -146624,7 +146625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1942574456
 BoxCollider:
   m_ObjectHideFlags: 0

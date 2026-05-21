@@ -37,6 +37,8 @@ public class Chef : MonoBehaviour
 
     public bool gameActive;
 
+    public OrderChecker orderChecker;
+
     void Start()
     {
         nextOrderTimer = Time.time + nextOrderInterval;

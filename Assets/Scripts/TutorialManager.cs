@@ -27,6 +27,8 @@ public class TutorialManager : MonoBehaviour
 
     public void TutorialPhase(int voiceLineInt, bool associatedBool)
     {
+        if (voiceLineInt == 4) { chef.orderChecker.gameObject.SetActive(true); }
+
         if (voiceLineInt == 6) { EndTutorial(); }
 
         if (!associatedBool && !tutComplete)
