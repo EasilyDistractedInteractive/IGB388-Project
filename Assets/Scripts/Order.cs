@@ -19,17 +19,17 @@ public class Order
 
     public enum SlopStates
     {
-        Slop_A_Empty,
+        Slop_Empty,
         Slop_A_Full,
-        Slop_B_Empty,
         Slop_B_Full,
-        Slop_C_Empty,
         Slop_C_Full
     }
 
     public bool isSlopBowl;
 
     public bool orderComplete;
+
+    public GameObject attachedDocket;
 
     public PrepMethod requiredPrepMethod;
     public SlopStates requiredSlopState;

@@ -62,6 +62,7 @@ public class OrderChecker : MonoBehaviour
             //Compares the required state of each orders required ingredient with the state of the submitted ingredient
             foreach (Order order in validOrders)
             {
+                Debug.Log($"Submitted ingredient is {submittedIngredient.currentState}, required ingredient is {order.requiredPrepMethod}");
                 if (submittedIngredient.currentState.ToString() == order.requiredPrepMethod.ToString())
                 {
                     OrderCorrect(order);

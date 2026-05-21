@@ -586,9 +586,9 @@ MonoBehaviour:
   ingredientAudioSource: {fileID: 1345526807391714016}
   ingredientIcon: {fileID: 21300000, guid: 15c308c8887b369499f430d14a6fa7be, type: 3}
   statesCount: 4
-  slopStatesCount: 6
+  slopStatesCount: 4
   currentState: 0
-  currentSlopState: 0
+  currentSlopState: 1
   currentModel: 0
   tutorialManager: {fileID: 0}
 --- !u!1 &3246653465403603246

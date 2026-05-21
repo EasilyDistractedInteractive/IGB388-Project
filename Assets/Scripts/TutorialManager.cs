@@ -19,7 +19,6 @@ public class TutorialManager : MonoBehaviour
 
     [SerializeField] private Chef chef;
 
-
     [SerializeField] public Chef.VoiceLine[] tutorialVoiceLines;
 
     private void Start()
@@ -37,7 +36,7 @@ public class TutorialManager : MonoBehaviour
 
             chef.chefDialogue.ActivateDialogue(voiceLine.voiceLineText, voiceLine.voiceLineAudio, chef.chefAudioSource);
 
-            yield return new WaitUntil(() => nextStep);
+            yield return new WaitUntil(() => tutorialProgressionSteps[i] == true);
         }
 
         chef.manager.gameTimer.timerRunning = true;

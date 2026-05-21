@@ -1,6 +1,8 @@
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEditor.Build.Content;
+using UnityEngine;
 
 namespace UnityEngine.XR.Content.Interaction
 {
@@ -28,6 +30,10 @@ namespace UnityEngine.XR.Content.Interaction
 
         XRBaseInteractor m_Interactor;
 
+        public GameManager manager;
+        public Chef chef;
+        public TutorialManager tutManager;
+
         /// <summary>
         /// Whether infinite spawning is enabled.
         /// </summary>
@@ -46,6 +52,9 @@ namespace UnityEngine.XR.Content.Interaction
         void Awake()
         {
             m_Interactor = GetComponent<XRBaseInteractor>();
+            manager = FindAnyObjectByType<GameManager>();
+            chef = manager.chef;
+            tutManager = chef.tutManager;
 
             if (m_OverrideStartingSelectedInteractable)
                 OverrideStartingSelectedInteractable();
@@ -77,6 +86,8 @@ namespace UnityEngine.XR.Content.Interaction
 
         XRBaseInteractable InstantiateInteractable()
         {
+            Debug.Log("Ingredient Grabbed");
+            tutManager.ingredientGrabbed = true;
             var socketTransform = m_Interactor.transform;
             return Instantiate(m_InteractablePrefab, socketTransform.position, socketTransform.rotation);
         }

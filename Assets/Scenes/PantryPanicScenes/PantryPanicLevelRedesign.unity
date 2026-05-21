@@ -11847,6 +11847,9 @@ MonoBehaviour:
   m_Active: 1
   m_OverrideStartingSelectedInteractable: 1
   m_InteractablePrefab: {fileID: 1193064027230838348, guid: a24f1a6e21742244cbdd844afe45ad44, type: 3}
+  manager: {fileID: 0}
+  chef: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!114 &113358527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49189,6 +49192,9 @@ MonoBehaviour:
   m_Active: 1
   m_OverrideStartingSelectedInteractable: 1
   m_InteractablePrefab: {fileID: 4898069815235508508, guid: 998ea5fc583ffee4a98cf89bd54c9d0c, type: 3}
+  manager: {fileID: 0}
+  chef: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!114 &824324852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71862,6 +71868,9 @@ MonoBehaviour:
   m_Active: 1
   m_OverrideStartingSelectedInteractable: 1
   m_InteractablePrefab: {fileID: 8068901875821496233, guid: 1cfe506b480dce74fbe11c3a95a9239a, type: 3}
+  manager: {fileID: 0}
+  chef: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!114 &1198200712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125089,6 +125098,9 @@ MonoBehaviour:
   m_Active: 1
   m_OverrideStartingSelectedInteractable: 1
   m_InteractablePrefab: {fileID: 1193064027230838348, guid: a24f1a6e21742244cbdd844afe45ad44, type: 3}
+  manager: {fileID: 0}
+  chef: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!114 &1513102029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125540,6 +125552,9 @@ MonoBehaviour:
   m_Active: 1
   m_OverrideStartingSelectedInteractable: 1
   m_InteractablePrefab: {fileID: 201088608572175168, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
+  manager: {fileID: 0}
+  chef: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!114 &1521307458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137515,6 +137530,9 @@ MonoBehaviour:
   m_Active: 1
   m_OverrideStartingSelectedInteractable: 1
   m_InteractablePrefab: {fileID: 4673194667028891847, guid: d5af4a3564a0250478c52c015551ca05, type: 3}
+  manager: {fileID: 0}
+  chef: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!114 &1792937824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147058,6 +147076,9 @@ MonoBehaviour:
   m_Active: 1
   m_OverrideStartingSelectedInteractable: 1
   m_InteractablePrefab: {fileID: 1193064027230838348, guid: 38669b04feafbe24e9ad42f2a6d6cf3a, type: 3}
+  manager: {fileID: 0}
+  chef: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!114 &1967893957
 MonoBehaviour:
   m_ObjectHideFlags: 0

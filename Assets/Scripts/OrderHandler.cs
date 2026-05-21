@@ -38,45 +38,47 @@ public class OrderHandler : MonoBehaviour
     public Queue<Order> RemoveFromQueue(Queue<Order> myQueue, Order itemToRemove)
     {
         //Filters out the item and creates a new queue from the result
-        Queue<Order> newQueue = new(myQueue.Where(x => x != itemToRemove));
+        List<Order> tempOrderQueue = orderQueue.ToList<Order>();
+
+        tempOrderQueue.Remove(itemToRemove);
+
+        Queue<Order> newQueue = new Queue<Order>(tempOrderQueue);
         return newQueue;
     }
 
     void UpdateOrderQueue(Order order)
     {
         orderQueue = RemoveFromQueue(orderQueue, order);
+        currentOrders.Remove(order);
 
-        GameObject tempDocket = null;
+        List<Order> tempOrderQueue = orderQueue.ToList<Order>();
 
-        foreach (GameObject docket in dockets)
+        for (int i = 0; i < docketPositions.Length; i++)
         {
-            if (docket.GetComponentInChildren<Docket>().docketOrder.orderComplete)
-            {
-                tempDocket = docket;
-                break;
-            }
-        }
-        
-        if (tempDocket != null)
-        {
-            dockets.Remove(dockets[0]);
-            Destroy(tempDocket);
-            currentOrders.Remove(order);
+            GameObject tempDocket = tempOrderQueue[i].attachedDocket;
 
-            //Updating the queued dockets so the leftmost docket is the first remaining one to have been generated
-            for (int i = 0; i < dockets.Count; i++)
-            {
-                dockets[i].transform.parent = docketPositions[i].transform;
-                dockets[i].transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-
-                if (dockets[i].activeSelf == false && i < docketPositions.Length && docketPositions[i].transform.childCount == 0)
-                {
-                    currentOrders.Add(dockets[i].GetComponentInChildren<Docket>().docketOrder);
-                    dockets[i].transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-                    dockets[i].SetActive(true);
-                }
-            }
+            tempDocket.transform.parent = docketPositions[i].transform;
+            tempDocket.transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+            tempDocket.SetActive(true);
         }
+
+        dockets.Remove(order.attachedDocket);
+        Destroy(order.attachedDocket);
+
+        /* GameObject tempDocket = order.attachedDocket;
+
+        int oldDocketPos = dockets.IndexOf(tempDocket);
+
+        dockets.Remove(tempDocket);
+        Destroy(tempDocket);
+        currentOrders.Remove(order);
+
+        GameObject nextDocket = dockets[currentOrders.Count+1];
+
+        nextDocket.transform.parent = docketPositions[oldDocketPos].transform;
+        nextDocket.transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+        nextDocket.SetActive(true);
+        */
     }
 
     //Technically can scale infinitely but can be hardcapped if need be
@@ -90,7 +92,7 @@ public class OrderHandler : MonoBehaviour
         IngredientLogic tempIng = ingredientPool[UnityEngine.Random.Range(0, ingredientPool.Length)];
         tempOrderComplexity += tempIng.ingredient.ingredientComplexity;
 
-        int orderSlopState;
+        int orderSlopState = 1;
         int orderState;
 
         Order tempOrder = new Order();
@@ -127,6 +129,7 @@ public class OrderHandler : MonoBehaviour
         Docket newDocketReference = newDocket.GetComponentInChildren<Docket>();
         newDocketReference.docketOrder = tempOrder;
         newDocketReference.DocketSetup();
+        tempOrder.attachedDocket = newDocket;
 
         TMP_Text docketText = newDocketReference.orderNumberText;
         docketText.text = $"Order #{orderCounter}";

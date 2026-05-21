@@ -47,6 +47,9 @@ public class Docket : MonoBehaviour
                     break;
 
                 default:
+                    activeImages = onePrepMethodLocations;
+                    activeImages[0].sprite = slopAIcon;
+                    docketOrder.ingredient.associatedObject.currentSlopState = IngredientLogic.slopStates.Slop_A_Full;
                     break;
             }
         }

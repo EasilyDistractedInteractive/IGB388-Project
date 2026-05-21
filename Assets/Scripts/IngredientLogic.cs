@@ -65,7 +65,7 @@ public class IngredientLogic : MonoBehaviour
     }
 
     [HideInInspector] public int statesCount = 8; //Update if more states are added
-    [HideInInspector] public int slopStatesCount = 6; //Update if more states are added
+    [HideInInspector] public int slopStatesCount = 4; //Update if more states are added
 
     [HideInInspector] public state currentState = state.Dirty_Unsliced_Raw;
 
