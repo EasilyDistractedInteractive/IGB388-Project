@@ -58,11 +58,9 @@ public class IngredientLogic : MonoBehaviour
 
     public enum slopStates
     {
-        Slop_A_Empty,
+        Slop_Empty,
         Slop_A_Full,
-        Slop_B_Empty,
         Slop_B_Full,
-        Slop_C_Empty,
         Slop_C_Full
     }
 
@@ -71,7 +69,7 @@ public class IngredientLogic : MonoBehaviour
 
     [HideInInspector] public state currentState = state.Dirty_Unsliced_Raw;
 
-    [HideInInspector] public slopStates currentSlopState = slopStates.Slop_A_Empty;
+    [HideInInspector] public slopStates currentSlopState = slopStates.Slop_Empty;
 
     public state currentModel = state.Dirty_Unsliced_Raw;
 
@@ -354,6 +352,7 @@ public class IngredientLogic : MonoBehaviour
         if(ingredient.isSlopBowl == true)
         {
             currentState = state.Clean_Unsliced_Raw;
+            currentSlopState = slopStates.Slop_A_Full;
             print("SlopA!");
         }
     }
@@ -363,6 +362,7 @@ public class IngredientLogic : MonoBehaviour
         if(ingredient.isSlopBowl == true)
         {
             currentState = state.Clean_Sliced_Raw;
+            currentSlopState = slopStates.Slop_B_Full;
             print("SlopB!");
         }
     }
@@ -372,6 +372,7 @@ public class IngredientLogic : MonoBehaviour
         if(ingredient.isSlopBowl == true)
         {
             currentState = state.Dirty_Sliced_Raw;
+            currentSlopState = slopStates.Slop_C_Full;
             print("SlopC!");
         }
     }

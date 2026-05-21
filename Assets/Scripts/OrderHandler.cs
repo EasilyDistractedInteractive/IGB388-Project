@@ -97,7 +97,8 @@ public class OrderHandler : MonoBehaviour
 
         if (tempIng.ingredient.isSlopBowl)
         {
-            orderSlopState = UnityEngine.Random.Range(0, tempIng.slopStatesCount);
+            //Generates a slop state that is not empty
+            orderSlopState = UnityEngine.Random.Range(1, tempIng.slopStatesCount);
             tempOrder = new Order { ingredient = tempIng.ingredient, orderComplexity = tempOrderComplexity, requiredSlopState = (Order.SlopStates)orderSlopState };
             tempOrder.isSlopBowl = true;
             tempOrder.orderComplete = false;

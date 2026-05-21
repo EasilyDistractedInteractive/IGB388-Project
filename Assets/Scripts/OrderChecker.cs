@@ -49,6 +49,7 @@ public class OrderChecker : MonoBehaviour
         {
             foreach (Order order in validOrders)
             {
+                Debug.Log($"Submitted ingredient is {submittedIngredient.currentSlopState}, required ingredient is {order.requiredSlopState}");
                 if (submittedIngredient.currentSlopState.ToString() == order.requiredSlopState.ToString())
                 {
                     OrderCorrect(order);
