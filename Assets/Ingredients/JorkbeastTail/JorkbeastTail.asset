@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: JorkbeastTail
   m_EditorClassIdentifier: 
   isSlopBowl: 0
-  model_Clean_Sliced_Cooked: {fileID: 3716536055630940257, guid: 267b7f21569e4b149ac52dc068dfbee7, type: 3}
-  model_Clean_Sliced_Raw: {fileID: 3716536055630940257, guid: c29561d5bae7c1d468fed91798cf5de3, type: 3}
-  model_Clean_Unsliced_Cooked: {fileID: 1090079981167961977, guid: 5376a9cb0a0ed5740b35d8a3bc019a92, type: 3}
-  model_Clean_Unsliced_Raw: {fileID: 1090079981167961977, guid: d201325c389bbe24d94af92326bdd837, type: 3}
-  model_Dirty_Sliced_Cooked: {fileID: 4595815187996253985, guid: cd811c312a06fcd45a4600a7bd3d5701, type: 3}
-  model_Dirty_Sliced_Raw: {fileID: 4595815187996253985, guid: a4d05f8f5be3a51419054b7f3846a06e, type: 3}
-  model_Dirty_Unsliced_Cooked: {fileID: 8821396944388948604, guid: 50a7527775e155544a6b0c3c9fd73cc8, type: 3}
-  model_Dirty_Unsliced_Raw: {fileID: 8821396944388948604, guid: b72822e8f7dcf0c42a2b6a14bc8ed30e, type: 3}
+  model_Clean_Sliced_Cooked: {fileID: 7655074011950451596, guid: 267b7f21569e4b149ac52dc068dfbee7, type: 3}
+  model_Clean_Sliced_Raw: {fileID: 3166341622982437055, guid: c29561d5bae7c1d468fed91798cf5de3, type: 3}
+  model_Clean_Unsliced_Cooked: {fileID: 564949724358629175, guid: 5376a9cb0a0ed5740b35d8a3bc019a92, type: 3}
+  model_Clean_Unsliced_Raw: {fileID: 5756143647904315731, guid: d201325c389bbe24d94af92326bdd837, type: 3}
+  model_Dirty_Sliced_Cooked: {fileID: 7636521868734966481, guid: cd811c312a06fcd45a4600a7bd3d5701, type: 3}
+  model_Dirty_Sliced_Raw: {fileID: 8070326633996713623, guid: a4d05f8f5be3a51419054b7f3846a06e, type: 3}
+  model_Dirty_Unsliced_Cooked: {fileID: 7836628719351968237, guid: 50a7527775e155544a6b0c3c9fd73cc8, type: 3}
+  model_Dirty_Unsliced_Raw: {fileID: 426205573389720504, guid: b72822e8f7dcf0c42a2b6a14bc8ed30e, type: 3}
   cutParticleEffect: {fileID: 5150223793887423612, guid: 7cfa0b9fd983a884ea89a5eaec33cf79, type: 3}
   associatedObject: {fileID: 3436505519096272459, guid: a24f1a6e21742244cbdd844afe45ad44, type: 3}
   ingredientName: Jorkbeast Tail

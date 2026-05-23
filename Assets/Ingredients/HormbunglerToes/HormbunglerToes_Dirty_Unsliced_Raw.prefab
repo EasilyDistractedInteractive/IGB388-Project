@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3015927226984721751}
-  - component: {fileID: 81029977802750796}
   m_Layer: 0
   m_Name: HormbunglerToes_Dirty_Unsliced_Raw
   m_TagString: Untagged
@@ -30,27 +29,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4184359189920841874}
   - {fileID: 1069419295349290328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &81029977802750796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982079372640548662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &674957562134876851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +112,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8349832657597921127}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4081041040031304555}
   m_SourcePrefab: {fileID: 100100000, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
 --- !u!1 &404347060138962914 stripped
 GameObject:
@@ -158,8 +143,88 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 735832125838740290, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
+--- !u!114 &4081041040031304555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404347060138962914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &1069419295349290328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
   m_PrefabInstance: {fileID: 674957562134876851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4427773206741953116
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3015927226984721751}
+    m_Modifications:
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6870766
+      objectReference: {fileID: 0}
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6870766
+      objectReference: {fileID: 0}
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.16711009
+      objectReference: {fileID: 0}
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.16711009
+      objectReference: {fileID: 0}
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -27.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 915539165005877742, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+      propertyPath: m_Name
+      value: StinkyDirty_PS
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+--- !u!4 &4184359189920841874 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 532349199858477774, guid: 0d8df0abb31538f41a8b806c8884390e, type: 3}
+  m_PrefabInstance: {fileID: 4427773206741953116}
   m_PrefabAsset: {fileID: 0}

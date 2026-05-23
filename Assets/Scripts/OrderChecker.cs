@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System;
+using System.Collections;
 using UnityEngine.XR.Content.Interaction;
 
 public class OrderChecker : MonoBehaviour
@@ -81,7 +81,24 @@ public class OrderChecker : MonoBehaviour
         orderHandler.OrderComplete(order);
 
         //Spawns and destroys the added juice effect
-        GameObject juiceEffect = Instantiate(orderCorrectEffect);
+        //Destroying and instantiating is really expensive, maybe just set it active and inactive instead?
+
+        GameObject confetti = orderCorrectEffect;
+
+        confetti.SetActive(true);
+
+        StartCoroutine(DeactivateEffect(confetti, 2));
+
+
+
+        /*GameObject juiceEffect = Instantiate(orderCorrectEffect);
         Destroy(juiceEffect, 2);
+        */
+    }
+
+    IEnumerator DeactivateEffect(GameObject effect, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        effect.SetActive(false);
     }
 }

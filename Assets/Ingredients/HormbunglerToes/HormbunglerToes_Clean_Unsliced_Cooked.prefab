@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3015927226984721751}
-  - component: {fileID: 81029977802750796}
   m_Layer: 0
   m_Name: HormbunglerToes_Clean_Unsliced_Cooked
   m_TagString: Untagged
@@ -33,24 +32,6 @@ Transform:
   - {fileID: 1069419295349290328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &81029977802750796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982079372640548662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &674957562134876851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +111,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1167719876826771087}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 930488871322659344}
   m_SourcePrefab: {fileID: 100100000, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
 --- !u!1 &404347060138962914 stripped
 GameObject:
@@ -158,6 +142,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 735832125838740290, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
+--- !u!114 &930488871322659344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404347060138962914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &1069419295349290328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e03751b00fc84c24e8f82ce023e99839, type: 3}
