@@ -80,7 +80,7 @@ Transform:
   m_GameObject: {fileID: 1377882202440855630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.069, y: 0.081, z: 0}
+  m_LocalPosition: {x: -0.069, y: 0.081, z: 0.02}
   m_LocalScale: {x: 0.21, y: 0.21, z: 0.21}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -931,7 +931,7 @@ MonoBehaviour:
   currentState: 0
   currentSlopState: 0
   currentModel: 7
-  tutorialManager: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!1001 &7834360620515362160
 PrefabInstance:
   m_ObjectHideFlags: 0
