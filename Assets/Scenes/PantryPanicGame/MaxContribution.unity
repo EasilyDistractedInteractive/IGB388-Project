@@ -8879,22 +8879,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b41d4bcef14624e835d4228069257e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cuttingBoard: {fileID: 1916275108}
+  chef: {fileID: 0}
+  orderHandler: {fileID: 0}
+  gameTimer: {fileID: 0}
+  tutorialManager: {fileID: 0}
+  tableHeightSlider: {fileID: 0}
+  tableTransform: {fileID: 0}
+  playerHeightSlider: {fileID: 0}
+  playerOrigin: {fileID: 0}
+  cuttingBoardSocket: {fileID: 0}
   currentObjectOnBoard: {fileID: 0}
-  sink: {fileID: 0}
+  sinkSocket: {fileID: 0}
   currentObjectInSink: {fileID: 0}
-  ingredientsList:
-  - {fileID: 3413039493605981544, guid: ad73a2c5cdbbe2d4f9b059f4ca467267, type: 3}
-  - {fileID: 7739515337856977167, guid: 1cfe506b480dce74fbe11c3a95a9239a, type: 3}
-  - {fileID: 8847465373410616505, guid: 38669b04feafbe24e9ad42f2a6d6cf3a, type: 3}
-  ingredientSpawnPoint: {fileID: 1824249188}
   tapWaterParticles: {fileID: 0}
   tapOn: 0
+  grillSocket: {fileID: 0}
+  currentObjectOnGrill: {fileID: 0}
+  SlopADispenserSocket: {fileID: 0}
+  SlopACurrentObject: {fileID: 0}
+  SlopAParticles: {fileID: 0}
+  SlopBDispenserSocket: {fileID: 0}
+  SlopBCurrentObject: {fileID: 0}
+  SlopBParticles: {fileID: 0}
+  SlopCDispenserSocket: {fileID: 0}
+  SlopCCurrentObject: {fileID: 0}
+  SlopCParticles: {fileID: 0}
   prepCompleted: {fileID: 8300000, guid: fb6c37ca667fecb458c29ed324b0cf53, type: 3}
   cutIngredientClips:
   - {fileID: 8300000, guid: 19a714ed9321cd544a2a4af57911db04, type: 3}
   - {fileID: 8300000, guid: 1816fd0c64f8f72408fab86ad96f3fde, type: 3}
   squishedIngredientClip: {fileID: 8300000, guid: a87c764752d95604aadaf06284b4e170, type: 3}
+  grillSizzling: {fileID: 0}
+  grillingComplete: {fileID: 0}
+  sinkSploosh: {fileID: 0}
+  heightAdjustSliders: {fileID: 0}
+  heightAdjustButtons: {fileID: 0}
+  heightAdjustMode: 0
 --- !u!4 &2022313672
 Transform:
   m_ObjectHideFlags: 0
@@ -9412,6 +9432,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f274eccda3de214c96c46e23d63da89, type: 3}
+--- !u!1001 &9162798208127480217
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824748839531294508, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904883514892627122, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
+      propertyPath: m_Name
+      value: Sparkles_PS
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e94539d52d6e227488cde600dd2d2c4b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9438,3 +9515,4 @@ SceneRoots:
   - {fileID: 1099482807}
   - {fileID: 912691602}
   - {fileID: 8764937176338231450}
+  - {fileID: 9162798208127480217}
