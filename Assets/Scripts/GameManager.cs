@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.UI;
 using Unity.XR.CoreUtils;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
     public OrderHandler orderHandler;
     public Timer gameTimer;
     public TutorialManager tutorialManager;
+    public TMP_Text scoreTracker;
+
+    public int playerScore;
 
     public Slider tableHeightSlider;
     public Transform tableTransform;
@@ -255,10 +259,19 @@ public class GameManager : MonoBehaviour
         tapOn = false;
     }
 
+    public void UpdateScore(int scoreAmt)
+    {
+        playerScore += scoreAmt;
+
+        if (scoreTracker != null)
+        {
+            scoreTracker.text = $"{playerScore}";
+        }
+    }
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
+        //Debug.Log("Game Over");
     }
 
     public void playerHeightIncrease()

@@ -14,10 +14,13 @@ public class OrderChecker : MonoBehaviour
 
     Chef chef;
 
+    GameManager gameManager;
+
     void Start()
     {
         orderHandler = FindAnyObjectByType<OrderHandler>();
         chef = orderHandler.chef;
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     //Currently only built to handle single ingredient orders
@@ -28,7 +31,6 @@ public class OrderChecker : MonoBehaviour
             chef.tutManager.TutorialPhase(5, chef.tutManager.ingredientSubmitted);
 
             submittedIngredient = other.GetComponentInParent<IngredientLogic>();
-            Debug.Log($"Order submitted {submittedIngredient.name}");
             IngredientsCheck(submittedIngredient, other.transform.parent.gameObject);
         }
     }
@@ -53,7 +55,7 @@ public class OrderChecker : MonoBehaviour
         {
             foreach (Order order in validOrders)
             {
-                Debug.Log($"Submitted ingredient is {submittedIngredient.currentSlopState}, required ingredient is {order.requiredSlopState}");
+                //Debug.Log($"Submitted ingredient is {submittedIngredient.currentSlopState}, required ingredient is {order.requiredSlopState}");
                 if (submittedIngredient.currentSlopState.ToString() == order.requiredSlopState.ToString())
                 {
                     OrderCorrect(order);
@@ -66,7 +68,7 @@ public class OrderChecker : MonoBehaviour
             //Compares the required state of each orders required ingredient with the state of the submitted ingredient
             foreach (Order order in validOrders)
             {
-                Debug.Log($"Submitted ingredient is {submittedIngredient.currentState}, required ingredient is {order.requiredPrepMethod}");
+                //Debug.Log($"Submitted ingredient is {submittedIngredient.currentState}, required ingredient is {order.requiredPrepMethod}");
                 if (submittedIngredient.currentState.ToString() == order.requiredPrepMethod.ToString())
                 {
                     OrderCorrect(order);
@@ -78,22 +80,13 @@ public class OrderChecker : MonoBehaviour
     void OrderCorrect(Order order)
     {
         order.orderComplete = true;
+        gameManager.UpdateScore(order.orderScore); //Incrementing the player's score by the amount of points the order is worth
         orderHandler.OrderComplete(order);
 
-        //Spawns and destroys the added juice effect
-        //Destroying and instantiating is really expensive, maybe just set it active and inactive instead?
+        //Plays the attached juice effect
+        orderCorrectEffect.SetActive(true);
 
-        GameObject confetti = orderCorrectEffect;
-
-        confetti.SetActive(true);
-
-        StartCoroutine(DeactivateEffect(confetti, 2));
-
-
-
-        /*GameObject juiceEffect = Instantiate(orderCorrectEffect);
-        Destroy(juiceEffect, 2);
-        */
+        StartCoroutine(DeactivateEffect(orderCorrectEffect, 2));
     }
 
     IEnumerator DeactivateEffect(GameObject effect, float delay)

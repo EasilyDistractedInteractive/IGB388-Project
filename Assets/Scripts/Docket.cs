@@ -33,22 +33,25 @@ public class Docket : MonoBehaviour
             {
                 case Order.SlopStates.Slop_A_Full:
                     activeImages = onePrepMethodLocations;
+                    docketOrder.orderScore = 10;
                     activeImages[0].sprite = slopAIcon;
                     break;
 
                 case Order.SlopStates.Slop_B_Full:
                     activeImages = onePrepMethodLocations;
+                    docketOrder.orderScore = 10;
                     activeImages[0].sprite = slopBIcon;
                     break;
 
                 case Order.SlopStates.Slop_C_Full:
                     activeImages = onePrepMethodLocations;
+                    docketOrder.orderScore = 10;
                     activeImages[0].sprite = slopCIcon;
                     break;
 
                 default:
-                    Debug.Log("No attached slop status");
                     activeImages = onePrepMethodLocations;
+                    docketOrder.orderScore = 10;
                     activeImages[0].sprite = slopAIcon;
                     docketOrder.ingredient.associatedObject.currentSlopState = IngredientLogic.slopStates.Slop_A_Full;
                     break;
@@ -60,6 +63,7 @@ public class Docket : MonoBehaviour
             {
                 case Order.PrepMethod.Clean_Sliced_Cooked:
                     activeImages = threePrepMethodLocations;
+                    docketOrder.orderScore = 30;
                     activeImages[0].sprite = washIcon;
                     activeImages[1].sprite = sliceIcon;
                     activeImages[2].sprite = cookIcon;
@@ -67,38 +71,45 @@ public class Docket : MonoBehaviour
 
                 case Order.PrepMethod.Clean_Sliced_Raw:
                     activeImages = twoPrepMethodLocations;
+                    docketOrder.orderScore = 20;
                     activeImages[0].sprite = washIcon;
                     activeImages[1].sprite = sliceIcon;
                     break;
 
                 case Order.PrepMethod.Clean_Unsliced_Cooked:
                     activeImages = twoPrepMethodLocations;
+                    docketOrder.orderScore = 20;
                     activeImages[0].sprite = washIcon;
                     activeImages[1].sprite = cookIcon;
                     break;
 
                 case Order.PrepMethod.Clean_Unsliced_Raw:
                     activeImages = onePrepMethodLocations;
+                    docketOrder.orderScore = 10;
                     activeImages[0].sprite = washIcon;
                     break;
 
                 case Order.PrepMethod.Dirty_Sliced_Cooked:
                     activeImages = twoPrepMethodLocations;
+                    docketOrder.orderScore = 10;
                     activeImages[0].sprite = sliceIcon;
                     activeImages[1].sprite = cookIcon;
                     break;
 
                 case Order.PrepMethod.Dirty_Sliced_Raw:
                     activeImages = onePrepMethodLocations;
+                    docketOrder.orderScore = 10;
                     activeImages[0].sprite = sliceIcon;
                     break;
 
                 case Order.PrepMethod.Dirty_Unsliced_Cooked:
                     activeImages = onePrepMethodLocations;
+                    docketOrder.orderScore = 10;
                     activeImages[0].sprite = cookIcon;
                     break;
 
                 case Order.PrepMethod.Dirty_Unsliced_Raw:
+                    docketOrder.orderScore = 5;
                     break;
 
                 default:

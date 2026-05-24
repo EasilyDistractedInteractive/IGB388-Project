@@ -33,7 +33,7 @@ public class TutorialManager : MonoBehaviour
 
         if (!associatedBool && !tutComplete)
         {
-            Debug.Log(voiceLineInt);
+            //Debug.Log(voiceLineInt);
             if (voiceLineInt < tutorialVoiceLines.Length)
             {
                 Chef.VoiceLine voiceLine = tutorialVoiceLines[voiceLineInt];

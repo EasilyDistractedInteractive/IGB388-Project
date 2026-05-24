@@ -30,9 +30,4 @@ public class CuttingBoard : MonoBehaviour
 
         }
     }
-
-    void Update()
-    {
-        print(IngredientsInTrigger);
-    }
 }

@@ -42,11 +42,6 @@ public class OrderHandler : MonoBehaviour
 
         tempOrderQueue.Remove(itemToRemove);
 
-        foreach (Order order in tempOrderQueue)
-        {
-            Debug.Log(order.ingredient.name);
-        }
-
         Queue<Order> newQueue = new Queue<Order>(tempOrderQueue);
         return newQueue;
     }
@@ -67,23 +62,11 @@ public class OrderHandler : MonoBehaviour
             tempDocket.transform.parent = docketPositions[i].transform;
             tempDocket.transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
             tempDocket.SetActive(true);
-            currentOrders.Add(tempDocket.GetComponentInChildren<Docket>().docketOrder);
+
+            Order currentDocketOrder = tempDocket.GetComponentInChildren<Docket>().docketOrder;
+
+            if (!currentOrders.Contains(currentDocketOrder)) currentOrders.Add(currentDocketOrder);
         }
-
-        /* GameObject tempDocket = order.attachedDocket;
-
-        int oldDocketPos = dockets.IndexOf(tempDocket);
-
-        dockets.Remove(tempDocket);
-        Destroy(tempDocket);
-        currentOrders.Remove(order);
-
-        GameObject nextDocket = dockets[currentOrders.Count+1];
-
-        nextDocket.transform.parent = docketPositions[oldDocketPos].transform;
-        nextDocket.transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-        nextDocket.SetActive(true);
-        */
     }
 
     //Technically can scale infinitely but can be hardcapped if need be

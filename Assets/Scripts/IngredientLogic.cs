@@ -305,7 +305,7 @@ public class IngredientLogic : MonoBehaviour
     {
         if(collision.gameObject.tag == "Utensil" && isOnCuttingBoard == true)
         {
-            Debug.Log("Slice");
+            //Debug.Log("Slice");
             slices += 1;
 
             if (!isSliced)
@@ -335,7 +335,7 @@ public class IngredientLogic : MonoBehaviour
             currentState = state.Clean_Unsliced_Raw;
             currentSlopState = slopStates.Slop_A_Full;
             if (!tutManager.tutComplete) tutManager.TutorialPhase(6, tutManager.slopDispensed);
-            print("SlopA!");
+            //print("SlopA!");
         }
     }
 
@@ -346,7 +346,7 @@ public class IngredientLogic : MonoBehaviour
             currentState = state.Clean_Sliced_Raw;
             currentSlopState = slopStates.Slop_B_Full;
             if (!tutManager.tutComplete) tutManager.TutorialPhase(6, tutManager.slopDispensed);
-            print("SlopB!");
+            //print("SlopB!");
         }
     }
 
@@ -357,7 +357,7 @@ public class IngredientLogic : MonoBehaviour
             currentState = state.Dirty_Sliced_Raw;
             currentSlopState = slopStates.Slop_C_Full;
             if (!tutManager.tutComplete) tutManager.TutorialPhase(6, tutManager.slopDispensed);
-            print("SlopC!");
+            //print("SlopC!");
         }
     }
 

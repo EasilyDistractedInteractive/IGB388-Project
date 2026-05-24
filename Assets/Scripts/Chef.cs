@@ -61,7 +61,7 @@ public class Chef : MonoBehaviour
         if (gameActive)
         {
 
-            Debug.Log("Game Beginning, orders generating");
+            //Debug.Log("Game Beginning, orders generating");
             if (Time.time > nextOrderTimer)
             {
                 orderHandler.GenerateOrder(orderComplexity);

@@ -37,8 +37,8 @@ public class Order
     [Tooltip("The time the player has to complete the order before they are reprimanded by the chef")]
     public float timeLimit;
 
-    [Tooltip("The bonus value the order has, 0 by default")]
-    public float orderBonusValue = 0;
+    [Tooltip("The score the order is worth")]
+    public int orderScore;
 
     [Tooltip("The overall difficulty of an order, based on time limit and ingredient complexity")] //Formula needs to be tuned with playtesting
     [HideInInspector] public float orderComplexity;
