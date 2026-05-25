@@ -22,17 +22,21 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (remainingTime > 0)
+        if (timerRunning)
         {
-            remainingTime -= Time.deltaTime;
+            if (remainingTime > 0)
+            {
+                remainingTime -= Time.deltaTime;
+            }
+            else if (remainingTime < 0)
+            {
+                remainingTime = 0;
+                countdownText.color = Color.red;
+                manager.GameOver();
+            }
+
+            UpdateClock(remainingTime);
         }
-        else if (remainingTime < 0)
-        {
-            remainingTime = 0;
-            countdownText.color = Color.red;
-        }
-        
-        UpdateClock(remainingTime);
     }
 
     void UpdateClock(float remainingTime)

@@ -46,9 +46,9 @@ public class TutorialManager : MonoBehaviour
     public void EndTutorial()
     {
         chef.chefDialogue.gameObject.SetActive(false);
-        //chef.manager.gameTimer.timerRunning = true;
+        chef.manager.gameTimer.timerRunning = true;
         chef.gameActive = true;
-        chef.nextOrderTimer = Time.time + chef.nextOrderInterval;
+        chef.nextOrderTimer = Time.time + chef.nextOrderInterval / 2;
         tutComplete = true;
     }
 }

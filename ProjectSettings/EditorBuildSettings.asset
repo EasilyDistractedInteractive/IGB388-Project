@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PantryPanicScenes/PantryPanicLevelRedesign.unity
     guid: 1bac7ad587df06c48ab07964d98c48c9
+  - enabled: 1
+    path: Assets/Scenes/PantryPanicScenes/Game End Scene.unity
+    guid: a3a8fc63fdf522648b52a09cc5db03a0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
