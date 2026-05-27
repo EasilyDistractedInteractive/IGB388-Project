@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 0.36078432, a: 1}
+  m_Color: {r: 1, g: 1, b: 0.7607843, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -393,10 +393,10 @@ MonoBehaviour:
   orderNumberText: {fileID: 3496934062080386795}
   sliceIcon: {fileID: 21300000, guid: db661606cff082e4494ee491cdd24e98, type: 3}
   washIcon: {fileID: 21300000, guid: 6e02004c758103d4db4622f787b9f268, type: 3}
-  cookIcon: {fileID: 21300000, guid: 74ba82e50b9024540804194db24a1824, type: 3}
-  slopAIcon: {fileID: 21300000, guid: 6d61988b06ba9de4bb77903f0401e126, type: 3}
-  slopBIcon: {fileID: 21300000, guid: 57a461dfb00d59d4589bf0cc2c61b57a, type: 3}
-  slopCIcon: {fileID: 21300000, guid: b4646feb65f00604482e52e95f4ee353, type: 3}
+  cookIcon: {fileID: 21300000, guid: 0d08f7124df0dab42bda2deb4c951aff, type: 3}
+  slopAIcon: {fileID: 21300000, guid: 3c941f7909a72ad4582979ad653c5262, type: 3}
+  slopBIcon: {fileID: 21300000, guid: 6840cd7e36d5536468302ab2133ec73a, type: 3}
+  slopCIcon: {fileID: 21300000, guid: bdcdffb692910094fa308b23ad6d6291, type: 3}
 --- !u!1 &4664984104112805520
 GameObject:
   m_ObjectHideFlags: 0

@@ -235,7 +235,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8800235971784589974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +277,12 @@ MonoBehaviour:
   activeImages: []
   ingredientIcon: {fileID: 0}
   orderNumberText: {fileID: 5025715680333670896}
+  sliceIcon: {fileID: 0}
+  washIcon: {fileID: 0}
+  cookIcon: {fileID: 0}
+  slopAIcon: {fileID: 0}
+  slopBIcon: {fileID: 0}
+  slopCIcon: {fileID: 0}
 --- !u!1 &1682792725816656713
 GameObject:
   m_ObjectHideFlags: 0
