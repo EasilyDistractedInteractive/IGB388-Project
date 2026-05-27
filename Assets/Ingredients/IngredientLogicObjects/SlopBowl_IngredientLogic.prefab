@@ -584,13 +584,13 @@ MonoBehaviour:
   framesOffGrill: 0
   cookedness: 0
   ingredientAudioSource: {fileID: 1345526807391714016}
-  ingredientIcon: {fileID: 21300000, guid: 15c308c8887b369499f430d14a6fa7be, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: dc6522d21c6b9ba48b1cd48230f3886f, type: 3}
   statesCount: 4
   slopStatesCount: 4
   currentState: 0
   currentSlopState: 1
   currentModel: 0
-  tutorialManager: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!1 &3246653465403603246
 GameObject:
   m_ObjectHideFlags: 0

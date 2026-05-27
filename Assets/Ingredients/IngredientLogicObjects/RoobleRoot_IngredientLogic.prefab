@@ -999,13 +999,13 @@ MonoBehaviour:
   framesOffGrill: 0
   cookedness: 0
   ingredientAudioSource: {fileID: 3878513013349871916}
-  ingredientIcon: {fileID: 21300000, guid: 26ab8319d4f601c43b9620269d65efbd, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: eb99e1d7390948e44955d9b54856bc32, type: 3}
   statesCount: 4
   slopStatesCount: 6
   currentState: 0
   currentSlopState: 0
   currentModel: 7
-  tutorialManager: {fileID: 0}
+  tutManager: {fileID: 0}
 --- !u!1001 &522578840461132774
 PrefabInstance:
   m_ObjectHideFlags: 0

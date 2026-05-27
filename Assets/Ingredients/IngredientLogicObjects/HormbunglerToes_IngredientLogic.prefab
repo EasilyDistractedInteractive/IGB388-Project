@@ -925,7 +925,7 @@ MonoBehaviour:
   framesOffGrill: 0
   cookedness: 0
   ingredientAudioSource: {fileID: 3935915256399123089}
-  ingredientIcon: {fileID: 21300000, guid: a9222d4c3bf01bd4aa104bf504382b32, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: 044ce6249ce6e5040bca23344f367cb5, type: 3}
   statesCount: 4
   slopStatesCount: 6
   currentState: 0
