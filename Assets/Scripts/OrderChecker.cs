@@ -86,6 +86,7 @@ public class OrderChecker : MonoBehaviour
         //Plays the attached juice effect
         orderCorrectEffect.SetActive(true);
 
+
         StartCoroutine(DeactivateEffect(orderCorrectEffect, 2));
     }
 
