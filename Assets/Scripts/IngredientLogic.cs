@@ -42,6 +42,7 @@ public class IngredientLogic : MonoBehaviour
     bool playedCookedDing = false;
     bool playedGrillSizzle = false;
     bool playedSinkSploosh = false;
+    bool playedChoppedThud = false;
     
 
 
@@ -259,6 +260,12 @@ public class IngredientLogic : MonoBehaviour
     {
         isOnCuttingBoard = true;
         framesOffCuttingBoard = 0;
+
+        if (playedChoppedThud == false)
+        {
+            ingredientAudioSource.PlayOneShot(Manager.choppedThud);
+            playedChoppedThud= true;
+        }
     }
 
     public void setIsInSinkTrue()

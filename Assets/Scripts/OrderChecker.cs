@@ -10,6 +10,10 @@ public class OrderChecker : MonoBehaviour
     OrderHandler orderHandler;
     [SerializeField] private GameObject orderCorrectEffect;
 
+    [SerializeField] public AudioSource chefAudioSource;
+
+    bool playedCorrectSound = false; 
+
     List<Order> validOrders;
 
     Chef chef;
@@ -85,7 +89,12 @@ public class OrderChecker : MonoBehaviour
 
         //Plays the attached juice effect
         orderCorrectEffect.SetActive(true);
-
+        if (playedCorrectSound == false)
+        {
+            chefAudioSource.PlayOneShot(gameManager.orderCorrectSound);
+            playedCorrectSound = true;
+            Debug.Log("Played correct sound cha-ching");
+        }
 
         StartCoroutine(DeactivateEffect(orderCorrectEffect, 2));
     }

@@ -85,6 +85,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public AudioClip sinkSploosh;
 
+    [SerializeField] public AudioClip choppedThud;
+
+    [SerializeField] public AudioClip winChaChing;
+
+    [SerializeField] public AudioClip orderCorrectSound;
+
+
     float tableHeight;
     float playerHeight = 1.7f;
 
