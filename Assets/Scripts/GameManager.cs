@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Timer gameTimer;
     public TutorialManager tutorialManager;
     public TMP_Text scoreTracker;
+    public int ordersCompleted;
 
     public int playerScore;
 

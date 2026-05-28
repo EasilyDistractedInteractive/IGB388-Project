@@ -84,6 +84,7 @@ public class OrderChecker : MonoBehaviour
     void OrderCorrect(Order order)
     {
         order.orderComplete = true;
+        gameManager.ordersCompleted++;
         gameManager.UpdateScore(order.orderScore); //Incrementing the player's score by the amount of points the order is worth
         orderHandler.OrderComplete(order);
 
