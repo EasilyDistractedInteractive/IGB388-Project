@@ -23,6 +23,8 @@ public class TutorialManager : MonoBehaviour
 
     [SerializeField] public Chef.VoiceLine[] tutorialVoiceLines;
 
+    List<int> completedSteps = new List<int>();
+
     public bool tutStarted = false;
 
     public void TutorialPhase(int voiceLineInt, bool associatedBool)
@@ -31,8 +33,9 @@ public class TutorialManager : MonoBehaviour
 
         if (voiceLineInt == 6) { EndTutorial(); }
 
-        if (!associatedBool && !tutComplete)
+        if (!associatedBool && !tutComplete && !completedSteps.Contains(voiceLineInt))
         {
+            completedSteps.Add(voiceLineInt);
             //Debug.Log(voiceLineInt);
             if (voiceLineInt < tutorialVoiceLines.Length)
             {
