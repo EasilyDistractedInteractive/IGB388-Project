@@ -26,6 +26,9 @@ public class OrderHandler : MonoBehaviour
 
     public Chef chef;
 
+    public AudioSource chefAudioSource;
+    public AudioClip orderUpSound;
+
     private void Start()
     {
         //Finding the most complex individual ingredient
@@ -127,16 +130,18 @@ public class OrderHandler : MonoBehaviour
             newDocket.transform.parent = docketPositions[dockets.Count - 1].transform;
             newDocket.transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0,0,0,0));
             newDocket.SetActive(true);
+            chefAudioSource.PlayOneShot(orderUpSound);
         }
     }
 
     public void OrderComplete(Order order)
     {
         UpdateOrderQueue(order);
+        chefAudioSource.PlayOneShot(orderUpSound);
 
         //Add function to add score for completed order
 
-        chef.incrementChefMood(5);
+        chef.incrementChefMood(10);
 
     }
 }

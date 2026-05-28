@@ -13,6 +13,11 @@ public class Timer : MonoBehaviour
 
     GameManager manager;
 
+    public AudioSource clockAudioSource;
+    public AudioClip tickTock;
+
+    bool gameEndTimer = false;
+
     private void Start()
     {
         UpdateClock(remainingTime);
@@ -32,7 +37,12 @@ public class Timer : MonoBehaviour
             countdownText.color = Color.red;
             manager.GameOver();
         }
-        
+        if(remainingTime <= 30 && gameEndTimer == false)
+        {
+            gameEndTimer = true;
+            clockAudioSource.PlayOneShot(tickTock);
+        }
+
         UpdateClock(remainingTime);
     }
 

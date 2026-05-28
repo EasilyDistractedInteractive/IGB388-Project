@@ -2451,6 +2451,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4786342139024748702, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_FacingExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786342139024748702, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_FacingEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2101737114}
@@ -30100,6 +30104,7 @@ Transform:
   m_Children:
   - {fileID: 1068727997}
   - {fileID: 2126092611}
+  - {fileID: 853356892}
   m_Father: {fileID: 1160351605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &356934132
@@ -38686,6 +38691,8 @@ MonoBehaviour:
   - {fileID: 1529154483}
   dockets: []
   chef: {fileID: 627230243}
+  chefAudioSource: {fileID: 1326132823}
+  orderUpSound: {fileID: 8300000, guid: 651b489200aaf76429e5a228ea2dfa85, type: 3}
 --- !u!114 &627230243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38705,6 +38712,9 @@ MonoBehaviour:
   orderHandler: {fileID: 627230242}
   chefDialogue: {fileID: 236494610}
   chefAudioSource: {fileID: 1326132823}
+  excitedVoice: {fileID: 8300000, guid: b7b1eb8f8bb40014caf6c6ad7da269bd, type: 3}
+  neutralVoice: {fileID: 8300000, guid: 365269588cac9a44aa9d85d7152dc2fb, type: 3}
+  disappointedVoice: {fileID: 8300000, guid: d2ef5191b0421744eb081d3e0a593973, type: 3}
   chefAnim: {fileID: 1013047683}
   moodText: {fileID: 0}
   manager: {fileID: 0}
@@ -49792,6 +49802,135 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00014252639, y: 0.00014252639, z: 0.0005904019}
   m_Center: {x: -9.313226e-10, y: 4.1950585e-18, z: -0.00029520094}
+--- !u!1 &853356890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853356892}
+  - component: {fileID: 853356891}
+  m_Layer: 0
+  m_Name: ClockAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &853356891
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853356890}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &853356892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853356890}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 354722821}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &859446829
 Mesh:
   m_ObjectHideFlags: 0
@@ -161812,6 +161951,8 @@ MonoBehaviour:
   countdownText: {fileID: 2090836220}
   remainingTime: 120
   timerRunning: 0
+  clockAudioSource: {fileID: 853356891}
+  tickTock: {fileID: 8300000, guid: 2e62b75a9bd47604b83889679e73208d, type: 3}
 --- !u!1 &2091755688
 GameObject:
   m_ObjectHideFlags: 0
