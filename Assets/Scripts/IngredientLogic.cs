@@ -231,7 +231,12 @@ public class IngredientLogic : MonoBehaviour
 
         if(cleanliness >= 100f)
         {
-            isDirty = false;
+            if(isDirty == true)
+            {
+                ingredientAudioSource.PlayOneShot(Manager.washingComplete);
+                isDirty = false;
+            }
+            
             if (!tutManager.tutComplete) tutManager.TutorialPhase(3, tutManager.ingredientWashed);
         }
 

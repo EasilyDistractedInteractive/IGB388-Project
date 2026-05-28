@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public AudioClip grillingComplete;
 
     [SerializeField] public AudioClip sinkSploosh;
+    [SerializeField] public AudioClip washingComplete;
 
     [SerializeField] public AudioClip choppedThud;
 
