@@ -11,6 +11,8 @@ public class OrderChecker : MonoBehaviour
     [SerializeField] private ParticleSystem orderCorrectEffect;
 
     [SerializeField] public AudioSource chefAudioSource;
+    [SerializeField] public AudioClip orderCorrectAudio;
+
 
     bool playedCorrectSound = false; 
 
@@ -90,12 +92,14 @@ public class OrderChecker : MonoBehaviour
 
         //Plays the attached juice effect
         orderCorrectEffect.Play();
-        if (playedCorrectSound == false)
+        chefAudioSource.PlayOneShot(orderCorrectAudio);
+
+        /*if (playedCorrectSound == false)
         {
             chefAudioSource.PlayOneShot(gameManager.orderCorrectSound);
             playedCorrectSound = true;
             Debug.Log("Played correct sound cha-ching");
-        }
+        }*/
 
         //StartCoroutine(DeactivateEffect(orderCorrectEffect, 2));
     }

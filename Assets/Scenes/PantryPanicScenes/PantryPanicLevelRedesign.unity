@@ -45999,7 +45999,6 @@ MonoBehaviour:
   grillingComplete: {fileID: 8300000, guid: 62e529f67e9ec664688defec0e4ba7fd, type: 3}
   sinkSploosh: {fileID: 8300000, guid: 0323ae305296ee047bc568bf0cf4104d, type: 3}
   choppedThud: {fileID: 8300000, guid: 395935001e79ea840a9641afe3c5c1a1, type: 3}
-  winChaChing: {fileID: 8300000, guid: aa1342d43f582ef43afa3b62af98af5c, type: 3}
   orderCorrectSound: {fileID: 8300000, guid: fb6c37ca667fecb458c29ed324b0cf53, type: 3}
   heightAdjustSliders: {fileID: 803939098}
   heightAdjustButtons: {fileID: 1906730009}
@@ -119437,7 +119436,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -147542,6 +147541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderCorrectEffect: {fileID: 1926713117}
   chefAudioSource: {fileID: 1326132823}
+  orderCorrectAudio: {fileID: 8300000, guid: aa1342d43f582ef43afa3b62af98af5c, type: 3}
 --- !u!4 &1942574458
 Transform:
   m_ObjectHideFlags: 0

@@ -89,8 +89,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public AudioClip choppedThud;
 
-    [SerializeField] public AudioClip winChaChing;
-
     [SerializeField] public AudioClip orderCorrectSound;
 
 
