@@ -23,6 +23,10 @@ public class Chef : MonoBehaviour
 
     public AudioSource chefAudioSource;
 
+    [SerializeField] public AudioClip excitedVoice;
+    [SerializeField] public AudioClip neutralVoice;
+    [SerializeField] public AudioClip disappointedVoice;
+
     public Animator chefAnim;
 
     public TextMeshProUGUI moodText;
@@ -39,6 +43,7 @@ public class Chef : MonoBehaviour
 
     public OrderChecker orderChecker;
 
+    
     void Start()
     {
         nextOrderTimer = Time.time + nextOrderInterval;
@@ -79,14 +84,17 @@ public class Chef : MonoBehaviour
         if(mood == Moods.Disappointed)
         {
             chefAnim.SetInteger("Emotion", -1);
+            //chefAudioSource.PlayOneShot(disappointedVoice);
         }
         if(mood == Moods.Neutral)
         {
             chefAnim.SetInteger("Emotion", 0);
+            //chefAudioSource.PlayOneShot(neutralVoice);
         }
         if(mood == Moods.Excited)
         {
             chefAnim.SetInteger("Emotion", 1);
+            //chefAudioSource.PlayOneShot(excitedVoice);
         }
         //print(chefMood);
     }
@@ -135,12 +143,15 @@ public class Chef : MonoBehaviour
         {
             case <= 30:
                 mood = Moods.Disappointed;
+                chefAudioSource.PlayOneShot(disappointedVoice);
                 break;
             case <= 65:
                 mood = Moods.Neutral;
+                chefAudioSource.PlayOneShot(neutralVoice);
                 break;
             case <= 80:
                 mood = Moods.Excited;
+                chefAudioSource.PlayOneShot(excitedVoice);
                 break;
         }
     }

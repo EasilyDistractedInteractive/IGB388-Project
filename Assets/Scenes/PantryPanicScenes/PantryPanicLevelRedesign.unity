@@ -38749,22 +38749,22 @@ MonoBehaviour:
   tutorialVoiceLines:
   - voiceLineText: G'day blorblump, glad you've finally made it. Hurry up and grab
       an ingredient would you?
-    voiceLineAudio: {fileID: 8300000, guid: 49ab13c380da9dd48a7ac0ffd20fb9dd, type: 3}
+    voiceLineAudio: {fileID: 8300000, guid: 5601a0118f9754540a177457630ec07a, type: 3}
   - voiceLineText: "Nice, that wasn\u2019t too hard was it? Now can you cut that
       up for me?"
-    voiceLineAudio: {fileID: 8300000, guid: b7b1eb8f8bb40014caf6c6ad7da269bd, type: 3}
+    voiceLineAudio: {fileID: 8300000, guid: 3c3b35a601cdb9b4497cedb50ccaf7dc, type: 3}
   - voiceLineText: Alright, good job. Now, can you wash an ingredient for me? Then
       maybe yourself after, you kinda stink
-    voiceLineAudio: {fileID: 8300000, guid: 49ab13c380da9dd48a7ac0ffd20fb9dd, type: 3}
+    voiceLineAudio: {fileID: 8300000, guid: 365269588cac9a44aa9d85d7152dc2fb, type: 3}
   - voiceLineText: Geez, took you long enough. Go ahead and throw that one on the
       grill for me now
-    voiceLineAudio: {fileID: 8300000, guid: 49ab13c380da9dd48a7ac0ffd20fb9dd, type: 3}
+    voiceLineAudio: {fileID: 8300000, guid: bf7a4b8702fae8e40906e215e2610cb5, type: 3}
   - voiceLineText: "Great, that\u2019s all sorted. Just chuck that towards me now,
       we haven't got all day"
-    voiceLineAudio: {fileID: 8300000, guid: b7b1eb8f8bb40014caf6c6ad7da269bd, type: 3}
+    voiceLineAudio: {fileID: 8300000, guid: 3c3b35a601cdb9b4497cedb50ccaf7dc, type: 3}
   - voiceLineText: Alright, nearly done. Just grab a bowl and fill it up with some
       slop then you can get into your proper shift
-    voiceLineAudio: {fileID: 8300000, guid: 49ab13c380da9dd48a7ac0ffd20fb9dd, type: 3}
+    voiceLineAudio: {fileID: 8300000, guid: 5601a0118f9754540a177457630ec07a, type: 3}
   tutStarted: 0
 --- !u!1 &632109388 stripped
 GameObject:
