@@ -46008,7 +46008,7 @@ MonoBehaviour:
   grillSizzling: {fileID: 8300000, guid: 7c3a03212821ec14bb2e75a9b08efd35, type: 3}
   grillingComplete: {fileID: 8300000, guid: 62e529f67e9ec664688defec0e4ba7fd, type: 3}
   sinkSploosh: {fileID: 8300000, guid: 0323ae305296ee047bc568bf0cf4104d, type: 3}
-  washingComplete: {fileID: 8300000, guid: 7ccb57bb93b18e549a5766a060426e13, type: 3}
+  washingComplete: {fileID: 8300000, guid: fd5aeaf31e29e334881cd1342e6de1e2, type: 3}
   choppedThud: {fileID: 8300000, guid: 395935001e79ea840a9641afe3c5c1a1, type: 3}
   orderCorrectSound: {fileID: 8300000, guid: fb6c37ca667fecb458c29ed324b0cf53, type: 3}
   heightAdjustSliders: {fileID: 803939098}
