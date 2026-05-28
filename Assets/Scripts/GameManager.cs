@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public TutorialManager tutorialManager;
     public TMP_Text scoreTracker;
     public int ordersCompleted;
+    public Menus menuHandler;
 
     public int playerScore;
 
@@ -279,7 +280,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        //Debug.Log("Game Over");
+        GlobalInstanceManager.Instance.playerScoresList.Add(playerScore);
+        GlobalInstanceManager.Instance.ordersCompleted.Add(ordersCompleted);
+        GlobalInstanceManager.Instance.replay = true;
+        menuHandler.GoToScene(2);
     }
 
     public void playerHeightIncrease()

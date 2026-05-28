@@ -12288,7 +12288,7 @@ PrefabInstance:
     - target: {fileID: 5749555058095058891, guid: 0c3b1a507c4a7c945924664e1fe651fb, type: 3}
       propertyPath: fadeScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 307895147}
     - target: {fileID: 7401931534951234194, guid: 0c3b1a507c4a7c945924664e1fe651fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12352,6 +12352,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38ca9a4a1418e0d40b439bb3d4fb2696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &132106223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5749555058095058891, guid: 0c3b1a507c4a7c945924664e1fe651fb, type: 3}
+  m_PrefabInstance: {fileID: 132106220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132106221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c5afade6247f244b23d5975ac5c9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &136348351
@@ -29084,7 +29095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8167915464433814017, guid: 28ea206a9ab629248ab1ddc4b7834696, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9136976917404402797, guid: 28ea206a9ab629248ab1ddc4b7834696, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29131,6 +29142,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28ea206a9ab629248ab1ddc4b7834696, type: 3}
+--- !u!114 &307895147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1126508437412076101, guid: 28ea206a9ab629248ab1ddc4b7834696, type: 3}
+  m_PrefabInstance: {fileID: 307895146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a350dcbe27e8794a92e3f23b9a70328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &319263321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38677,7 +38699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextOrderTimer: 0
-  nextOrderInterval: 5
+  nextOrderInterval: 3.5
   moodCheckInterval: 20
   orderComplexity: 50
   orderHandler: {fileID: 627230242}
@@ -45940,10 +45962,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chef: {fileID: 627230243}
-  orderHandler: {fileID: 0}
-  gameTimer: {fileID: 0}
+  orderHandler: {fileID: 627230242}
+  gameTimer: {fileID: 2090836222}
   tutorialManager: {fileID: 627230244}
   scoreTracker: {fileID: 0}
+  ordersCompleted: 0
+  menuHandler: {fileID: 132106223}
   playerScore: 0
   tableHeightSlider: {fileID: 49451259}
   tableTransform: {fileID: 836832768}
@@ -45975,7 +45999,7 @@ MonoBehaviour:
   grillingComplete: {fileID: 8300000, guid: 62e529f67e9ec664688defec0e4ba7fd, type: 3}
   sinkSploosh: {fileID: 8300000, guid: 0323ae305296ee047bc568bf0cf4104d, type: 3}
   choppedThud: {fileID: 8300000, guid: 395935001e79ea840a9641afe3c5c1a1, type: 3}
-  winChaChing: {fileID: 0}
+  winChaChing: {fileID: 8300000, guid: aa1342d43f582ef43afa3b62af98af5c, type: 3}
   orderCorrectSound: {fileID: 8300000, guid: fb6c37ca667fecb458c29ed324b0cf53, type: 3}
   heightAdjustSliders: {fileID: 803939098}
   heightAdjustButtons: {fileID: 1906730009}
@@ -132852,37 +132876,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b66f1cd6e555c5844a668dacc040ecb8, type: 3}
   m_PrefabInstance: {fileID: 1975941946}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1731975167
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1731975168}
-  m_Layer: 0
-  m_Name: Confetti Spawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1731975168
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731975167}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2.95, z: 0}
-  m_LocalScale: {x: 0.099999994, y: 0.10000006, z: 0.10000006}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1738612950
 GameObject:
   m_ObjectHideFlags: 0
@@ -133038,7 +133031,7 @@ MonoBehaviour:
   grillInactiveSmoke: {fileID: 1805903385}
   grillActiveSmoke: {fileID: 1993127308}
   IngredientsInTrigger: 0
-  grillSizzle: {fileID: 0}
+  grillSizzle: {fileID: 8300000, guid: 7c3a03212821ec14bb2e75a9b08efd35, type: 3}
   grillAudioSource: {fileID: 405656433}
 --- !u!65 &1745485737
 BoxCollider:
@@ -138128,11 +138121,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761619163}
   m_CullTransparentMesh: 1
---- !u!1 &1767335499 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1811127766094463673, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
-  m_PrefabInstance: {fileID: 1926713116}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1769031573
 Mesh:
   m_ObjectHideFlags: 0
@@ -147151,7 +147139,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811127766094463673, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
       propertyPath: m_Name
-      value: Confetti_PS
+      value: Order Juice
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811127766094463673, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860782458700794041, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860782458700794041, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860782458700794041, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423492285812511768, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8417264508355229548, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -147159,11 +147167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8417264508355229548, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.95
+      value: 2.874
       objectReference: {fileID: 0}
     - target: {fileID: 8417264508355229548, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8417264508355229548, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -147198,6 +147206,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
+--- !u!198 &1926713117 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4860782458700794041, guid: dfe56f1a886da034caff8ab4901922e7, type: 3}
+  m_PrefabInstance: {fileID: 1926713116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1930950409
 GameObject:
   m_ObjectHideFlags: 0
@@ -147527,7 +147540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d0d409abf8b583458157eca74d23ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderCorrectEffect: {fileID: 1767335499}
+  orderCorrectEffect: {fileID: 1926713117}
   chefAudioSource: {fileID: 1326132823}
 --- !u!4 &1942574458
 Transform:
@@ -161795,7 +161808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 2090836220}
-  remainingTime: 300
+  remainingTime: 5
   timerRunning: 0
 --- !u!1 &2091755688
 GameObject:
@@ -166029,7 +166042,6 @@ SceneRoots:
   - {fileID: 1279163086}
   - {fileID: 803939099}
   - {fileID: 434717907}
-  - {fileID: 1731975168}
   - {fileID: 1891142911}
   - {fileID: 897217707}
   - {fileID: 1926713116}

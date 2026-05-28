@@ -8,7 +8,7 @@ public class OrderChecker : MonoBehaviour
     //List<Ingredient> submittedIngredients = new List<Ingredient>();
     IngredientLogic submittedIngredient;
     OrderHandler orderHandler;
-    [SerializeField] private GameObject orderCorrectEffect;
+    [SerializeField] private ParticleSystem orderCorrectEffect;
 
     [SerializeField] public AudioSource chefAudioSource;
 
@@ -89,7 +89,7 @@ public class OrderChecker : MonoBehaviour
         orderHandler.OrderComplete(order);
 
         //Plays the attached juice effect
-        orderCorrectEffect.SetActive(true);
+        orderCorrectEffect.Play();
         if (playedCorrectSound == false)
         {
             chefAudioSource.PlayOneShot(gameManager.orderCorrectSound);
@@ -97,7 +97,7 @@ public class OrderChecker : MonoBehaviour
             Debug.Log("Played correct sound cha-ching");
         }
 
-        StartCoroutine(DeactivateEffect(orderCorrectEffect, 2));
+        //StartCoroutine(DeactivateEffect(orderCorrectEffect, 2));
     }
 
     IEnumerator DeactivateEffect(GameObject effect, float delay)

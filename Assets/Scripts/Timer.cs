@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (remainingTime > 0)
+        if (remainingTime > 0 && timerRunning)
         {
             remainingTime -= Time.deltaTime;
         }
@@ -30,6 +30,7 @@ public class Timer : MonoBehaviour
         {
             remainingTime = 0;
             countdownText.color = Color.red;
+            manager.GameOver();
         }
         
         UpdateClock(remainingTime);
