@@ -12,9 +12,13 @@ public class OrderChecker : MonoBehaviour
 
     [SerializeField] public AudioSource chefAudioSource;
     [SerializeField] public AudioClip orderCorrectAudio;
+    [SerializeField] public AudioClip incorrectOrderAudio;
+
+    [SerializeField] public TutorialManager tutManager;
 
 
-    bool playedCorrectSound = false; 
+    bool playedCorrectSound = false;
+    bool correctOrderFound = false;
 
     List<Order> validOrders;
 
@@ -32,6 +36,7 @@ public class OrderChecker : MonoBehaviour
     //Currently only built to handle single ingredient orders
     private void OnTriggerEnter(Collider other)
     {
+        correctOrderFound = false;
         if (other.CompareTag("Ingredient"))
         {
             chef.tutManager.TutorialPhase(5, chef.tutManager.ingredientSubmitted);
@@ -78,7 +83,12 @@ public class OrderChecker : MonoBehaviour
                 if (submittedIngredient.currentState.ToString() == order.requiredPrepMethod.ToString())
                 {
                     OrderCorrect(order);
+                    correctOrderFound = true;
                 }
+            }
+            if (!correctOrderFound /*&& tutManager.tutComplete*/)
+            {
+                chefAudioSource.PlayOneShot(incorrectOrderAudio);
             }
         }
     }
@@ -93,13 +103,6 @@ public class OrderChecker : MonoBehaviour
         //Plays the attached juice effect
         orderCorrectEffect.Play();
         chefAudioSource.PlayOneShot(orderCorrectAudio);
-
-        /*if (playedCorrectSound == false)
-        {
-            chefAudioSource.PlayOneShot(gameManager.orderCorrectSound);
-            playedCorrectSound = true;
-            Debug.Log("Played correct sound cha-ching");
-        }*/
 
         //StartCoroutine(DeactivateEffect(orderCorrectEffect, 2));
     }

@@ -11,9 +11,12 @@ public class Dialogue : MonoBehaviour
         //Debug.Log("Dialogue Active");
         this.gameObject.SetActive(true);
         speechBubbleText.text = dialogueText;
+        //dialogueAudioSource.PlayOneShot(dialogueAudio);
+        
         if (dialogueAudio != null && dialogueAudioSource != null)
         {
             dialogueAudioSource.PlayOneShot(dialogueAudio);
         }
+        
     }
 }

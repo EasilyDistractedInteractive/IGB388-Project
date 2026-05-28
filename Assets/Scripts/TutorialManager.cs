@@ -41,6 +41,7 @@ public class TutorialManager : MonoBehaviour
             {
                 Chef.VoiceLine voiceLine = tutorialVoiceLines[voiceLineInt];
 
+                //chef.chefDialogue.ActivateDialogue(voiceLine.voiceLineText, chef.chefAudioSource.PlayOneShot(voiceLine.voiceLineAudio));
                 chef.chefDialogue.ActivateDialogue(voiceLine.voiceLineText, voiceLine.voiceLineAudio, chef.chefAudioSource);
             }
         }

@@ -21,7 +21,7 @@ public class Chef : MonoBehaviour
 
     public Dialogue chefDialogue;
 
-    [HideInInspector] public AudioSource chefAudioSource;
+    public AudioSource chefAudioSource;
 
     public Animator chefAnim;
 
@@ -44,7 +44,7 @@ public class Chef : MonoBehaviour
         nextOrderTimer = Time.time + nextOrderInterval;
         moodCheckTimer = Time.time + moodCheckInterval;
         currentLinePool = voiceLines[1];
-        chefAudioSource = GetComponent<AudioSource>();
+        //chefAudioSource = GetComponent<AudioSource>();
         manager = FindAnyObjectByType<GameManager>();
         gameTimer = manager.gameTimer;
 
