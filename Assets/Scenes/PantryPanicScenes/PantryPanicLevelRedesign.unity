@@ -38707,7 +38707,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextOrderTimer: 0
   nextOrderInterval: 3.5
+  moodCheckTimer: 0
   moodCheckInterval: 20
+  chefDialogueTimer: 0
+  chefDialogueInterval: 28
   orderComplexity: 50
   orderHandler: {fileID: 627230242}
   chefDialogue: {fileID: 236494610}
@@ -38716,7 +38719,6 @@ MonoBehaviour:
   neutralVoice: {fileID: 8300000, guid: 365269588cac9a44aa9d85d7152dc2fb, type: 3}
   disappointedVoice: {fileID: 8300000, guid: d2ef5191b0421744eb081d3e0a593973, type: 3}
   chefAnim: {fileID: 1013047683}
-  moodText: {fileID: 0}
   manager: {fileID: 0}
   tutManager: {fileID: 627230244}
   replay: 0
@@ -38728,14 +38730,44 @@ MonoBehaviour:
     orderReceivedVoiceLines: []
     orderLateVoiceLines: []
     orderIncorrectVoiceLines: []
+    miscVoiceLines:
+    - voiceLineText: Get your xhorak into gear, we haven't got all cosmic cycle!
+      voiceLineAudio: {fileID: 8300000, guid: d2ef5191b0421744eb081d3e0a593973, type: 3}
+    - voiceLineText: I knew I should have got my grandma phorb for this job, she
+        would've been quicker than this at least
+      voiceLineAudio: {fileID: 8300000, guid: d2ef5191b0421744eb081d3e0a593973, type: 3}
+    - voiceLineText: ...
+      voiceLineAudio: {fileID: 8300000, guid: d2ef5191b0421744eb081d3e0a593973, type: 3}
   - voiceLinesMood: 1
     orderReceivedVoiceLines: []
     orderLateVoiceLines: []
     orderIncorrectVoiceLines: []
+    miscVoiceLines:
+    - voiceLineText: I wonder when the Zarbellion Quarks have their next VorkOrb
+        game...
+      voiceLineAudio: {fileID: 8300000, guid: 5601a0118f9754540a177457630ec07a, type: 3}
+    - voiceLineText: Can't wait to head home, I wanna finally catch a Zoople
+      voiceLineAudio: {fileID: 8300000, guid: 3c3b35a601cdb9b4497cedb50ccaf7dc, type: 3}
+    - voiceLineText: I could really go for a Xarian slorpbeer right about now...
+      voiceLineAudio: {fileID: 8300000, guid: 365269588cac9a44aa9d85d7152dc2fb, type: 3}
   - voiceLinesMood: 2
     orderReceivedVoiceLines: []
     orderLateVoiceLines: []
     orderIncorrectVoiceLines: []
+    miscVoiceLines:
+    - voiceLineText: Holy Glorboly you're quick! Good job
+      voiceLineAudio: {fileID: 8300000, guid: b7b1eb8f8bb40014caf6c6ad7da269bd, type: 3}
+    - voiceLineText: People must be hearing about your cooking, the place is busier
+        than the Blumbork spaceport on the fourth day of Karnath!
+      voiceLineAudio: {fileID: 8300000, guid: b7b1eb8f8bb40014caf6c6ad7da269bd, type: 3}
+    - voiceLineText: I knew I made the right choice hiring you, you're doing me proud
+        young borpawan!
+      voiceLineAudio: {fileID: 8300000, guid: b7b1eb8f8bb40014caf6c6ad7da269bd, type: 3}
+  - voiceLinesMood: 2
+    orderReceivedVoiceLines: []
+    orderLateVoiceLines: []
+    orderIncorrectVoiceLines: []
+    miscVoiceLines: []
 --- !u!114 &627230244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147645,7 +147677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1942574456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147683,7 +147715,7 @@ MonoBehaviour:
   chefAudioSource: {fileID: 1326132823}
   orderCorrectAudio: {fileID: 8300000, guid: eb99439f654733444870355626d062f3, type: 3}
   incorrectOrderAudio: {fileID: 8300000, guid: 4e4485d9019456c409c1049032f7edd0, type: 3}
-  tutManager: {fileID: 0}
+  tutManager: {fileID: 627230244}
 --- !u!4 &1942574458
 Transform:
   m_ObjectHideFlags: 0

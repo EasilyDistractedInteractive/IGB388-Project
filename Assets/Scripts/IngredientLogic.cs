@@ -222,11 +222,19 @@ public class IngredientLogic : MonoBehaviour
         if(framesOffCuttingBoard >= 2)
         {
             isOnCuttingBoard = false;
+            playedChoppedThud = false;
         }
 
         if(framesOutOfSink >= 2)
         {
             isInSink = false;
+            playedSinkSploosh = false;
+        }
+
+        if (framesOffGrill >= 2)
+        {
+            isOnGrill = false;
+            playedGrillSizzle = false;
         }
 
         if(cleanliness >= 100f)

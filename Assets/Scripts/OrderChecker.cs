@@ -39,7 +39,7 @@ public class OrderChecker : MonoBehaviour
         correctOrderFound = false;
         if (other.CompareTag("Ingredient"))
         {
-            chef.tutManager.TutorialPhase(5, chef.tutManager.ingredientSubmitted);
+            if (!tutManager.tutComplete) { chef.tutManager.TutorialPhase(5, chef.tutManager.ingredientSubmitted); }
 
             submittedIngredient = other.GetComponentInParent<IngredientLogic>();
             IngredientsCheck(submittedIngredient, other.transform.parent.gameObject);
@@ -66,10 +66,10 @@ public class OrderChecker : MonoBehaviour
         {
             foreach (Order order in validOrders)
             {
-                //Debug.Log($"Submitted ingredient is {submittedIngredient.currentSlopState}, required ingredient is {order.requiredSlopState}");
                 if (submittedIngredient.currentSlopState.ToString() == order.requiredSlopState.ToString())
                 {
                     OrderCorrect(order);
+                    correctOrderFound = true;
                 }
             }
         }
@@ -79,17 +79,16 @@ public class OrderChecker : MonoBehaviour
             //Compares the required state of each orders required ingredient with the state of the submitted ingredient
             foreach (Order order in validOrders)
             {
-                //Debug.Log($"Submitted ingredient is {submittedIngredient.currentState}, required ingredient is {order.requiredPrepMethod}");
                 if (submittedIngredient.currentState.ToString() == order.requiredPrepMethod.ToString())
                 {
                     OrderCorrect(order);
                     correctOrderFound = true;
                 }
             }
-            if (!correctOrderFound /*&& tutManager.tutComplete*/)
-            {
-                chefAudioSource.PlayOneShot(incorrectOrderAudio);
-            }
+        }
+        if (!correctOrderFound)
+        {
+            chefAudioSource.PlayOneShot(incorrectOrderAudio);
         }
     }
 

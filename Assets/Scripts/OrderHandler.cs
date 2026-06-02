@@ -130,7 +130,11 @@ public class OrderHandler : MonoBehaviour
             newDocket.transform.parent = docketPositions[dockets.Count - 1].transform;
             newDocket.transform.SetLocalPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0,0,0,0));
             newDocket.SetActive(true);
-            chefAudioSource.PlayOneShot(orderUpSound);
+
+            //If the order correct sound is playing, the order up sound will be scaled to 60% volume, otherwise it will play at full volume
+            if (chefAudioSource.isPlaying) { chefAudioSource.PlayOneShot(orderUpSound, 0.6f); }
+            else { chefAudioSource.PlayOneShot(orderUpSound, 1.0f); }
+                
         }
     }
 

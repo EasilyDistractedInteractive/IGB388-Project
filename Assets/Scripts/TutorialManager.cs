@@ -41,7 +41,6 @@ public class TutorialManager : MonoBehaviour
             {
                 Chef.VoiceLine voiceLine = tutorialVoiceLines[voiceLineInt];
 
-                //chef.chefDialogue.ActivateDialogue(voiceLine.voiceLineText, chef.chefAudioSource.PlayOneShot(voiceLine.voiceLineAudio));
                 chef.chefDialogue.ActivateDialogue(voiceLine.voiceLineText, voiceLine.voiceLineAudio, chef.chefAudioSource);
             }
         }
@@ -49,10 +48,13 @@ public class TutorialManager : MonoBehaviour
 
     public void EndTutorial()
     {
+        chef.orderChecker.gameObject.SetActive(true);
         chef.chefDialogue.gameObject.SetActive(false);
         chef.manager.gameTimer.timerRunning = true;
         chef.gameActive = true;
         chef.nextOrderTimer = Time.time;
+        chef.moodCheckTimer = Time.time + chef.moodCheckInterval;
+        chef.chefDialogueTimer = Time.time + chef.chefDialogueInterval;
         tutComplete = true;
     }
 }

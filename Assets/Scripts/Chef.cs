@@ -10,8 +10,11 @@ public class Chef : MonoBehaviour
     [HideInInspector] public float nextOrderTimer; //Set to 3 for now for testing purposes
     public float nextOrderInterval;
 
-    private float moodCheckTimer;
-    [SerializeField] private float moodCheckInterval;
+    [HideInInspector] public float moodCheckTimer;
+    public float moodCheckInterval;
+
+    [HideInInspector] public float chefDialogueTimer;
+    public float chefDialogueInterval;
 
     private float chefMood = 50;
 
@@ -29,8 +32,6 @@ public class Chef : MonoBehaviour
 
     public Animator chefAnim;
 
-    public TextMeshProUGUI moodText;
-
     [HideInInspector] public GameManager manager;
 
     Timer gameTimer;
@@ -46,9 +47,7 @@ public class Chef : MonoBehaviour
     
     void Start()
     {
-        nextOrderTimer = Time.time + nextOrderInterval;
-        moodCheckTimer = Time.time + moodCheckInterval;
-        currentLinePool = voiceLines[1];
+        currentLinePool = voiceLines[1].miscVoiceLines;
         //chefAudioSource = GetComponent<AudioSource>();
         manager = FindAnyObjectByType<GameManager>();
         gameTimer = manager.gameTimer;
@@ -61,12 +60,8 @@ public class Chef : MonoBehaviour
 
     void Update()
     {
-        //moodText.text = "Chef Mood: " + chefMood;
-
         if (gameActive)
         {
-
-            //Debug.Log("Game Beginning, orders generating");
             if (Time.time > nextOrderTimer)
             {
                 orderHandler.GenerateOrder(orderComplexity);
@@ -79,24 +74,26 @@ public class Chef : MonoBehaviour
                 MoodCheck();
                 moodCheckTimer += moodCheckInterval;
             }
+
+            if (Time.time > chefDialogueTimer)
+            {
+                PlayDialogue();
+                chefDialogueTimer += chefDialogueInterval;
+            }
         }
 
         if(mood == Moods.Disappointed)
         {
             chefAnim.SetInteger("Emotion", -1);
-            //chefAudioSource.PlayOneShot(disappointedVoice);
         }
         if(mood == Moods.Neutral)
         {
             chefAnim.SetInteger("Emotion", 0);
-            //chefAudioSource.PlayOneShot(neutralVoice);
         }
         if(mood == Moods.Excited)
         {
             chefAnim.SetInteger("Emotion", 1);
-            //chefAudioSource.PlayOneShot(excitedVoice);
         }
-        //print(chefMood);
     }
 
     public float ChefMood
@@ -114,15 +111,16 @@ public class Chef : MonoBehaviour
 
     [SerializeField] VoiceLines[] voiceLines;
 
-    VoiceLines currentLinePool;
+    VoiceLine[] currentLinePool;
 
     [Serializable]
     struct VoiceLines
     {
         [SerializeField] public Moods voiceLinesMood;
-        [SerializeField] public VoiceLine[] orderReceivedVoiceLines;
+        [SerializeField] public VoiceLine[] orderReceivedVoiceLines; //Unused as of now, same as below 2
         [SerializeField] public VoiceLine[] orderLateVoiceLines;
         [SerializeField] public VoiceLine[] orderIncorrectVoiceLines;
+        [SerializeField] public VoiceLine[] miscVoiceLines;
     }
     
     [Serializable]
@@ -132,7 +130,7 @@ public class Chef : MonoBehaviour
         public AudioClip voiceLineAudio;
     }
 
-    public void incrementChefMood(float amount )
+    public void incrementChefMood(float amount)
     {
         chefMood += amount;
     }
@@ -144,20 +142,27 @@ public class Chef : MonoBehaviour
             case <= 30:
                 mood = Moods.Disappointed;
                 chefAudioSource.PlayOneShot(disappointedVoice);
+                currentLinePool = voiceLines[0].miscVoiceLines;
                 break;
+
             case <= 65:
                 mood = Moods.Neutral;
                 chefAudioSource.PlayOneShot(neutralVoice);
+                currentLinePool = voiceLines[1].miscVoiceLines;
                 break;
+
             case <= 80:
                 mood = Moods.Excited;
                 chefAudioSource.PlayOneShot(excitedVoice);
+                currentLinePool = voiceLines[2].miscVoiceLines;
                 break;
         }
     }
 
-    public void OrderCompleteInteraction()
+    public void PlayDialogue()
     {
-
+        int voiceLineSelection = UnityEngine.Random.Range(0, currentLinePool.Length);
+        VoiceLine line = currentLinePool[voiceLineSelection];
+        chefDialogue.TimedDialogue(line.voiceLineText, line.voiceLineAudio, chefAudioSource, 8);
     }
 }
